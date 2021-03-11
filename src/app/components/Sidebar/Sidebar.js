@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { FunnelFill } from 'react-bootstrap-icons';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
+import Checkbox from '../Checkbox/checkbox'
 import './sidebar.scss';
 
 const Sidebar = ({ setShowSidebar }) => {
-	const [checkAvailable, setCheckAvailable] = React.useState(null);
-
 	return (
 		<>
 			<div className={`h-100 sidebar py-5 px-3 text-primary`}>
@@ -14,84 +12,46 @@ const Sidebar = ({ setShowSidebar }) => {
 						onClick={() => setShowSidebar(false)}
 						className='close-btn'
 					/>
-					<Card className='sidebar__card py-4 px-2 mb-5'>
-						<div className='text-center'>
-							<h3 className='mb-0 d-flex align-items-center justify-content-center'>
-								<FunnelFill size={30} />
-								<span className='ml-2'>Filter Options</span>
-							</h3>
-						</div>
-					</Card>
 
 					<Form>
-						<div className='mb-5'>
-							<Card className='sidebar__card py-3 px-3'>
-								<h4 className='mb-3 text-black'>Availability</h4>
-								<Form.Check
-									className='custom-control'
-									type='checkbox'
-									onChange={() =>
-										setCheckAvailable(
-											checkAvailable === 'available' ? null : 'available'
-										)
-									}
-									checked={checkAvailable === 'available'}
-									label='Available'
-									value='available'
-								/>
-								<Form.Check
-									className='custom-control'
-									type='checkbox'
-									onChange={() =>
-										setCheckAvailable(
-											checkAvailable === 'not-offered' ? null : 'not-offered'
-										)
-									}
-									checked={checkAvailable === 'not-offered'}
-									label='Not Offered'
-									value='not-offered'
-								/>
+						<div className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Project Types</h4>
+								<Checkbox label="Formal"></Checkbox>
+								<Checkbox label="Informal"></Checkbox>
 							</Card>
 						</div>
-						<div className='mb-5'>
-							<Card className='sidebar__card py-3 px-3'>
-								<h4 className='mb-3 text-black'>Details</h4>
-
-								<Form.Group>
-									<Form.Label>Course Name</Form.Label>
-									<Form.Control />
-								</Form.Group>
-								<Form.Group>
-									<Form.Label>Course ID</Form.Label>
-									<div className='d-flex'>
-										<Form.Control as='select'>
-											<option>BITS F</option>
-											<option>CSE F</option>
-											<option>ECE F</option>
-											<option>EEE F</option>
-											<option>IS F</option>
-										</Form.Control>
-										<Form.Control type='number' />
+						<div className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Course Types</h4>
+								<Checkbox label="LOP"></Checkbox>
+								<Checkbox label="DOP"></Checkbox>
+								<Checkbox label="SOP"></Checkbox>
+							</Card>
+						</div>
+						<div className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Departments</h4>
+								<div class="row">
+									<div class="col-sm-6">
+										<Checkbox label="Checmical"></Checkbox>
+										<Checkbox label="Pharmacy"></Checkbox>
+										<Checkbox label="Economics"></Checkbox>
+										<Checkbox label="Biology"></Checkbox>
+										<Checkbox label="Computer Science"></Checkbox>
+										<Checkbox label="Mechanical &amp; Manufcaturing"></Checkbox>
 									</div>
-								</Form.Group>
-
-								<Form.Group>
-									<Form.Label>Course Type</Form.Label>
-									<Form.Control as='select'>
-										<option>-</option>
-										<option>Project</option>
-										<option>Thesis</option>
-									</Form.Control>
-								</Form.Group>
+									<div class="col-sm-6">
+										<Checkbox label="Phoenix"></Checkbox>
+										<Checkbox label="Math"></Checkbox>
+										<Checkbox label="Civil"></Checkbox>
+									</div>
+								</div>
 							</Card>
 						</div>
-						<Card className='sidebar__card py-4 px-2'>
-							<div className='text-center'>
-								<Button size='sm'>Apply Filter</Button>
-								<Button variant='danger' className='ml-2' size='sm'>
-									Reset Filter
-								</Button>
-							</div>
+						<Card className='sidebar__card py-4 px-2 b-0'>
+								<Button variant="outline-primary" className="btn-block btn-outline">Apply Filter</Button>
+								<Button variant='outline-danger' className='my-2 btn-block btn-outline'>Reset Filter</Button>
 						</Card>
 					</Form>
 				</Container>

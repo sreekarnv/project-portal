@@ -2,8 +2,10 @@
 
 html {
 	&::-webkit-scrollbar {
-		display: none !important	;
+		display: none !important;
 	}
+
+	scrollbar-width: none;
 }
 
 body {
@@ -13,6 +15,10 @@ body {
 }
 
 .custom-control {
+	label {
+		color: #eeeeee;
+	}
+
 	.form-check-input:checked ~ .form-check-label::before {
 		background-color: black !important;
 	}
