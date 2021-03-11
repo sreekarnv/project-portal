@@ -8,7 +8,7 @@ const Header = () => {
 			bg='primary'
 			expand='lg'
 			variant='dark'>
-			<Container>
+			<Container className="justify-content-center">
 				<Navbar.Brand href='#home'>Project Portal</Navbar.Brand>
 			</Container>
 		</Navbar>

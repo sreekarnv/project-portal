@@ -64,3 +64,10 @@ body {
 	z-index: 5 !important;
 	overflow: hidden;
 }
+
+.cards-container {
+	min-height: 100vh;
+	padding-left:10%;
+	padding-right: 10%;
+	background:#222;
+}

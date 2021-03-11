@@ -2,17 +2,15 @@
 ////////////////////////////////
 // CARD-1
 
-$c1-blue-1: #0080ff;
+$c1-blue-1: #46CAFF;
 $c1-blue-2: #00b1f9;
-
-$c1-green-1: #00d7ac;
-$c1-green-2: #00f333;
+$c1-blue-3: #009ABE;
+$c1-blue-4: #006FF0;
 
 ///////////////////////////////
 // CARD-2
 
-$c2-blue-1: #00a5ff;
-$c2-blue-2: #6390fd;
+$c2-purple-1: #C600D7;
 
 $c2-pink-1: #e1099a;
 $c2-pink-2: #ff2875;
@@ -23,10 +21,8 @@ $c2-pink-2: #ff2875;
 $c3-yellow-1: #ffbc00;
 $c3-yellow-2: #ff8e29;
 
-$c3-orange-1: #ff5c4f;
-
-$c3-pink-1: #ff2875;
-$c3-pink-2: #e1099a;
+$c3-orange-1: #E68400;
+$c3-orange-2: #FF5A00;
 
 ///////////////////////////////
 //
@@ -34,6 +30,9 @@ $color-bg-1: #65dfc9;
 $color-bg-2: #6cdbeb;
 
 $theme-colors: (
-	'primary': #31195a,
-	'secondary': #0080ff,
+	'primary': #00c2d7,
+	'secondary': #FFC600,
 );
+
+
+$bg-primary: #222222;

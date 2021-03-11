@@ -3,8 +3,8 @@
 		to right top,
 		$c1-blue-1,
 		$c1-blue-2,
-		$c1-green-1,
-		$c1-green-2
+		$c1-blue-3,
+		$c1-blue-4
 	);
 
 	&__cta {
@@ -20,8 +20,7 @@
 		$c2-pink-1,
 		$c2-pink-2,
 		$c2-pink-1,
-		$c2-blue-1,
-		$c2-blue-2
+		$c2-purple-1
 	);
 
 	&__cta {
@@ -37,8 +36,7 @@
 		$c3-yellow-1,
 		$c3-yellow-2,
 		$c3-orange-1,
-		$c3-pink-1,
-		$c3-pink-2
+		$c3-orange-2
 	);
 
 	&__cta {
@@ -49,7 +47,7 @@
 }
 
 .card-project {
-	border-radius: 2rem !important;
+	border-radius: 1rem !important;
 	border: none !important;
 	box-shadow: 0 5px 10px rgba(#000, 0.27);
 
@@ -88,7 +86,7 @@
 		}
 	}
 
-	&__prof1 {
+	&__prof {
 		&-name {
 			font-size: 16px !important;
 			letter-spacing: 0.5px;
