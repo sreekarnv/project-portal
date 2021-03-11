@@ -1,24 +1,14 @@
 import * as React from 'react';
 import { FunnelFill } from 'react-bootstrap-icons';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import './sidebar.scss';
 
-const sidebarVariants = {
-	open: { opacity: 1, x: 0, visibility: 'visible' },
-	close: { opacity: 0, x: '-300px', visibility: 'hidden' },
-};
-
-const Sidebar = ({ showSideBar, setShowSidebar }) => {
+const Sidebar = ({ setShowSidebar }) => {
 	const [checkAvailable, setCheckAvailable] = React.useState(null);
 
 	return (
 		<>
-			<motion.div
-				initial={sidebarVariants.close}
-				transition={{ ease: 'linear', duration: 0.1 }}
-				animate={showSideBar ? sidebarVariants.open : sidebarVariants.close}
-				{...{ variants: sidebarVariants }}
-				className={`h-100 sidebar py-5 px-3 text-primary`}>
+			<div className={`h-100 sidebar py-5 px-3 text-primary`}>
 				<Container>
 					<CloseButton
 						onClick={() => setShowSidebar(false)}
@@ -105,7 +95,7 @@ const Sidebar = ({ showSideBar, setShowSidebar }) => {
 						</Card>
 					</Form>
 				</Container>
-			</motion.div>
+			</div>
 		</>
 	);
 };

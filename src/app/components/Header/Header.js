@@ -1,14 +1,11 @@
 import React from 'react';
+import './header.scss';
 import { Container, Navbar } from 'react-bootstrap';
 
 const Header = () => {
 	return (
-		<Navbar
-			style={{ zIndex: 15, position: 'sticky', top: 0, left: 0 }}
-			bg='primary'
-			expand='lg'
-			variant='dark'>
-			<Container className="justify-content-center">
+		<Navbar expand='lg' variant='dark'>
+			<Container className='justify-content-center'>
 				<Navbar.Brand href='#home'>Project Portal</Navbar.Brand>
 			</Container>
 		</Navbar>

@@ -1,16 +1,20 @@
+@import '/node_modules/bootstrap/scss/functions';
+@import '/node_modules/bootstrap/scss/variables';
+@import '/node_modules/bootstrap/scss/mixins';
+
 // CARD GRADIENT COLORS
 ////////////////////////////////
 // CARD-1
 
-$c1-blue-1: #46CAFF;
+$c1-blue-1: #46caff;
 $c1-blue-2: #00b1f9;
-$c1-blue-3: #009ABE;
-$c1-blue-4: #006FF0;
+$c1-blue-3: #009abe;
+$c1-blue-4: #006ff0;
 
 ///////////////////////////////
 // CARD-2
 
-$c2-purple-1: #C600D7;
+$c2-purple-1: #c600d7;
 
 $c2-pink-1: #e1099a;
 $c2-pink-2: #ff2875;
@@ -21,18 +25,24 @@ $c2-pink-2: #ff2875;
 $c3-yellow-1: #ffbc00;
 $c3-yellow-2: #ff8e29;
 
-$c3-orange-1: #E68400;
-$c3-orange-2: #FF5A00;
+$c3-orange-1: #e68400;
+$c3-orange-2: #ff5a00;
 
 ///////////////////////////////
 //
-$color-bg-1: #65dfc9;
-$color-bg-2: #6cdbeb;
+$color-bg-1: #00b38f;
+$color-bg-2: #54ecc4;
+
+$tertiary: #00b38f;
+$tertiaryDark: #007d5c;
+$tertiaryLight: #54ecc4;
 
 $theme-colors: (
 	'primary': #00c2d7,
-	'secondary': #FFC600,
+	'secondary': #ffc600,
+	'tertiaryLight': $tertiaryLight,
+	'tertiary': $tertiary,
+	'tertiaryDark': $tertiaryDark,
 );
-
 
 $bg-primary: #222222;

@@ -1,0 +1,21 @@
+.btn-wide-sm {
+	padding: 0.375rem 1.75rem;
+}
+
+.btn-wide-md {
+	padding: 0.375rem 2rem;
+}
+
+.btn-wide-lg {
+	padding: 0.375rem 3.25rem;
+}
+
+.btn-wide-xl {
+	padding: 0.375rem 4.75rem;
+}
+
+.btn-hover-text-dark {
+	&:hover {
+		color: $black !important;
+	}
+}

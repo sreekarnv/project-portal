@@ -1,50 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
+html {
+	&::-webkit-scrollbar {
+		display: none !important	;
+	}
+}
+
 body {
 	font-family: 'Nunito', sans-serif !important;
 	width: 100vw !important;
 	overflow-x: hidden;
-}
-
-.sidebar {
-	transition: all 0.3s ease-out;
-	position: fixed;
-	top: 50px;
-	left: 0;
-	height: 100%;
-	width: 350px;
-	z-index: 10 !important;
-
-	background-image: linear-gradient(
-		to right bottom,
-		$color-bg-1,
-		$color-bg-2
-	) !important;
-
-	@media only screen and (max-width: 400px) {
-		width: 300px !important;
-	}
-
-	.close-btn {
-		position: absolute;
-		top: 10px;
-		right: 15px;
-		color: #fff !important;
-		fill: currentColor !important;
-	}
-
-	&__card {
-		border-radius: 2rem !important;
-		background: linear-gradient(
-			to right bottom,
-			rgba(#fff, 0.9),
-			rgba(#fff, 0.2)
-		) !important;
-
-		backdrop-filter: blur(30px);
-		box-shadow: 0 2px 16px rgba(#000, 0.25);
-		border: 2px solid rgba(#fff, 0.4) !important;
-	}
 }
 
 .custom-control {
@@ -53,21 +18,27 @@ body {
 	}
 }
 
-.backdrop {
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(#000, 0.85);
-	z-index: 5 !important;
-	overflow: hidden;
-}
-
 .cards-container {
 	min-height: 100vh;
-	padding-left:10%;
-	padding-right: 10%;
-	background:#222;
+	background: #222;
+
+	.form-control,
+	.form-control:focus {
+		background-color: $bg-primary;
+		border: 0px;
+		border-bottom: 2px solid #eeeeee;
+		border-radius: 0px;
+		outline: none;
+		box-shadow: none;
+		color: #eeeeee;
+		padding-left: 0;
+
+		&::placeholder {
+			opacity: 0.8;
+		}
+	}
+
+	.form-control:focus {
+		border-color: #ffc600 !important;
+	}
 }

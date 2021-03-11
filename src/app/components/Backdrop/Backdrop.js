@@ -1,4 +1,5 @@
 import React from 'react';
+import './backdrop.scss';
 import { motion } from 'framer-motion';
 
 const backDropVariants = {

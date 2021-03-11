@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-import Img from './../../assets/image.jpg';
+import './project-card.scss';
+import Img from './../../../assets/image.jpg';
 
 const ProjectCard = ({ number, style }) => {
 	return (
