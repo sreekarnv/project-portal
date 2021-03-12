@@ -1,14 +1,24 @@
 @import '/src/scss/variables';
+@import '/src/scss/mixins';
 
 .sidebar {
-	height: 100%;
-	width: 100%;
+	position: fixed !important;
+	left: 0;
 	z-index: 10 !important;
-
+	width: 400px !important;
 	background: #222222;
+	overflow-y: scroll !important;
 
-	@media only screen and (max-width: 400px) {
+	@include respond(500px) {
+		width: 400px !important;
+	}
+
+	@include respond(400px) {
 		width: 300px !important;
+	}
+
+	@include media-breakpoint-up(md) {
+		width: 400px !important;
 	}
 
 	.close-btn {

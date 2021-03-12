@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
-html {
+* {
 	&::-webkit-scrollbar {
 		display: none !important;
 	}
 
-	scrollbar-width: none;
+	scrollbar-width: none !important;
 }
 
 body {
@@ -46,5 +46,12 @@ body {
 
 	.form-control:focus {
 		border-color: #ffc600 !important;
+	}
+
+	.dropdown-item {
+		transition: all 0.3s ease-out;
+		&:hover {
+			background: rgba($black, 0.5) !important;
+		}
 	}
 }
