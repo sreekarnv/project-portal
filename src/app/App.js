@@ -96,16 +96,16 @@ const App = () => {
 											</Dropdown.Toggle>
 
 											<Dropdown.Menu className='bg-dark w-100'>
-												<Dropdown.Item className='text-primary'>
+												<Dropdown.Item className='text-light'>
 													<SortAlphaDown size={20} /> Name
 												</Dropdown.Item>
-												<Dropdown.Item className='text-secondary'>
+												<Dropdown.Item className='text-light'>
 													<SortAlphaUp size={20} /> Name
 												</Dropdown.Item>
-												<Dropdown.Item className='text-primary'>
+												<Dropdown.Item className='text-light'>
 													<SortAlphaDown size={20} /> Course
 												</Dropdown.Item>
-												<Dropdown.Item className='text-secondary'>
+												<Dropdown.Item className='text-light'>
 													<SortAlphaDown size={20} /> Course
 												</Dropdown.Item>
 											</Dropdown.Menu>
