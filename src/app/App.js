@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import * as React from 'react';
 import { Row, Container, Button, Form, Dropdown } from 'react-bootstrap';
 import {
 	FunnelFill,
@@ -11,6 +11,8 @@ import ProjectCard from './components/ProjectCard/ProjectCard';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Backdrop from './components/Backdrop/Backdrop';
+import { ProjectContext } from './context/ProjectContext';
+import Loading from './components/Loader/Loading';
 
 const sidebarVariants = {
 	open: {
@@ -26,15 +28,24 @@ const sidebarVariants = {
 };
 
 const App = () => {
-	const [showSideBar, setShowSidebar] = useState(false);
+	const [showSideBar, setShowSidebar] = React.useState(false);
+	const { projects, loading } = React.useContext(ProjectContext);
+
+	if (loading) {
+		return (
+			<div className='vh-100 bg-dark d-flex justify-content-center align-items-center'>
+				<Loading />
+			</div>
+		);
+	}
 
 	return (
 		<>
 			<Header />
 
 			<Container fluid>
-				<Row className='cards-container'>
-					<AnimateSharedLayout>
+				<AnimateSharedLayout>
+					<Row className='cards-container'>
 						<AnimatePresence>
 							{showSideBar && (
 								<motion.div
@@ -56,7 +67,6 @@ const App = () => {
 						/>
 
 						<motion.div
-							style={{ minHeight: 0 }}
 							layout
 							className={`mx-auto col-xl-10 col-lg-${
 								showSideBar ? '9' : '10'
@@ -64,6 +74,8 @@ const App = () => {
 							<Container fluid>
 								<div className='py-4'>
 									<motion.div
+										id='filter-row'
+										key='filter-row'
 										layout
 										className={`filter-row mt-5 ${
 											showSideBar ? 'p-show-sidebar' : ''
@@ -114,28 +126,32 @@ const App = () => {
 
 									<Row
 										className={`py-4 mt-3 ${showSideBar && 'p-show-sidebar'}`}>
-										{[1, 2, 3, 2, 3, 1].map((el, i) => {
-											return (
-												<motion.div
-													layout
-													key={`${el}-${i}`}
-													className={`col-xl-${
-														showSideBar ? '4' : '3'
-													} col-lg-${
-														showSideBar ? '6' : '4'
-													} col-md-6 col-sm-6 col-12`}>
-													<div>
-														<ProjectCard number={el} />
-													</div>
-												</motion.div>
-											);
-										})}
+										<AnimateSharedLayout>
+											{projects &&
+												projects.map((el, i) => {
+													return (
+														<motion.div
+															layout
+															transition={{ ease: 'easeOut' }}
+															key={`${el}-${i}`}
+															className={`col-xl-${
+																showSideBar ? '4' : '3'
+															} col-lg-${
+																showSideBar ? '6' : '4'
+															} col-md-6 col-sm-6 col-12`}>
+															<div>
+																<ProjectCard number={i} project={el} />
+															</div>
+														</motion.div>
+													);
+												})}
+										</AnimateSharedLayout>
 									</Row>
 								</div>
 							</Container>
 						</motion.div>
-					</AnimateSharedLayout>
-				</Row>
+					</Row>
+				</AnimateSharedLayout>
 			</Container>
 		</>
 	);

@@ -39,8 +39,8 @@ const Sidebar = ({ setShowSidebar }) => {
 						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
-								<div class='row'>
-									<div class='col-sm-6'>
+								<div className='row'>
+									<div className='col-sm-6'>
 										<Checkbox label='Chemical'></Checkbox>
 										<Checkbox label='Pharmacy'></Checkbox>
 										<Checkbox label='Economics'></Checkbox>
@@ -48,7 +48,7 @@ const Sidebar = ({ setShowSidebar }) => {
 										<Checkbox label='Computer Science'></Checkbox>
 										<Checkbox label='Mechanical &amp; Manufcaturing'></Checkbox>
 									</div>
-									<div class='col-sm-6'>
+									<div className='col-sm-6'>
 										<Checkbox label='Phoenix'></Checkbox>
 										<Checkbox label='Math'></Checkbox>
 										<Checkbox label='Civil'></Checkbox>

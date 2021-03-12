@@ -55,6 +55,8 @@
 }
 
 .card-project {
+	height: 420px;
+	backface-visibility: hidden;
 	border-radius: 1rem !important;
 	border: none !important;
 
@@ -90,6 +92,7 @@
 			letter-spacing: 0.5px;
 			text-transform: uppercase;
 			font-size: 24px;
+			height: 80px;
 		}
 	}
 
