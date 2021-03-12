@@ -65,7 +65,7 @@ const App = () => {
 										<div className='d-flex w-100 justify-content-center justify-content-sm-between'>
 											<Button
 												variant='outline-primary'
-												className='btn-wide-md  w-50 w-sm-auto btn-hover-text-dark w-sm-0 mb-4 mb-sm-0'
+												className='btn-wide-xl  w-50 w-sm-auto btn-hover-text-dark w-sm-0 mb-4 mb-sm-0'
 												onClick={() => setShowSidebar(!showSideBar)}>
 												<FunnelFill size={20} />
 												<span>Filter</span>
@@ -73,7 +73,7 @@ const App = () => {
 
 											<Dropdown className='ml-sm-auto ml-0 w-50 w-sm-auto'>
 												<Dropdown.Toggle
-													className='mx-3 btn-wide-md mb-2 w-100 w-sm-auto mb-sm-0 '
+													className='mx-3 btn-wide-lg mb-2 w-100 w-sm-auto mb-sm-0 '
 													variant='outline-secondary'
 													id='dropdown-basic'>
 													<SortDown size={20} />
@@ -81,16 +81,16 @@ const App = () => {
 												</Dropdown.Toggle>
 
 												<Dropdown.Menu className='bg-dark'>
-													<Dropdown.Item className='text-primary'>
+													<Dropdown.Item className='text-light'>
 														Name Ascending
 													</Dropdown.Item>
-													<Dropdown.Item className='text-secondary'>
+													<Dropdown.Item className='text-light'>
 														Name Descending
 													</Dropdown.Item>
-													<Dropdown.Item className='text-primary'>
+													<Dropdown.Item className='text-light'>
 														Course Ascending
 													</Dropdown.Item>
-													<Dropdown.Item className='text-secondary'>
+													<Dropdown.Item className='text-light'>
 														Course Descending
 													</Dropdown.Item>
 												</Dropdown.Menu>
