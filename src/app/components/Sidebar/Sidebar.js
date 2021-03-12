@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox from '../Checkbox/checkbox';
 import './sidebar.scss';
 
 const Sidebar = ({ setShowSidebar }) => {
@@ -39,7 +39,7 @@ const Sidebar = ({ setShowSidebar }) => {
 						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
-								<div class='row'>
+								<div className='row'>
 									<div class='col-sm-6'>
 										<Checkbox label='Chemical'></Checkbox>
 										<Checkbox label='Pharmacy'></Checkbox>
