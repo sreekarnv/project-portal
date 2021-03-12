@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<Navbar expand='lg' variant='dark'>
 			<Container className='justify-content-center'>
-				<Navbar.Brand href='#home'>BPHC Study Project Portal</Navbar.Brand>
+				<Navbar.Brand href='#home' className="py-3">BPHC Project Portal</Navbar.Brand>
 			</Container>
 		</Navbar>
 	);
