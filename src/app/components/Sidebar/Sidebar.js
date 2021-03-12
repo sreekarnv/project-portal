@@ -6,8 +6,8 @@ import './sidebar.scss';
 const Sidebar = ({ setShowSidebar }) => {
 	return (
 		<>
-			<div className={`h-100 sidebar py-3 px-3 text-primary`}>
-				<Container>
+			<div className={`h-100 sidebar pb-5 px-3 text-primary`}>
+				<Container className='pb-5'>
 					<CloseButton
 						onClick={() => setShowSidebar(false)}
 						className='close-btn'
@@ -29,7 +29,7 @@ const Sidebar = ({ setShowSidebar }) => {
 								<Checkbox label='SOP'></Checkbox>
 							</Card>
 						</div>
-						<div className="mb-3">
+						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Project Time</h4>
 								<Checkbox label='Previous Semesters'></Checkbox>
