@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
-import Checkbox from '../Checkbox/checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 import './sidebar.scss';
 
 const Sidebar = ({ setShowSidebar }) => {
@@ -49,7 +49,7 @@ const Sidebar = ({ setShowSidebar }) => {
 								</div>
 							</Card>
 						</div>
-						<Card className='sidebar__card py-4 px-2 b-0'>
+						<Card className='sidebar__card py-4 px-2 b-0 u-bb-none'>
 							<Button
 								variant='outline-primary'
 								className='btn-block btn-outline'>

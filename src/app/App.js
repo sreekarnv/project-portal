@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { Row, Container, Button, Form, Dropdown } from 'react-bootstrap';
-import { FunnelFill, SortDown } from 'react-bootstrap-icons';
+import {
+	FunnelFill,
+	SortDown,
+	SortAlphaDown,
+	SortAlphaUp,
+} from 'react-bootstrap-icons';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -51,6 +56,7 @@ const App = () => {
 						/>
 
 						<motion.div
+							style={{ minHeight: 0 }}
 							layout
 							className={`mx-auto col-xl-10 col-lg-${
 								showSideBar ? '9' : '10'
@@ -59,55 +65,51 @@ const App = () => {
 								<div className='py-4'>
 									<motion.div
 										layout
-										className={`d-flex flex-column flex-sm-row justify-content-center align-items-center justify-content-md-between mt-5 ${
+										className={`filter-row mt-5 ${
 											showSideBar ? 'p-show-sidebar' : ''
 										}`}>
-										<div className='d-flex w-100 justify-content-center justify-content-sm-between'>
-											<Button
-												variant='outline-primary'
-												className='btn-wide-md  w-50 w-sm-auto btn-hover-text-dark w-sm-0 mb-4 mb-sm-0'
-												onClick={() => setShowSidebar(!showSideBar)}>
-												<FunnelFill size={20} />
-												<span>Filter</span>
-											</Button>
+										<Button
+											variant='outline-primary'
+											className='btn-wide-md btn-hover-text-dark mb-4 mb-sm-0 filter-row__filter'
+											onClick={() => setShowSidebar(!showSideBar)}>
+											<FunnelFill size={20} />
+											<span>Filter</span>
+										</Button>
 
-											<Dropdown className='ml-sm-auto ml-0 w-50 w-sm-auto'>
-												<Dropdown.Toggle
-													className='mx-3 btn-wide-md mb-2 w-100 w-sm-auto mb-sm-0 '
-													variant='outline-secondary'
-													id='dropdown-basic'>
-													<SortDown size={20} />
-													<span>Sort</span>
-												</Dropdown.Toggle>
+										<Form.Group
+											className='mb-0 filter-row__search'
+											controlId='search'>
+											<Form.Control
+												autoComplete='off'
+												type='text'
+												placeholder='Search by Name, Dept or Prof'
+											/>
+										</Form.Group>
 
-												<Dropdown.Menu className='bg-dark'>
-													<Dropdown.Item className='text-primary'>
-														Name Ascending
-													</Dropdown.Item>
-													<Dropdown.Item className='text-secondary'>
-														Name Descending
-													</Dropdown.Item>
-													<Dropdown.Item className='text-primary'>
-														Course Ascending
-													</Dropdown.Item>
-													<Dropdown.Item className='text-secondary'>
-														Course Descending
-													</Dropdown.Item>
-												</Dropdown.Menu>
-											</Dropdown>
-										</div>
+										<Dropdown className='filter-row__dropdown w-100'>
+											<Dropdown.Toggle
+												className='btn-block mb-2 mb-sm-0'
+												variant='outline-secondary'
+												id='dropdown-basic'>
+												<SortDown size={20} />
+												<span>Sort</span>
+											</Dropdown.Toggle>
 
-										<div className='ml-0 ml-sm-auto w-100 w-sm-auto'>
-											<Form.Group
-												className='mb-0 ml-xl-auto w-100'
-												controlId='search'>
-												<Form.Control
-													autoComplete='off'
-													type='text'
-													placeholder='Search by Name, Dept or Prof'
-												/>
-											</Form.Group>
-										</div>
+											<Dropdown.Menu className='bg-dark w-100'>
+												<Dropdown.Item className='text-primary'>
+													<SortAlphaDown size={20} /> Name
+												</Dropdown.Item>
+												<Dropdown.Item className='text-secondary'>
+													<SortAlphaUp size={20} /> Name
+												</Dropdown.Item>
+												<Dropdown.Item className='text-primary'>
+													<SortAlphaDown size={20} /> Course
+												</Dropdown.Item>
+												<Dropdown.Item className='text-secondary'>
+													<SortAlphaDown size={20} /> Course
+												</Dropdown.Item>
+											</Dropdown.Menu>
+										</Dropdown>
 									</motion.div>
 
 									<Row
