@@ -1,201 +1,214 @@
-import * as React from "react";
-import { Container, Form, Button, CloseButton, Card } from "react-bootstrap";
-import Checkbox from "../Checkbox/checkbox.js";
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
+import * as React from 'react';
+import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
+import { FilterContext } from '../../context/FilterContext';
+import Checkbox from '../Checkbox/Checkbox';
+import './sidebar.scss';
 
-import {FilterContext} from '../../context/FilterContext'
+const Sidebar = ({ setShowSidebar }) => {
+	const {
+		updateFilterOptions,
+		filterOptions,
+		applyFilter,
+		resetFilterOptions,
+	} = React.useContext(FilterContext);
 
-import "./sidebar.scss";
+	const handleFilter = (e) => {
+		const key = e.target.name.split('-')[0];
+		const subFilter = e.target.name.split('-')[1];
+		const value = e.target.checked;
 
-const Sidebar = ({
-    setShowSidebar,
-}) => {
+		let newFilterOptions = { ...filterOptions };
 
-    const FilterOptions = React.useContext(FilterContext);
+		///////////////////////////////////////////
+		// Project Type Filter
+		if (newFilterOptions.projectType.Formal && subFilter === 'Informal') {
+			newFilterOptions.projectType.Formal = false;
+			Object.keys(newFilterOptions.courseType).forEach((k) => {
+				newFilterOptions.courseType[k] = false;
+			});
+		} else if (
+			newFilterOptions.projectType.Informal &&
+			subFilter === 'Formal'
+		) {
+			newFilterOptions.projectType.Informal = false;
+		}
+		//////////////////////////////////////////////////
 
-    const handleCheck = (e) => {
-        //e.target.checked = !e.target.checked;
-        FilterOptions.handleFilterChanged(e.target.getAttribute("subfilter"), e.target.name, !e.target.checked);
-    };
+		newFilterOptions[key][subFilter] = value;
+		updateFilterOptions(newFilterOptions);
+	};
 
-    return (
-        <>
-            <div className={`h-100 sidebar pb-5 px-3 text-primary`}>
-                <Container className="pb-5">
-                    <CloseButton
-                        onClick={() => setShowSidebar(false)}
-                        className="close-btn"
-                    />
+	return (
+		<AnimateSharedLayout>
+			<div className={`h-100 sidebar pb-5 px-3 text-primary`}>
+				<Container className='pb-5'>
+					<CloseButton
+						onClick={() => setShowSidebar(false)}
+						className='close-btn'
+					/>
 
-                    <Form>
-                        <div className="mb-3">
-                            <Card className="sidebar__card py-3 pr-3">
-                                <h4 className="mb-3 text-black">
-                                    Project Types
-                                </h4>
-                                <Checkbox
-                                    label="Formal"
-                                    subFilter="isFormal"
-                                    name="Formal"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.isFormal.Formal}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="Informal"
-                                    subFilter="isFormal"
-                                    name="Informal"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.isFormal.Informal}
-                                ></Checkbox>
-                            </Card>
-                        </div>
-                        <div className="mb-3">
-                            <Card className="sidebar__card py-3 pr-3">
-                                <h4 className="mb-3 text-black">
-                                    Course Types
-                                </h4>
-                                <Checkbox
-                                    label="LOP"
-                                    subFilter="ProjectType"
-                                    name="LOP"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.ProjectType.LOP}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="DOP"
-                                    subFilter="ProjectType"
-                                    name="DOP"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.ProjectType.DOP}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="SOP"
-                                    subFilter="ProjectType"
-                                    name="SOP"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.ProjectType.SOP}
-                                ></Checkbox>
-                            </Card>
-                        </div>
-                        <div className="mb-3">
-                            <Card className="sidebar__card py-3 pr-3">
-                                <h4 className="mb-3 text-black">
-                                    Project Time
-                                </h4>
-                                <Checkbox
-                                    label="Previous Semesters"
-                                    subFilter="ProjectTime"
-                                    name="previousSem"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.ProjectTime.previousSem}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="Upcoming Semester"
-                                    subFilter="ProjectTime"
-                                    name="upcomingSem"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={FilterOptions.filters.ProjectTime.upcomingSem}
-                                ></Checkbox>
-                            </Card>
-                        </div>
-                        <div className="mb-3">
-                            <Card className="sidebar__card py-3 pr-3">
-                                <h4 className="mb-3 text-black">Departments</h4>
-                                <div className="row">
-                                    <div className="col-sm-6">
-                                        <Checkbox
-                                            label="Chemical"
-                                            subFilter="Department"
-                                            name="Chemical"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Chemical}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Pharmacy"
-                                            subFilter="Department"
-                                            name="Pharmacy"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Pharmacy}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Economics"
-                                            subFilter="Department"
-                                            name="Economics"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Economics}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Biology"
-                                            subFilter="Department"
-                                            name="Biology"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Biology}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Computer Science"
-                                            subFilter="Department"
-                                            name="Computer Science"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={
-                                                FilterOptions.filters.Department["Computer Science"]
-                                            }
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Mechanical &amp; Manufcaturing"
-                                            subFilter="Department"
-                                            name="Mechanical & Manufacturing"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={
-                                                FilterOptions.filters.Department["Mechanical & Manufacturing"]
-                                            }
-                                        ></Checkbox>
-                                    </div>
-                                    <div className="col-sm-6">
-                                        <Checkbox
-                                            label="Phoenix"
-                                            subFilter="Department"
-                                            name="Phoenix"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Phoenix}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Math"
-                                            subFilter="Department"
-                                            name="Math"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Math}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="Civil"
-                                            subFilter="Department"
-                                            name="Civil"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={FilterOptions.filters.Department.Civil}
-                                        ></Checkbox>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                        <Card className="sidebar__card py-4 px-2 b-0 u-bb-none">
-                            <Button
-                                variant="outline-primary"
-                                className="btn-block btn-outline"
-                                onClick={FilterOptions.handleFilterApply}
-                            >
-                                Apply Filter
-                            </Button>
-                            <Button
-                                variant="outline-danger"
-                                className="my-2 btn-block btn-outline"
-                                onClick={FilterOptions.handleFilterReset}
-                            >
-                                Reset Filter
-                            </Button>
-                        </Card>
-                    </Form>
-                </Container>
-            </div>
-        </>
-    );
+					<Form>
+						<div className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Project Types</h4>
+								<Checkbox
+									name='projectType-Formal'
+									label='Formal'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.projectType.Formal}
+								/>
+								<Checkbox
+									name='projectType-Informal'
+									label='Informal'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.projectType.Informal}
+								/>
+							</Card>
+						</div>
+						<AnimatePresence>
+							{filterOptions.projectType.Formal && (
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									className='mb-3'>
+									<Card className='sidebar__card py-3 pr-3'>
+										<h4 className='mb-3 text-black'>Course Types</h4>
+										<Checkbox
+											name='courseType-LOP'
+											label='LOP'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.courseType.LOP}
+										/>
+										<Checkbox
+											name='courseType-DOP'
+											label='DOP'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.courseType.DOP}
+										/>
+										<Checkbox
+											name='courseType-SOP'
+											label='SOP'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.courseType.SOP}
+										/>
+									</Card>
+								</motion.div>
+							)}
+						</AnimatePresence>
+						{/* 
+						<motion.div layout className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Project Time</h4>
+								<Checkbox
+									name='projectTime-previousSem'
+									label='Previous Semesters'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.projectTime.previousSem}
+								/>
+								<Checkbox
+									name='projectTime-upcomingSem'
+									label='Upcoming Semester'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.projectTime.previousSem}
+								/>
+							</Card>
+						</motion.div> */}
+						<motion.div layout className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Departments</h4>
+								<div className='row'>
+									<div className='col-sm-6'>
+										<Checkbox
+											name='department-Chemical'
+											label='Chemical'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Chemical}
+										/>
+										<Checkbox
+											name='department-Pharmacy'
+											label='Pharmacy'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Pharmacy}
+										/>
+										<Checkbox
+											name='department-Economics'
+											label='Economics'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Economics}
+										/>
+										<Checkbox
+											name='department-Biology'
+											label='Biology'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Biology}
+										/>
+										<Checkbox
+											name='department-Computer Science'
+											label='Computer Science'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department['Computer Science']}
+										/>
+										<Checkbox
+											name='department-Mechanical & Manufacturing'
+											label='Mechanical &amp; Manufcaturing'
+											onChange={(e) => handleFilter(e)}
+											checked={
+												filterOptions.department['Mechanical & Manufacturing']
+											}
+										/>
+									</div>
+									<div className='department-col-sm-6'>
+										<Checkbox
+											name='department-Phoenix'
+											label='Phoenix'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Phoenix}
+										/>
+										<Checkbox
+											name='department-Math'
+											label='Math'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Math}
+										/>
+										<Checkbox
+											name='department-Civil'
+											label='Civil'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.department.Civil}
+										/>
+									</div>
+								</div>
+							</Card>
+						</motion.div>
+						<motion.div
+							layout
+							className='card sidebar__card py-4 px-2 b-0 u-bb-none'>
+							<Button
+								variant='outline-primary'
+								onClick={() => {
+									applyFilter();
+									setShowSidebar(false);
+								}}
+								className='btn-block btn-outline'>
+								Apply Filter
+							</Button>
+							<Button
+								onClick={() => {
+									resetFilterOptions();
+									setShowSidebar(false);
+								}}
+								variant='outline-danger'
+								className='my-2 btn-block btn-outline'>
+								Reset Filter
+							</Button>
+						</motion.div>
+					</Form>
+				</Container>
+			</div>
+		</AnimateSharedLayout>
+	);
 };
 
 export default Sidebar;

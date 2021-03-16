@@ -1,40 +1,34 @@
-import React from 'react'
+import React from 'react';
 
-import './checkbox.scss'
+import './checkbox.scss';
 
-const Checkbox = ({hasError, label, type, onChange, name,checked, subFilter}) => {
-
-    const checkboxClassname = `
+const Checkbox = ({ hasError, label, type, onChange, checked, name }) => {
+	const checkboxClassname = `
     m-checkbox
     ${type === 'switch' && 'm-checkbox--switch'}
     ${hasError && 'm-checkbox--has-error'}`;
 
-    const inputClassname = `
+	const inputClassname = `
     m-checkbox__input
     ${type === 'switch' && 'm-checkbox--switch__input'}
     ${hasError && 'm-checkbox--has-error__input'}
     `;
 
-    const labelClassname = `
+	const labelClassname = `
     m-checkbox__label
     ${type === 'switch' && 'm-checkbox--switch__label'}
     `;
 
-    return (
-        <div className={checkboxClassname}>
-            <input
-                type="checkbox"
-                className={inputClassname}
-                onChange={onChange}
-                name={name}
-                checked={checked}
-                subfilter={subFilter}
-            ></input>
-            <label
-                className={labelClassname}
-            >{label}</label>
-        </div>
-    );
+	return (
+		<div className={checkboxClassname}>
+			<input
+				type='checkbox'
+				className={inputClassname}
+				{...{ name, checked, onChange }}
+			/>
+			<label className={labelClassname}>{label}</label>
+		</div>
+	);
 };
 
 export default Checkbox;
