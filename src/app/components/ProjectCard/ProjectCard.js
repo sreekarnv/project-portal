@@ -21,7 +21,7 @@ const ProjectCard = ({ number, style, project }) => {
 				</div>
 				<div className='card-project__details mb-5'>
 					<Card.Subtitle className='mb-2 card-project__details-id'>
-						{project.isFormal ? `FORMAL / ${project.ProjectType}` : 'INFORMAL'}
+						{`${project.isFormal} ${project.ProjectType ? '/ ' + project.ProjectType : ''}`}
 					</Card.Subtitle>
 					<Card.Title className='card-project__details-name'>
 						{project.ProjectTitle}

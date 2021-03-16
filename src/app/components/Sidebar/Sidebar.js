@@ -1,139 +1,20 @@
 import * as React from "react";
 import { Container, Form, Button, CloseButton, Card } from "react-bootstrap";
-import Checkbox from "../Checkbox/Checkbox";
+import Checkbox from "../Checkbox/checkbox.js";
+
+import {FilterContext} from '../../context/FilterContext'
+
 import "./sidebar.scss";
 
 const Sidebar = ({
     setShowSidebar,
-    setDisplayProjects,
-    projects,
-    search,
-    setFilteredProjects,
-    sidebarFilters,
-    sidebarSetFilters,
 }) => {
+
+    const FilterOptions = React.useContext(FilterContext);
+
     const handleCheck = (e) => {
-        e.target.checked = !e.target.checked;
-        sidebarSetFilters((sidebarFilter) => ({
-            ...sidebarFilter,
-            [e.target.name]: !sidebarFilter[e.target.name],
-        }));
-    };
-
-    const handleReset = () => {
-        setFilteredProjects(projects);
-        setDisplayProjects(
-            projects.filter((project) => {
-                return (
-                    project.ProjectTitle.toLowerCase().includes(
-                        search.toLowerCase()
-                    ) ||
-                    project.Professor.toLowerCase().includes(
-                        search.toLowerCase()
-                    )
-                );
-            })
-        );
-        sidebarSetFilters({
-            Formal: false,
-            Informal: false,
-            LOP: false,
-            DOP: false,
-            SOP: false,
-            previousSem: false,
-            upcomingSem: false,
-            Chemical: false,
-            Phoenix: false,
-            Pharmacy: false,
-            Math: false,
-            Economics: false,
-            Civil: false,
-            Biology: false,
-            "Computer Science": false,
-            "Mechanical & Manufacturing": false,
-            projectAll: true,
-            courseAll: true,
-            departmentAll: true,
-        });
-    }
-
-    const handleSubmit = () => {
-        let newFilteredProjects = [];
-        let courses = [
-            "Chemical",
-            "Phoenix",
-            "Pharmacy",
-            "Math",
-            "Economics",
-            "Civil",
-            "Biology",
-            "Computer Science",
-            "Mechanical & Manufacturing",
-        ];
-
-        if (sidebarFilters.departmentAll === true) {
-            newFilteredProjects = projects;
-        } else {
-            for (let i in courses) {
-                if (sidebarFilters[courses[i]] === true) {
-                    newFilteredProjects = newFilteredProjects.concat(
-                        projects.filter(
-                            (project) => project.Department === courses[i]
-                        )
-                    );
-                }
-            }
-        }
-
-        if (sidebarFilters.projectAll === false) {
-            if (sidebarFilters["Informal"] === false) {
-                newFilteredProjects = newFilteredProjects.filter(
-                    (project) => project.isFormal === true
-                );
-            }
-            if (sidebarFilters["Formal"] === false) {
-                newFilteredProjects = newFilteredProjects.filter((project) => {
-                    return !project.isFormal;
-                });
-            }
-        }
-
-        if (sidebarFilters.courseAll === false) {
-            if (sidebarFilters["LOP"] === false) {
-                newFilteredProjects = newFilteredProjects.filter(
-                    (project) =>
-                        project.ProjectType && project.ProjectType !== "LOP"
-                );
-            }
-
-            if (sidebarFilters["SOP"] === false) {
-                newFilteredProjects = newFilteredProjects.filter(
-                    (project) =>
-                        project.ProjectType && project.ProjectType !== "SOP"
-                );
-            }
-
-            if (sidebarFilters["DOP"] === false) {
-                newFilteredProjects = newFilteredProjects.filter(
-                    (project) =>
-                        project.ProjectType && project.ProjectType !== "DOP"
-                );
-            }
-        }
-
-        setFilteredProjects(newFilteredProjects);
-        setDisplayProjects(
-            newFilteredProjects.filter((project) => {
-                return (
-                    project.ProjectTitle.toLowerCase().includes(
-                        search.toLowerCase()
-                    ) ||
-                    project.Professor.toLowerCase().includes(
-                        search.toLowerCase()
-                    )
-                );
-            })
-        );
+        //e.target.checked = !e.target.checked;
+        FilterOptions.handleFilterChanged(e.target.getAttribute("subfilter"), e.target.name, !e.target.checked);
     };
 
     return (
@@ -153,21 +34,17 @@ const Sidebar = ({
                                 </h4>
                                 <Checkbox
                                     label="Formal"
+                                    subFilter="isFormal"
                                     name="Formal"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.Formal}
+                                    checked={FilterOptions.filters.isFormal.Formal}
                                 ></Checkbox>
                                 <Checkbox
                                     label="Informal"
+                                    subFilter="isFormal"
                                     name="Informal"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.Informal}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="All"
-                                    name="projectAll"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.projectAll}
+                                    checked={FilterOptions.filters.isFormal.Informal}
                                 ></Checkbox>
                             </Card>
                         </div>
@@ -178,27 +55,24 @@ const Sidebar = ({
                                 </h4>
                                 <Checkbox
                                     label="LOP"
+                                    subFilter="ProjectType"
                                     name="LOP"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.LOP}
+                                    checked={FilterOptions.filters.ProjectType.LOP}
                                 ></Checkbox>
                                 <Checkbox
                                     label="DOP"
+                                    subFilter="ProjectType"
                                     name="DOP"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.DOP}
+                                    checked={FilterOptions.filters.ProjectType.DOP}
                                 ></Checkbox>
                                 <Checkbox
                                     label="SOP"
+                                    subFilter="ProjectType"
                                     name="SOP"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.SOP}
-                                ></Checkbox>
-                                <Checkbox
-                                    label="All"
-                                    name="courseAll"
-                                    onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.courseAll}
+                                    checked={FilterOptions.filters.ProjectType.SOP}
                                 ></Checkbox>
                             </Card>
                         </div>
@@ -209,15 +83,17 @@ const Sidebar = ({
                                 </h4>
                                 <Checkbox
                                     label="Previous Semesters"
+                                    subFilter="ProjectTime"
                                     name="previousSem"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.previousSem}
+                                    checked={FilterOptions.filters.ProjectTime.previousSem}
                                 ></Checkbox>
                                 <Checkbox
                                     label="Upcoming Semester"
+                                    subFilter="ProjectTime"
                                     name="upcomingSem"
                                     onChange={(e) => handleCheck(e)}
-                                    checked={sidebarFilters.upcomingSem}
+                                    checked={FilterOptions.filters.ProjectTime.upcomingSem}
                                 ></Checkbox>
                             </Card>
                         </div>
@@ -228,75 +104,72 @@ const Sidebar = ({
                                     <div className="col-sm-6">
                                         <Checkbox
                                             label="Chemical"
+                                            subFilter="Department"
                                             name="Chemical"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Chemical}
+                                            checked={FilterOptions.filters.Department.Chemical}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Pharmacy"
+                                            subFilter="Department"
                                             name="Pharmacy"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Pharmacy}
+                                            checked={FilterOptions.filters.Department.Pharmacy}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Economics"
+                                            subFilter="Department"
                                             name="Economics"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Economics}
+                                            checked={FilterOptions.filters.Department.Economics}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Biology"
+                                            subFilter="Department"
                                             name="Biology"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Biology}
+                                            checked={FilterOptions.filters.Department.Biology}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Computer Science"
+                                            subFilter="Department"
                                             name="Computer Science"
                                             onChange={(e) => handleCheck(e)}
                                             checked={
-                                                sidebarFilters[
-                                                    "Computer Science"
-                                                ]
+                                                FilterOptions.filters.Department["Computer Science"]
                                             }
                                         ></Checkbox>
                                         <Checkbox
                                             label="Mechanical &amp; Manufcaturing"
+                                            subFilter="Department"
                                             name="Mechanical & Manufacturing"
                                             onChange={(e) => handleCheck(e)}
                                             checked={
-                                                sidebarFilters[
-                                                    "Mechanical & Manufacturing"
-                                                ]
+                                                FilterOptions.filters.Department["Mechanical & Manufacturing"]
                                             }
                                         ></Checkbox>
                                     </div>
                                     <div className="col-sm-6">
                                         <Checkbox
                                             label="Phoenix"
+                                            subFilter="Department"
                                             name="Phoenix"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Phoenix}
+                                            checked={FilterOptions.filters.Department.Phoenix}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Math"
+                                            subFilter="Department"
                                             name="Math"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Math}
+                                            checked={FilterOptions.filters.Department.Math}
                                         ></Checkbox>
                                         <Checkbox
                                             label="Civil"
+                                            subFilter="Department"
                                             name="Civil"
                                             onChange={(e) => handleCheck(e)}
-                                            checked={sidebarFilters.Civil}
-                                        ></Checkbox>
-                                        <Checkbox
-                                            label="All"
-                                            name="departmentAll"
-                                            onChange={(e) => handleCheck(e)}
-                                            checked={
-                                                sidebarFilters.departmentAll
-                                            }
+                                            checked={FilterOptions.filters.Department.Civil}
                                         ></Checkbox>
                                     </div>
                                 </div>
@@ -306,14 +179,14 @@ const Sidebar = ({
                             <Button
                                 variant="outline-primary"
                                 className="btn-block btn-outline"
-                                onClick={handleSubmit}
+                                onClick={FilterOptions.handleFilterApply}
                             >
                                 Apply Filter
                             </Button>
                             <Button
                                 variant="outline-danger"
                                 className="my-2 btn-block btn-outline"
-                                onClick={handleReset}
+                                onClick={FilterOptions.handleFilterReset}
                             >
                                 Reset Filter
                             </Button>

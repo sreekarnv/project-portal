@@ -11,8 +11,9 @@ import ProjectCard from "./components/ProjectCard/ProjectCard";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import Backdrop from "./components/Backdrop/Backdrop";
-import { ProjectContext } from "./context/ProjectContext";
 import Loading from "./components/Loader/Loading";
+
+import {FilterContext} from './context/FilterContext'
 
 const sidebarVariants = {
     open: {
@@ -29,79 +30,10 @@ const sidebarVariants = {
 
 const App = () => {
     const [showSideBar, setShowSidebar] = React.useState(false);
-    const { projects, loading } = React.useContext(ProjectContext);
-    const [displayProjects, setDisplayProjects] = React.useState(projects);
-    const [filteredProjects, setFilteredProjects] = React.useState(projects);
-    const [search, setSearch] = React.useState("");
-    const [sidebarFilters, sidebarSetFilters] = React.useState({
-        Formal: false,
-        Informal: false,
-        LOP: false,
-        DOP: false,
-        SOP: false,
-        previousSem: false,
-        upcomingSem: false,
-        Chemical: false,
-        Phoenix: false,
-        Pharmacy: false,
-        Math: false,
-        Economics: false,
-        Civil: false,
-        Biology: false,
-        "Computer Science": false,
-        "Mechanical & Manufacturing": false,
-        projectAll: true,
-        courseAll: true,
-        departmentAll: true,
-    });
 
-    React.useEffect(() => {
-        setDisplayProjects(projects);
-        setFilteredProjects(projects);
-    }, [projects]);
+    const FilterOptions = React.useContext(FilterContext);
 
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
-        setDisplayProjects(
-            filteredProjects.filter((project) => {
-                return (
-                    project.ProjectTitle.toLowerCase().includes(
-                        search.toLowerCase()
-                    ) ||
-                    project.Professor.toLowerCase().includes(
-                        search.toLowerCase()
-                    )
-                );
-            })
-        );
-    };
-
-	const handleSort = (e, type) => {
-		setDisplayProjects((projects) => {
-            if (type === "asc")
-                return [...projects].sort((a, b) => {
-                    let result =
-                        a[e.target.name] < b[e.target.name]
-                            ? -1
-                            : a[e.target.name] > b[e.target.name]
-                            ? 1
-                            : 0;
-                    return result;
-                });
-            else
-                return [...projects].sort((a, b) => {
-                    let result =
-                        a[e.target.name] < b[e.target.name]
-                            ? -1
-                            : a[e.target.name] > b[e.target.name]
-                            ? 1
-                            : 0;
-                    return result * -1;
-                });
-		});
-    };
-
-    if (loading) {
+    if (FilterOptions.loading) {
         return (
             <div className="vh-100 bg-dark d-flex justify-content-center align-items-center">
                 <Loading />
@@ -109,15 +41,6 @@ const App = () => {
         );
     }
 
-										<Form.Group
-											className='mb-0 filter-row__search'
-											controlId='search'>
-											<Form.Control
-												autoComplete='off'
-												type='text'
-												placeholder='Search by Project Title, Department or Professor'
-											/>
-										</Form.Group>
     return (
         <>
             <Header />
@@ -144,12 +67,6 @@ const App = () => {
                                         {...{
                                             showSideBar,
                                             setShowSidebar,
-                                            setDisplayProjects,
-                                            projects,
-                                            search,
-                                            setFilteredProjects,
-                                            sidebarFilters,
-                                            sidebarSetFilters,
                                         }}
                                     />
                                 </motion.div>
@@ -193,12 +110,11 @@ const App = () => {
                                             controlId="search"
                                         >
                                             <Form.Control
-                                                autoComplete="off"
                                                 type="text"
                                                 placeholder="Search by Name, Dept or Prof"
-                                                value={search}
-                                                onChange={(e) =>
-                                                    handleSearch(e)
+                                                value={FilterOptions.searchString}
+                                                onChange={
+                                                    (e) => FilterOptions.setSearchString(e.target.value)
                                                 }
                                             />
                                         </Form.Group>
@@ -218,7 +134,7 @@ const App = () => {
                                                     className="text-light"
                                                     name="ProjectTitle"
                                                     onClick={(e) =>
-                                                        handleSort(e, "asc")
+                                                        FilterOptions.handleSort(e, "asc")
                                                     }
                                                 >
                                                     <SortAlphaDown size={20} />{" "}
@@ -228,7 +144,7 @@ const App = () => {
                                                     className="text-light"
                                                     name="ProjectTitle"
                                                     onClick={(e) =>
-                                                        handleSort(e, "dsc")
+                                                        FilterOptions.handleSort(e, "dsc")
                                                     }
                                                 >
                                                     <SortAlphaUp size={20} />{" "}
@@ -238,7 +154,7 @@ const App = () => {
                                                     className="text-light"
                                                     name="ProjectType"
                                                     onClick={(e) =>
-                                                        handleSort(e, "asc")
+                                                        FilterOptions.handleSort(e, "asc")
                                                     }
                                                 >
                                                     <SortAlphaDown size={20} />{" "}
@@ -248,7 +164,7 @@ const App = () => {
                                                     className="text-light"
                                                     name="ProjectType"
                                                     onClick={(e) =>
-                                                        handleSort(e, "dsc")
+                                                        FilterOptions.handleSort(e, "dsc")
                                                     }
                                                 >
                                                     <SortAlphaDown size={20} />{" "}
@@ -264,8 +180,8 @@ const App = () => {
                                         }`}
                                     >
                                         <AnimateSharedLayout>
-                                            {displayProjects &&
-                                                displayProjects.map((el, i) => {
+                                            {FilterOptions.displayProjects &&
+                                                FilterOptions.displayProjects.map((el, i) => {
                                                     return (
                                                         <motion.div
                                                             layout
