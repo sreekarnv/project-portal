@@ -9,6 +9,12 @@
 	background: #222222;
 	overflow-y: scroll !important;
 
+	&::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	scrollbar-width: none !important;
+
 	@include respond(500px) {
 		width: 400px !important;
 	}

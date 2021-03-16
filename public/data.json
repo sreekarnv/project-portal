@@ -1,0 +1,857 @@
+[
+    {
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "SOP",
+        "Professor": "D Purnima ",
+        "ProjectTitle": "Heavy metal removal "
+    },
+    {
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "LOP",
+        "Professor": "Suvadip Batabyal",
+        "ProjectTitle": "Quantum Architecture"
+    },
+    {
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Akash Chaurasiya",
+        "ProjectTitle": "Development of lipsomal formulation for anticancer drugs"
+    },
+    {
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Thota Nagaraju",
+        "ProjectTitle": "Derivatives Usage"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Dr. SUMIT KUMAR CHATTERJEE",
+        "ProjectTitle": "Design of High Speed Adders"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "LOP",
+        "Professor": "K Ram Chandra Murthy ",
+        "ProjectTitle": "CFD of wind flows over low rise buildings "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemistry",
+        "ProjectType": "SOP",
+        "Professor": "Prof. KVG Chandrashekhar",
+        "ProjectTitle": "Pharmacological advancement of Quinoxline derivatives"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "S.K. Sahoo",
+        "ProjectTitle": "Hardware Security"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "SOP",
+        "Professor": "V Vamsi Krishna Venuganti",
+        "ProjectTitle": "Functionalised nanoparticles for drug delivery"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "DOP",
+        "Professor": "Dushyant Kumar",
+        "ProjectTitle": "Information Economics and Perfect Bayesian Nash Equilibrium"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "K Ram Chandra Murthy ",
+        "ProjectTitle": "DSMC simulation of Rayleigh Benard flows in a Rarefied regime",
+        "Any Remarks / Experiences": "Basically meant to simulate a continuum phenomena in a Rarefied regime (found in microscale flows and very high altitudes/near space). We use OpenFOAM (specifically dsmcfoam) to simulate this "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Sudha Radika ",
+        "ProjectTitle": "Biomedical Image Processing "
+    },
+    {
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Swati Biswas",
+        "ProjectTitle": "Mechanism of EMT and therapeutic strategy in cancer"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Dr.Arti Dhar",
+        "ProjectTitle": "Therpeutic role of novel peptides in cardiometabolic syndrome"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Dr. Alivelu Manga Parimi",
+        "ProjectTitle": "Kalman Filter applications in Microgrids for state estimation and stability issues ",
+        "Any Remarks / Experiences": "Going well so far. Really responsive and helpful prof."
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Dr Manish Kumar",
+        "ProjectTitle": "Mathematical Modelling of COVID-19 using Image Processing Techniques"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Pardha Saradhi G.",
+        "ProjectTitle": "Two way Fluid Structure Interaction (FSI) in flexible structures with low mass ratios",
+        "Any Remarks / Experiences": "Usually intended to simulate FSI between submerged structures in oceans like mooring lines and oil boring pipes. Involves writing a specialised C code (also called an user defined function) which can only be compiled in ansys fluent. "
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Parikshit Sahatiya",
+        "ProjectTitle": "2D Materials Based Photodetectors ",
+        "Any Remarks / Experiences": "Really nice prof , has alot of knowledge in this domain. Though it would've been better if I could do this offline. Replies promptly and answers all my questions. The work is very interesting too . No complaints, would definitely recommend if you're interested in his work."
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "SK Sahoo",
+        "ProjectTitle": "Quantum Cryptography"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "LOP",
+        "Professor": "Dr. Lov Kumar",
+        "ProjectTitle": "Sentiment Analysis using ML techniques"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Paresh Saxena",
+        "ProjectTitle": "Work on MPQuic "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Dr Subhrakanta Panda",
+        "ProjectTitle": "Breast Cancer Detection using Machine Learning and DIP"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "LOP",
+        "Professor": "Soumya J",
+        "ProjectTitle": "RiscV based NoC Design"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": " Dr. Nitin Kotkunde",
+        "ProjectTitle": "Product design and development strategies for automotive applications"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "SOP",
+        "Professor": "Dr. ARTI DHAR",
+        "ProjectTitle": "Therapeutic potential of novel mad2 inhibitors in ovarian cancer"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "SOP",
+        "Professor": "Dr. Jaideep Chaterjee",
+        "ProjectTitle": "Desalination of water using RO"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "LOP",
+        "Professor": "Dr. Lov Kumar",
+        "ProjectTitle": "Testing of AI models"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "LOP",
+        "Professor": "R Gururaj",
+        "ProjectTitle": "Implementing Lexical and Syntax Analysers"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Civil",
+        "ProjectType": "DOP",
+        "Professor": "Prof K. Srinivas Raju",
+        "ProjectTitle": "Drought prediction using Machine Learning"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Tathagata Ray",
+        "ProjectTitle": "Computer Vision based Quality Assurance of Mechanical Assembly Components"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Mithun Mondal",
+        "ProjectTitle": "Design and simulation of textured insulator "
+    },
+    {
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "SK Sahoo",
+        "ProjectTitle": "CPS based system for biomedical application"
+    },
+    {
+        "ProjectType": "Informal",
+        "Department": "Computer Science",
+        "Professor": "Prof. M.B. Srinivas",
+        "ProjectTitle": "Classification of inages with complex backgrounds using transformer networks"
+    },
+    {
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Syed Ershad ",
+        "ProjectTitle": "Study of approximate booth multipliers"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "PK Sahoo",
+        "ProjectTitle": "Cosmological Models in Modified Gravity"
+    },
+    {
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "LOP",
+        "Professor": "Archana Srivastava ",
+        "ProjectTitle": "Corporate and Investment Banking (CIB): COVID-19 Impact and Recovery."
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Dr.Sujith R",
+        "ProjectTitle": "Fuelcell "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Civil",
+        "ProjectType": "DOP",
+        "Professor": "Murari Raja Raja Verma",
+        "ProjectTitle": "LCA of engineered water and wastewater treatment plants"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Professor Ponnalagu R N",
+        "ProjectTitle": "Machine Learning methods for Water parameter analysis and prediction"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Dr. N.L. Bhanumurthy",
+        "ProjectTitle": "Automatic comment generation of code"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Dr Runa Kumari",
+        "ProjectTitle": "Smart Antennas for Aerospace Applications"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "LOP",
+        "Professor": "Parikshit Sahatiya",
+        "ProjectTitle": "Broadband Photodetectors"
+    },
+    {
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Mithun Mondal",
+        "ProjectTitle": "Dissolved Gas Analysis (DGA) in Power Transformers."
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "SANKET GOEL",
+        "ProjectTitle": "Microfluidic devices for Energy Harvesting"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Physics",
+        "Professor": "Dr Rahul Nigam",
+        "ProjectTitle": "Guided Study in General Relativity"
+    },
+    {
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Nirmal J",
+        "ProjectTitle": "Pharmacoligical interventions for Uveitis"
+    },
+    {
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": "Sujith R",
+        "ProjectTitle": "Analysis of the high strain rate deformation behavior of metallic foams "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Prof. Onkar Kulkarni",
+        "ProjectTitle": "Medication and Management strategies for Alzheimer's Disease"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "Prof. Yogeeswari Perumal",
+        "ProjectTitle": "Modelling of Therapeutic agents for anti SARS CoV-2"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "SOP",
+        "Professor": "Nivedita Sinha",
+        "ProjectTitle": "Optimal Capital Structure of listed firms"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Barsha Mitra",
+        "ProjectTitle": "Website Fingerprinting"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "DOP",
+        "Professor": "Syed Arshad Ehmed",
+        "ProjectTitle": "Approcimate booth multiplier design"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Soumya J",
+        "ProjectTitle": "RISC-V based NoC designing",
+        "Any Remarks / Experiences": "Ma'am will be very busy. You will work with the PhD scholars most of the time"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "SOP",
+        "Professor": "Sandeep Deshmukh",
+        "ProjectTitle": "Machine learning Models"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Debopam Chakraborty",
+        "ProjectTitle": "Study of arithmetic of elliptic curves and elliptic curve cryptography"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "LOP",
+        "Professor": "Dr. Soumya J",
+        "ProjectTitle": "Arithmetic based Network on chip design"
+    },
+    {
+                "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "DOP",
+        "Professor": "Nivideta sinha",
+        "ProjectTitle": "Merger and acquisition in pharmaceutical industry"
+    },
+    {
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Amit Kumar Panda",
+        "ProjectTitle": "Efficient PRNG Method for Hardware Security "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemistry",
+        "ProjectType": "SOP",
+        "Professor": "Tanmay Chatterjee",
+        "ProjectTitle": "TADF lights 3rd generation lights"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Pavan Kumar Penumakala",
+        "ProjectTitle": "Computational Modelling of Pultruded Composites"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "SOP",
+        "Professor": "N. Jalaiah",
+        "ProjectTitle": "Cold thermal energy storage- a review"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Santanu Koley",
+        "ProjectTitle": "Stochastic modelling of wave energy converter devices"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Dr. Nitin Kotkunde",
+        "ProjectTitle": "Redesigning Automotive Interiors with an emphasis on Sustainability",
+        "Any Remarks / Experiences": "This project is particularly relevant for the Indian automotive scenario, with a special focus on sub-4m vehicles. There is a massive research gap with respect to sustainability approaches to design in the Indian automotive industry, this study hopes to shorten that gap."
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Math",
+        "Professor": "Depobam Chakraborty",
+        "ProjectTitle": "Elliptic Curves and Elliptic Curve Cryptography",
+        "Any Remarks / Experiences": "Wonderful experience with lot of freedom and no pressure whatsoever ^_^"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Biological Science",
+        "ProjectType": "SOP",
+        "Professor": "Vivek Sharma",
+        "ProjectTitle": "Techniques to study RNA and protein interaction"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": "Pardha Saradhi",
+        "ProjectTitle": "Flow induced rotation on a Square cylinder mounted on a torsion spring"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Computer Science",
+        "Professor": "Dipanjan Chakravarty",
+        "ProjectTitle": "Remote Sensing and socio economic indicators",
+        "Any Remarks / Experiences": "There are a lot of things to learn but the time constraints are humongous. The will to learn is there but the process is slow and time consuming. "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "SOP",
+        "Professor": "D Purnima",
+        "ProjectTitle": "Effect of Treatment of Biomass"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Computer Science",
+        "Professor": "Prof. DIPANJAN chakraborty",
+        "ProjectTitle": "Disinformation"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Sujith Sir",
+        "ProjectTitle": "DTF Computation ",
+        "Any Remarks / Experiences": "Sir is pretty good, but amount of computational required is high.... So you need to ask for access from Mechanical Department "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Tathagatha Ray",
+        "ProjectTitle": "Computer Vision based mechanical assembly analysis"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "DOP",
+        "Professor": "Arnab Dutta, Pankaj Kumar",
+        "ProjectTitle": "Biodiesel Production - Plant Design and Simulation"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "SOP",
+        "Professor": "Archana Srivastava",
+        "ProjectTitle": "Impact of COVID 19 on Economy"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "SOP",
+        "Professor": "Shreya Biswas",
+        "ProjectTitle": "Trends in portfolios of Indian Households"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Civil",
+        "ProjectType": "SOP",
+        "Professor": "KS Raju",
+        "ProjectTitle": "Prediction of Rainfall in Telangana using Machine Learning algorithms"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "SOP",
+        "Professor": "Lov Kumar",
+        "ProjectTitle": "Sentiment analysis"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Michael alphonse",
+        "ProjectTitle": "Singular integrals"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Sujith R.",
+        "ProjectTitle": "Ballistic testing of metal foam composites",
+        "Any Remarks / Experiences": "Great learning experience"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "SOP",
+        "Professor": "Manik Gupta",
+        "ProjectTitle": "Conversational AI for mental health"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Parikshit Sir",
+        "ProjectTitle": "Wearable sensors",
+        "Any Remarks / Experiences": "It is difficult to perform experimental work from home hence have to do the theoretical aspects as of now. The project is 80% practical though."
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Sujith R",
+        "ProjectTitle": "Computational analysis of 2D materials"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "LOP",
+        "Professor": "D V N Sivakumar ",
+        "ProjectTitle": "Privacy-preserving multi-keyword search over encrypted data"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Sudha Radhika",
+        "ProjectTitle": "IoT base HEMs"
+    },
+    {
+        "ProjectType": "Informal",
+        "Department": "Mechanical & Manufacturing",
+        "Professor": "Dr. Abhishek Sarkar",
+        "ProjectTitle": "Humanoid Gait Analysis",
+        "Any Remarks / Experiences": "Great prof to do project under."
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "DOP",
+        "Professor": "D Sriram",
+        "ProjectTitle": "Nano particle modelling for Alzheimer's disease"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Computer Science",
+        "Professor": "Manik Gupta",
+        "ProjectTitle": "Deep Learning for Time Series Classification",
+        "Any Remarks / Experiences": "Good so far. Expects work every week but helpful"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Computer Science",
+        "ProjectType": "DOP",
+        "Professor": "Dipanjan Chakraborty",
+        "ProjectTitle": "Disinformation"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "LOP",
+        "Professor": "Dr. R.N.Ponnalagu",
+        "ProjectTitle": "Impedance control of a spherical(3 dof) articulated manipulator"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Arshad Javed",
+        "ProjectTitle": "Motion planning and gait analysis of a quadruped robot on uneven terrains"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Pharmacy",
+        "ProjectType": "SOP",
+        "Professor": "Onkar kulkarni",
+        "ProjectTitle": "Immunoproteosome "
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Physics",
+        "ProjectType": "SOP",
+        "Professor": "Subhash Narayan Karbelkar",
+        "ProjectTitle": "Many Body Quantum Mechanics"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Prof. Sanket Goel",
+        "ProjectTitle": "Flexible memristor for neuromorphic applications"
+    },
+    {
+        
+        "ProjectType": "Informal",
+        "Department": "Phoenix",
+        "Professor": "Prof. Parikshit Sahatiya",
+        "ProjectTitle": "Large area pressure sensor for smart floor sensor applications",
+        "Any Remarks / Experiences": "Not currently doing this. But finished it up almost a year ago"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Economics",
+        "ProjectType": "DOP",
+        "Professor": "Prof. Archana Srivastava",
+        "ProjectTitle": "A sectoral analysis of the effect of COVID-19 announcements on stock market"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Sandeep Kumar",
+        "ProjectTitle": "Intelligent Transport Systems"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Sharan gopal sir",
+        "ProjectTitle": "A study on p-adic numbers"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Santanu Koley",
+        "ProjectTitle": "Stochastic modeling of wave energy converter device"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "PK Sahoo",
+        "ProjectTitle": "Cosmological Model in Unified Gravity"
+    },
+    {
+        "ProjectType": "Informal",
+        "Department": "Math",
+        "Professor": " Pratyusha Chattopadhyay",
+        "ProjectTitle": "Fundamental Group"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Santanu Koley",
+        "ProjectTitle": "Stochastic modeling of wave energy converter devices"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Dr. Pratyusha Chattopadhyay",
+        "ProjectTitle": "Properties of Classical Groups"
+    },
+    {
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Praveen Sir",
+        "ProjectTitle": "Adaptive learning"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "Santanu koley ",
+        "ProjectTitle": "Stochastic modelling of wave energy convertor devices"
+    },
+    {
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "LOP",
+        "Professor": "PTV Praveen Kumar",
+        "ProjectTitle": "Adaptive Learning"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Math",
+        "ProjectType": "SOP",
+        "Professor": "TSL Radhika",
+        "ProjectTitle": "Problems in Fluid Dynamics"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "LOP",
+        "Professor": "Parikshit Sahatiya",
+        "ProjectTitle": "Broadband photodetection"
+    },
+    {
+                "isFormal": true,
+        "Department": "Mechanical & Manufacturing",
+        "ProjectType": "DOP",
+        "Professor": "Dr. Nitin Ramesh kotkunde",
+        "ProjectTitle": "LCA of cockpit parts in the Indian automobile scenario"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "SOP",
+        "Professor": "I Sreedhar",
+        "ProjectTitle": "Nanomaterial Adsorbents in Heavy Metal Removal"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Chemical",
+        "ProjectType": "DOP",
+        "Professor": "Pankaj Kumar & Arnab Dutta",
+        "ProjectTitle": "Technoeconomic Analysis and Production of Green Diesel"
+    },
+    {
+        
+        "isFormal": true,
+        "Department": "Phoenix",
+        "ProjectType": "SOP",
+        "Professor": "Ponnalagu R N",
+        "ProjectTitle": "Measurement of Air Quality Parameters"
+
+    }
+]

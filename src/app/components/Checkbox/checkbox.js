@@ -2,7 +2,7 @@ import React from 'react'
 
 import './checkbox.scss'
 
-const Checkbox = ({hasError, label, type}) => {
+const Checkbox = ({hasError, label, type, onChange, name,checked}) => {
 
     const checkboxClassname = `
     m-checkbox
@@ -25,6 +25,9 @@ const Checkbox = ({hasError, label, type}) => {
             <input
                 type="checkbox"
                 className={inputClassname}
+                onChange={onChange}
+                name={name}
+                checked={checked}
             ></input>
             <label
                 className={labelClassname}
