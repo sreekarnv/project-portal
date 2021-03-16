@@ -82,7 +82,7 @@ const App = () => {
 											<Form.Control
 												autoComplete='off'
 												type='text'
-												placeholder='Search by Name, Dept or Prof'
+												placeholder='Search by Project Title, Department or Professor'
 											/>
 										</Form.Group>
 
