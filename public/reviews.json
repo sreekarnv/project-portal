@@ -1,0 +1,72 @@
+{
+    "project_reviews": [
+        {
+            "ProjectTitle": "DSMC simulation of Rayleigh Benard flows in a Rarefied regime",
+            "review": "Basically meant to simulate a continuum phenomena in a Rarefied regime (found in microscale flows and very high altitudes/near space). We use OpenFOAM (specifically dsmcfoam) to simulate this "
+        },
+        {
+            "ProjectTitle": "Two way Fluid Structure Interaction (FSI) in flexible structures with low mass ratios",
+            "review": "Usually intended to simulate FSI between submerged structures in oceans like mooring lines and oil boring pipes. Involves writing a specialised C code (also called an user defined function) which can only be compiled in ansys fluent. "
+        },
+        {
+            "ProjectTitle": "2D Materials Based Photodetectors ",
+            "review": "Really nice prof , has alot of knowledge in this domain. Though it would've been better if I could do this offline. Replies promptly and answers all my questions. The work is very interesting too . No complaints, would definitely recommend if you're interested in his work."
+        },
+        {
+            "ProjectTitle": "Redesigning Automotive Interiors with an emphasis on Sustainability",
+            "review": "This project is particularly relevant for the Indian automotive scenario, with a special focus on sub-4m vehicles. There is a massive research gap with respect to sustainability approaches to design in the Indian automotive industry, this study hopes to shorten that gap."
+        },
+        {
+            "ProjectTitle": "Elliptic Curves and Elliptic Curve Cryptography",
+            "review": "Wonderful experience with lot of freedom and no pressure whatsoever ^_^"
+        },
+        {
+            "ProjectTitle": "Remote Sensing and socio economic indicators",
+            "review": "There are a lot of things to learn but the time constraints are humongous. The will to learn is there but the process is slow and time consuming. "
+        },
+        {
+            "ProjectTitle": "DTF Computation ",
+            "review": "Sir is pretty good, but amount of computational required is high.... So you need to ask for access from Mechanical Department "
+        },
+        {
+            "ProjectTitle": "Ballistic testing of metal foam composites",
+            "review": "Great learning experience"
+        },
+        {
+            "ProjectTitle": "Wearable sensors",
+            "review": "It is difficult to perform experimental work from home hence have to do the theoretical aspects as of now. The project is 80% practical though."
+        },
+        {
+            "ProjectTitle": "Deep Learning for Time Series Classification",
+            "review": "Good so far. Expects work every week but helpful"
+        },
+        {
+            "ProjectTitle": "Large area pressure sensor for smart floor sensor applications",
+            "review": "Not currently doing this. But finished it up almost a year ago"
+        }
+    ],
+    "prof_reviews": [
+        {
+            "Professor": "Dr. Alivelu Manga Parimi",
+            "review": "Going well so far. Really responsive and helpful prof."
+        },
+        {
+            "Professor": "Parikshit Sahatiya",
+            "review": "Really nice prof , has alot of knowledge in this domain. Though it would've been better if I could do this offline. Replies promptly and answers all my questions. The work is very interesting too . No complaints, would definitely recommend if you're interested in his work."
+        },
+        {
+            "Professor": "Soumya J",
+            "review": "Ma'am will be very busy. You will work with the PhD scholars most of the time"
+        },
+        {
+            "Professor": "Dr. Abhishek Sarkar",
+            "review": "Great prof to do project under."
+        }
+    ],
+    "getting_started": [
+        {
+            "Nothing": "here",
+            "Fuck": "Off"
+        }
+    ]
+}
