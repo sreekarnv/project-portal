@@ -2,9 +2,53 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './project-card.scss';
 import Img from './../../../assets/image.jpg';
+import { ReviewContext } from '../../context/ReviewContext';
 
-const ProjectCard = ({ number, style, project }) => {
+const ProjectCard = ({
+	number,
+	style,
+	project,
+	showProjectDetails,
+	showDetails,
+}) => {
 	const variant = Math.floor(Math.random() * 3) + 1;
+	const [projectDetails, setProjectDetails] = React.useState(project);
+	const { reviews } = React.useContext(ReviewContext);
+
+	React.useEffect(() => {
+		if (reviews) {
+			const courseReviewIndex = reviews.projectReviews.findIndex(
+				(el) => el.ProjectTitle === project.ProjectTitle
+			);
+			if (courseReviewIndex !== -1) {
+				setProjectDetails(() => ({
+					...project,
+					projectReviews: reviews.projectReviews[courseReviewIndex].review,
+				}));
+			} else {
+				setProjectDetails({
+					...project,
+					projectReviews: [],
+				});
+			}
+
+			const profReviewIndex = reviews.profReviews.findIndex(
+				(el) => el.Professor === project.Professor
+			);
+
+			if (profReviewIndex !== -1) {
+				setProjectDetails((prev) => ({
+					...prev,
+					profReviews: reviews.profReviews[profReviewIndex].review,
+				}));
+			} else {
+				setProjectDetails((prev) => ({
+					...prev,
+					profReviews: [],
+				}));
+			}
+		}
+	}, [project, reviews]);
 
 	return (
 		<Card
@@ -33,7 +77,14 @@ const ProjectCard = ({ number, style, project }) => {
 					</Card.Text>
 					<small>{project.Department}</small>
 				</div>
-				<Button variant={`light card-gradient-${variant}__cta`}>View</Button>
+				<Button
+					variant={`light card-gradient-${variant}__cta`}
+					onClick={() => {
+						showProjectDetails(projectDetails);
+						showDetails();
+					}}>
+					View
+				</Button>
 			</Card.Body>
 		</Card>
 	);

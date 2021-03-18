@@ -1,0 +1,33 @@
+@import '/src/scss/variables';
+
+.review-sidebar {
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 550px;
+	z-index: 1500;
+	background: #222;
+	padding: 1.5rem 0.5rem;
+
+	&__projectTitle {
+		color: #fff;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.accordion {
+		.card {
+			color: #fff;
+			border: none;
+			background-color: transparent;
+		}
+	}
+
+	&__projectType {
+		text-align: right !important;
+		margin-right: 1.5rem;
+
+		color: #fff;
+	}
+}

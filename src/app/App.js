@@ -15,6 +15,7 @@ import Loading from './components/Loader/Loading';
 import useSearch from './hooks/useSearch';
 import { FilterContext } from './context/FilterContext';
 import useSort from './hooks/useSort';
+import ReviewSidebar from './components/ReviewSidebar/ReviewSidebar';
 
 const sidebarVariants = {
 	open: {
@@ -35,6 +36,15 @@ const App = () => {
 	const { searchText, handleSearch } = useSearch();
 	const { handleSort } = useSort();
 
+	const [showDetailedView, setShowDetailedView] = React.useState(false);
+	const [projectDetail, setProjectDetail] = React.useState(null);
+
+	React.useEffect(() => {
+		if (!showDetailedView) {
+			setProjectDetail(null);
+		}
+	}, [showDetailedView]);
+
 	if (loading) {
 		return (
 			<div className='vh-100 bg-dark d-flex justify-content-center align-items-center'>
@@ -45,7 +55,15 @@ const App = () => {
 
 	return (
 		<>
+			{showDetailedView && (
+				<ReviewSidebar
+					project={projectDetail}
+					{...{ showDetailedView, setShowDetailedView }}
+				/>
+			)}
+
 			<Header />
+
 			<Container fluid>
 				<AnimateSharedLayout>
 					<Row className='cards-container'>
@@ -68,6 +86,7 @@ const App = () => {
 						</AnimatePresence>
 
 						<Backdrop
+							className='d-lg-none'
 							show={showSideBar}
 							onClick={() => setShowSidebar(false)}
 						/>
@@ -152,7 +171,12 @@ const App = () => {
 																showSideBar ? '6' : '4'
 															} col-md-6 col-sm-6 col-12`}>
 															<div>
-																<ProjectCard number={i} project={el} />
+																<ProjectCard
+																	number={i}
+																	project={el}
+																	showDetails={() => setShowDetailedView(true)}
+																	showProjectDetails={setProjectDetail}
+																/>
 															</div>
 														</motion.div>
 													);

@@ -15,7 +15,7 @@ const backDropVariants = {
 	},
 };
 
-const Backdrop = ({ onClick, show }) => {
+const Backdrop = ({ onClick, show, className }) => {
 	return (
 		<AnimatePresence>
 			{show && (
@@ -25,7 +25,7 @@ const Backdrop = ({ onClick, show }) => {
 					animate={'show'}
 					exit='hide'
 					{...{ onClick }}
-					className='d-block d-lg-none backdrop'></motion.div>
+					className={`d-block backdrop ${className}`}></motion.div>
 			)}
 		</AnimatePresence>
 	);
