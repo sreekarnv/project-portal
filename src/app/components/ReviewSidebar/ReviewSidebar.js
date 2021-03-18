@@ -1,13 +1,12 @@
 import React from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
+import { ChevronDown, ChevronUp } from 'react-bootstrap-icons';
 import Backdrop from '../Backdrop/Backdrop';
 import './review-sidebar.scss';
 
 const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 	const [showCourse, setShowCourse] = React.useState(true);
 	const [showProf, setShowProf] = React.useState(false);
-
-	console.log(project);
 
 	return (
 		<>
@@ -21,7 +20,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 					<h6 className='text-primary'>
 						{project.isFormal ? `Formal / ${project.ProjectType}` : 'InFormal'}
 					</h6>
-					<h6 className='text-white'>~ {project.Professor}</h6>
+					<h6 className='text-white'>{project.Professor}</h6>
 				</div>
 				<Accordion defaultActiveKey='0'>
 					<Card>
@@ -35,10 +34,14 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 									}
 									setShowCourse(!showCourse);
 								}}
-								variant='secondary'
+								variant='transparent'
 								as={Button}
 								eventKey='0'>
-								{showCourse ? 'Hide' : 'Show'}
+								{showCourse ? (
+									<ChevronUp fill='#fff' />
+								) : (
+									<ChevronDown fill='#fff' />
+								)}
 							</Accordion.Toggle>
 						</Card.Header>
 						<Accordion.Collapse eventKey='0'>
@@ -64,10 +67,14 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										setShowCourse(!showCourse);
 									}
 								}}
-								variant='secondary'
+								variant='transparent'
 								as={Button}
 								eventKey='1'>
-								{showProf ? 'Hide' : 'Show'}
+								{showProf ? (
+									<ChevronUp fill='#fff' />
+								) : (
+									<ChevronDown fill='#fff' />
+								)}
 							</Accordion.Toggle>
 						</Card.Header>
 						<Accordion.Collapse eventKey='1'>

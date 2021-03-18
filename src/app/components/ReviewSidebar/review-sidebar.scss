@@ -12,8 +12,10 @@
 
 	&__projectTitle {
 		color: #fff;
-		margin-bottom: 2rem;
 		text-align: center;
+		margin-top: 5.5rem;
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
 	}
 
 	.accordion {
@@ -25,9 +27,13 @@
 	}
 
 	&__projectType {
-		text-align: right !important;
-		margin-right: 1.5rem;
+		text-align: left !important;
+		margin-left: 1.2rem !important;
+		padding-bottom: 1.2rem;
+		margin-bottom: 2rem;
 
 		color: #fff;
+
+		border-bottom: 0.125px solid rgba(#fff, 0.15);
 	}
 }
