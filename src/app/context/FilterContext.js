@@ -60,7 +60,6 @@ const FilterContextProvider = ({ children }) => {
 
 					Object.keys(subFilter).filter(key => subFilter[key]).forEach(key => {
 						if(project[d] && project[d].toLowerCase() === key.toLowerCase()) {
-							console.log(key, d, project[d]);
 							include = true;
 						}
 					});
