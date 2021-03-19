@@ -2,7 +2,8 @@ import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import * as React from 'react';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
 import { FilterContext } from '../../context/FilterContext';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox from '../Checkbox/checkbox.js';
+import useSearch from '../../hooks/useSearch'
 import './sidebar.scss';
 
 const Sidebar = ({ setShowSidebar }) => {
@@ -11,7 +12,17 @@ const Sidebar = ({ setShowSidebar }) => {
 		filterOptions,
 		applyFilter,
 		resetFilterOptions,
+		filteredProjects
 	} = React.useContext(FilterContext);
+
+	const {searchText, handleSearch} = useSearch();
+	const first = React.useRef(true);
+
+	React.useEffect(() => {
+		if(!first.current)
+			handleSearch(searchText);
+		first.current = false;
+	}, [filteredProjects]);
 
 	const handleFilter = (e) => {
 		const key = e.target.name.split('-')[0];
@@ -20,22 +31,20 @@ const Sidebar = ({ setShowSidebar }) => {
 
 		let newFilterOptions = { ...filterOptions };
 
-		///////////////////////////////////////////
-		// Project Type Filter
-		if (newFilterOptions.projectType.Formal && subFilter === 'Informal') {
-			newFilterOptions.projectType.Formal = false;
-			Object.keys(newFilterOptions.courseType).forEach((k) => {
-				newFilterOptions.courseType[k] = false;
+		if (newFilterOptions.isFormal.Formal && subFilter === 'Informal') {
+			newFilterOptions.isFormal.Formal = false;
+			Object.keys(newFilterOptions.ProjectType).forEach((k) => {
+				newFilterOptions.ProjectType[k] = false;
 			});
 		} else if (
-			newFilterOptions.projectType.Informal &&
+			newFilterOptions.isFormal.Informal &&
 			subFilter === 'Formal'
 		) {
-			newFilterOptions.projectType.Informal = false;
+			newFilterOptions.isFormal.Informal = false;
 		}
-		//////////////////////////////////////////////////
 
 		newFilterOptions[key][subFilter] = value;
+
 		updateFilterOptions(newFilterOptions);
 	};
 
@@ -53,21 +62,21 @@ const Sidebar = ({ setShowSidebar }) => {
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Project Types</h4>
 								<Checkbox
-									name='projectType-Formal'
+									name='isFormal-Formal'
 									label='Formal'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.projectType.Formal}
+									checked={filterOptions.isFormal.Formal}
 								/>
 								<Checkbox
-									name='projectType-Informal'
+									name='isFormal-Informal'
 									label='Informal'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.projectType.Informal}
+									checked={filterOptions.isFormal.Informal}
 								/>
 							</Card>
 						</div>
 						<AnimatePresence>
-							{filterOptions.projectType.Formal && (
+							{(
 								<motion.div
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
@@ -76,22 +85,25 @@ const Sidebar = ({ setShowSidebar }) => {
 									<Card className='sidebar__card py-3 pr-3'>
 										<h4 className='mb-3 text-black'>Course Types</h4>
 										<Checkbox
-											name='courseType-LOP'
+											name='ProjectType-LOP'
 											label='LOP'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.courseType.LOP}
+											checked={filterOptions.ProjectType.LOP}
+											disabled={filterOptions.isFormal.Informal}
 										/>
 										<Checkbox
-											name='courseType-DOP'
+											name='ProjectType-DOP'
 											label='DOP'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.courseType.DOP}
+											checked={filterOptions.ProjectType.DOP}
+											disabled={filterOptions.isFormal.Informal}
 										/>
 										<Checkbox
-											name='courseType-SOP'
+											name='ProjectType-SOP'
 											label='SOP'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.courseType.SOP}
+											checked={filterOptions.ProjectType.SOP}
+											disabled={filterOptions.isFormal.Informal}
 										/>
 									</Card>
 								</motion.div>
@@ -121,62 +133,62 @@ const Sidebar = ({ setShowSidebar }) => {
 								<div className='row'>
 									<div className='col-sm-6'>
 										<Checkbox
-											name='department-Chemical'
+											name='Department-Chemical'
 											label='Chemical'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Chemical}
+											checked={filterOptions.Department.Chemical}
 										/>
 										<Checkbox
-											name='department-Pharmacy'
+											name='Department-Pharmacy'
 											label='Pharmacy'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Pharmacy}
+											checked={filterOptions.Department.Pharmacy}
 										/>
 										<Checkbox
-											name='department-Economics'
+											name='Department-Economics'
 											label='Economics'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Economics}
+											checked={filterOptions.Department.Economics}
 										/>
 										<Checkbox
-											name='department-Biology'
+											name='Department-Biology'
 											label='Biology'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Biology}
+											checked={filterOptions.Department.Biology}
 										/>
 										<Checkbox
-											name='department-Computer Science'
+											name='Department-Computer Science'
 											label='Computer Science'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department['Computer Science']}
+											checked={filterOptions.Department['Computer Science']}
 										/>
 										<Checkbox
-											name='department-Mechanical & Manufacturing'
+											name='Department-Mechanical & Manufacturing'
 											label='Mechanical &amp; Manufcaturing'
 											onChange={(e) => handleFilter(e)}
 											checked={
-												filterOptions.department['Mechanical & Manufacturing']
+												filterOptions.Department['Mechanical & Manufacturing']
 											}
 										/>
 									</div>
-									<div className='department-col-sm-6'>
+									<div className='Department-col-sm-6'>
 										<Checkbox
-											name='department-Phoenix'
+											name='Department-Phoenix'
 											label='Phoenix'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Phoenix}
+											checked={filterOptions.Department.Phoenix}
 										/>
 										<Checkbox
-											name='department-Math'
+											name='Department-Math'
 											label='Math'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Math}
+											checked={filterOptions.Department.Math}
 										/>
 										<Checkbox
-											name='department-Civil'
+											name='Department-Civil'
 											label='Civil'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.department.Civil}
+											checked={filterOptions.Department.Civil}
 										/>
 									</div>
 								</div>
@@ -188,6 +200,7 @@ const Sidebar = ({ setShowSidebar }) => {
 							<Button
 								variant='outline-primary'
 								onClick={() => {
+									first.current = false;
 									applyFilter();
 									setShowSidebar(false);
 								}}

@@ -1,27 +1,27 @@
 [
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "SOP",
         "Professor": "D Purnima ",
         "ProjectTitle": "Heavy metal removal"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "LOP",
         "Professor": "Suvadip Batabyal",
         "ProjectTitle": "Quantum Architecture"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Akash Chaurasiya",
         "ProjectTitle": "Development of lipsomal formulation for anticancer drugs"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "DOP",
         "Professor": "Dr. Thota Nagaraju",
@@ -29,7 +29,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Dr. SUMIT KUMAR CHATTERJEE",
@@ -37,7 +37,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "LOP",
         "Professor": "K Ram Chandra Murthy ",
@@ -45,7 +45,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemistry",
         "ProjectType": "SOP",
         "Professor": "Prof. KVG Chandrashekhar",
@@ -53,7 +53,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "S.K. Sahoo",
@@ -61,7 +61,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "SOP",
         "Professor": "V Vamsi Krishna Venuganti",
@@ -69,7 +69,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "DOP",
         "Professor": "Dushyant Kumar",
@@ -77,7 +77,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "K Ram Chandra Murthy ",
         "ProjectTitle": "DSMC simulation of Rayleigh Benard flows in a Rarefied regime",
@@ -85,14 +85,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Dr. Sudha Radika ",
         "ProjectTitle": "Biomedical Image Processing "
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Dr. Swati Biswas",
@@ -100,7 +100,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Dr.Arti Dhar",
@@ -108,7 +108,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Dr. Alivelu Manga Parimi",
         "ProjectTitle": "Kalman Filter applications in Microgrids for state estimation and stability issues ",
@@ -116,7 +116,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Dr Manish Kumar",
@@ -124,7 +124,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Pardha Saradhi G.",
         "ProjectTitle": "Two way Fluid Structure Interaction (FSI) in flexible structures with low mass ratios",
@@ -132,7 +132,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "2D Materials Based Photodetectors ",
@@ -140,7 +140,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "SK Sahoo",
@@ -148,7 +148,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "LOP",
         "Professor": "Dr. Lov Kumar",
@@ -156,7 +156,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Paresh Saxena",
@@ -164,7 +164,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Dr Subhrakanta Panda",
@@ -172,7 +172,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "LOP",
         "Professor": "Soumya J",
@@ -180,7 +180,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": " Dr. Nitin Kotkunde",
@@ -188,7 +188,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "SOP",
         "Professor": "Dr. ARTI DHAR",
@@ -196,7 +196,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "SOP",
         "Professor": "Dr. Jaideep Chaterjee",
@@ -204,7 +204,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "LOP",
         "Professor": "Dr. Lov Kumar",
@@ -212,7 +212,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "LOP",
         "Professor": "R Gururaj",
@@ -220,7 +220,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Civil",
         "ProjectType": "DOP",
         "Professor": "Prof K. Srinivas Raju",
@@ -228,7 +228,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Tathagata Ray",
@@ -236,41 +236,41 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Mithun Mondal",
         "ProjectTitle": "Design and simulation of textured insulator "
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "SK Sahoo",
         "ProjectTitle": "CPS based system for biomedical application"
     },
     {
-        "isFormal ": false,
+        "isFormal": "Informal",
         "Department": "Computer Science",
         "Professor": "Prof. M.B. Srinivas",
         "ProjectTitle": "Classification of inages with complex backgrounds using transformer networks"
     },
     {
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Syed Ershad ",
         "ProjectTitle": "Study of approximate booth multipliers"
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "PK Sahoo",
         "ProjectTitle": "Cosmological Models in Modified Gravity"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "LOP",
         "Professor": "Archana Srivastava ",
@@ -278,14 +278,14 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr.Sujith R",
         "ProjectTitle": "Fuelcell"
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Civil",
         "ProjectType": "DOP",
         "Professor": "Murari Raja Raja Verma",
@@ -293,7 +293,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Professor Ponnalagu R N",
@@ -301,7 +301,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Dr. N.L. Bhanumurthy",
@@ -309,7 +309,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Dr Runa Kumari",
@@ -317,14 +317,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "LOP",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "Broadband Photodetectors"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Mithun Mondal",
@@ -332,7 +332,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "SANKET GOEL",
@@ -340,20 +340,20 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Physics",
         "Professor": "Dr Rahul Nigam",
         "ProjectTitle": "Guided Study in General Relativity"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Nirmal J",
         "ProjectTitle": "Pharmacoligical interventions for Uveitis"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": "Sujith R",
@@ -361,7 +361,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Prof. Onkar Kulkarni",
@@ -369,7 +369,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "Prof. Yogeeswari Perumal",
@@ -377,7 +377,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "SOP",
         "Professor": "Nivedita Sinha",
@@ -385,7 +385,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Barsha Mitra",
@@ -393,7 +393,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "DOP",
         "Professor": "Syed Arshad Ehmed",
@@ -401,7 +401,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Soumya J",
         "ProjectTitle": "RISC-V based NoC designing",
@@ -409,7 +409,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "SOP",
         "Professor": "Sandeep Deshmukh",
@@ -417,7 +417,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Debopam Chakraborty",
@@ -425,21 +425,21 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "LOP",
         "Professor": "Dr. Soumya J",
         "ProjectTitle": "Arithmetic based Network on chip design"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "DOP",
         "Professor": "Nivideta sinha",
         "ProjectTitle": "Merger and acquisition in pharmaceutical industry"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Amit Kumar Panda",
@@ -447,7 +447,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemistry",
         "ProjectType": "SOP",
         "Professor": "Tanmay Chatterjee",
@@ -455,7 +455,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": "Dr. Pavan Kumar Penumakala",
@@ -463,7 +463,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "SOP",
         "Professor": "N. Jalaiah",
@@ -471,7 +471,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
@@ -479,7 +479,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr. Nitin Kotkunde",
         "ProjectTitle": "Redesigning Automotive Interiors with an emphasis on Sustainability",
@@ -487,7 +487,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Math",
         "Professor": "Depobam Chakraborty",
         "ProjectTitle": "Elliptic Curves and Elliptic Curve Cryptography",
@@ -495,7 +495,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Biological Science",
         "ProjectType": "SOP",
         "Professor": "Vivek Sharma",
@@ -503,7 +503,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": "Pardha Saradhi",
@@ -511,7 +511,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Computer Science",
         "Professor": "Dipanjan Chakravarty",
         "ProjectTitle": "Remote Sensing and socio economic indicators",
@@ -519,7 +519,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "SOP",
         "Professor": "D Purnima",
@@ -527,14 +527,14 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Computer Science",
         "Professor": "Prof. DIPANJAN chakraborty",
         "ProjectTitle": "Disinformation"
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith Sir",
         "ProjectTitle": "DTF Computation ",
@@ -542,7 +542,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Dr. Tathagatha Ray",
@@ -550,7 +550,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "DOP",
         "Professor": "Arnab Dutta, Pankaj Kumar",
@@ -558,7 +558,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "SOP",
         "Professor": "Archana Srivastava",
@@ -566,7 +566,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "SOP",
         "Professor": "Shreya Biswas",
@@ -574,7 +574,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Civil",
         "ProjectType": "SOP",
         "Professor": "KS Raju",
@@ -582,7 +582,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "SOP",
         "Professor": "Lov Kumar",
@@ -590,7 +590,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Michael alphonse",
@@ -598,7 +598,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith R.",
         "ProjectTitle": "Ballistic testing of metal foam composites",
@@ -606,7 +606,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "SOP",
         "Professor": "Manik Gupta",
@@ -614,7 +614,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Parikshit Sir",
         "ProjectTitle": "Wearable sensors",
@@ -622,14 +622,14 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith R",
         "ProjectTitle": "Computational analysis of 2D materials"
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "LOP",
         "Professor": "D V N Sivakumar ",
@@ -637,14 +637,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Sudha Radhika",
         "ProjectTitle": "IoT base HEMs"
     },
     {
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr. Abhishek Sarkar",
         "ProjectTitle": "Humanoid Gait Analysis",
@@ -652,7 +652,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "DOP",
         "Professor": "D Sriram",
@@ -660,7 +660,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Computer Science",
         "Professor": "Manik Gupta",
         "ProjectTitle": "Deep Learning for Time Series Classification",
@@ -668,7 +668,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Computer Science",
         "ProjectType": "DOP",
         "Professor": "Dipanjan Chakraborty",
@@ -676,7 +676,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "LOP",
         "Professor": "Dr. R.N.Ponnalagu",
@@ -684,7 +684,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": "Dr. Arshad Javed",
@@ -692,7 +692,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Pharmacy",
         "ProjectType": "SOP",
         "Professor": "Onkar kulkarni",
@@ -700,7 +700,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Physics",
         "ProjectType": "SOP",
         "Professor": "Subhash Narayan Karbelkar",
@@ -708,7 +708,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Prof. Sanket Goel",
@@ -716,7 +716,7 @@
     },
     {
         
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Prof. Parikshit Sahatiya",
         "ProjectTitle": "Large area pressure sensor for smart floor sensor applications",
@@ -724,7 +724,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Economics",
         "ProjectType": "DOP",
         "Professor": "Prof. Archana Srivastava",
@@ -732,7 +732,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Sandeep Kumar",
@@ -740,7 +740,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Sharan gopal sir",
@@ -748,7 +748,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
@@ -756,21 +756,21 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "PK Sahoo",
         "ProjectTitle": "Cosmological Model in Unified Gravity"
     },
     {
-        "isFormal": false,
+        "isFormal": "Informal",
         "Department": "Math",
         "Professor": " Pratyusha Chattopadhyay",
         "ProjectTitle": "Fundamental Group"
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
@@ -778,14 +778,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Dr. Pratyusha Chattopadhyay",
         "ProjectTitle": "Properties of Classical Groups"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Praveen Sir",
@@ -793,14 +793,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "Santanu koley ",
         "ProjectTitle": "Stochastic modelling of wave energy convertor devices"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "LOP",
         "Professor": "PTV Praveen Kumar",
@@ -808,7 +808,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
         "Professor": "TSL Radhika",
@@ -816,14 +816,14 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "LOP",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "Broadband photodetection"
     },
     {
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Mechanical & Manufacturing",
         "ProjectType": "DOP",
         "Professor": "Dr. Nitin Ramesh kotkunde",
@@ -831,7 +831,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "SOP",
         "Professor": "I Sreedhar",
@@ -839,7 +839,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Chemical",
         "ProjectType": "DOP",
         "Professor": "Pankaj Kumar & Arnab Dutta",
@@ -847,7 +847,7 @@
     },
     {
         
-        "isFormal": true,
+        "isFormal": "Formal",
         "Department": "Phoenix",
         "ProjectType": "SOP",
         "Professor": "Ponnalagu R N",

@@ -32,12 +32,16 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, projects } = React.useContext(FilterContext);
+	const { loading, searchedProjects } = React.useContext(FilterContext);
 	const { searchText, handleSearch } = useSearch();
 	const { handleSort } = useSort();
 
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
+
+	const projects = searchedProjects;
+
+	const cardColors = React.useRef(new Array(250).fill(0).map(d => Math.floor(Math.random() * 3) + 1));
 
 	React.useEffect(() => {
 		if (!showDetailedView) {
@@ -119,7 +123,7 @@ const App = () => {
 											<Form.Control
 												autoComplete='off'
 												type='text'
-												placeholder='Search by Name, Dept or Prof'
+												placeholder='Search by Project Title, Professor or Department'
 												onChange={(e) => {
 													handleSearch(e.target.value);
 												}}
@@ -142,14 +146,28 @@ const App = () => {
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaDown size={20} />
-													Course Name
+													Project Title
 												</Dropdown.Item>
 												<Dropdown.Item
 													onClick={(e) => handleSort(e, 'dec')}
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaUp size={20} />
-													Course Name
+													Project Title
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={(e) => handleSort(e, 'asc')}
+													name='Department'
+													className='text-light'>
+													<SortAlphaDown size={20} />
+													Department
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={(e) => handleSort(e, 'dec')}
+													name='Department'
+													className='text-light'>
+													<SortAlphaUp size={20} />
+													Department
 												</Dropdown.Item>
 											</Dropdown.Menu>
 										</Dropdown>
@@ -176,6 +194,7 @@ const App = () => {
 																	project={el}
 																	showDetails={() => setShowDetailedView(true)}
 																	showProjectDetails={setProjectDetail}
+																	cardColors={cardColors.current}
 																/>
 															</div>
 														</motion.div>

@@ -10,8 +10,9 @@ const ProjectCard = ({
 	project,
 	showProjectDetails,
 	showDetails,
+	cardColors
 }) => {
-	const variant = Math.floor(Math.random() * 3) + 1;
+	const variant = cardColors[number];
 	const [projectDetails, setProjectDetails] = React.useState(project);
 	const { reviews } = React.useContext(ReviewContext);
 
@@ -65,7 +66,7 @@ const ProjectCard = ({
 				</div>
 				<div className='card-project__details mb-5'>
 					<Card.Subtitle className='mb-2 card-project__details-id'>
-						{project.isFormal ? `FORMAL / ${project.ProjectType}` : 'INFORMAL'}
+						{project.isFormal === "Formal" ? `FORMAL / ${project.ProjectType}` : 'INFORMAL'}
 					</Card.Subtitle>
 					<Card.Title className='card-project__details-name'>
 						{project.ProjectTitle}

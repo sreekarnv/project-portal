@@ -2,12 +2,12 @@ import * as React from 'react';
 import { FilterContext } from '../context/FilterContext';
 
 const useSort = () => {
-	const { projects, setProjects } = React.useContext(FilterContext);
+	const { searchedProjects, setSearchedProjects } = React.useContext(FilterContext);
 
 	const handleSort = (e, type) => {
 		let result;
 		if (type === 'asc')
-			result = [...projects].sort((a, b) => {
+			result = [...searchedProjects].sort((a, b) => {
 				return a[e.target.name] < b[e.target.name]
 					? -1
 					: a[e.target.name] > b[e.target.name]
@@ -15,7 +15,7 @@ const useSort = () => {
 					: 0;
 			});
 		else {
-			result = [...projects].sort((a, b) => {
+			result = [...searchedProjects].sort((a, b) => {
 				let res =
 					a[e.target.name] < b[e.target.name]
 						? -1
@@ -25,7 +25,7 @@ const useSort = () => {
 				return res * -1;
 			});
 		}
-		setProjects(result);
+		setSearchedProjects(result);
 	};
 
 	return { handleSort };
