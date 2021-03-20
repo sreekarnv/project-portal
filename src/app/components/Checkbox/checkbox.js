@@ -2,7 +2,15 @@ import React from 'react';
 
 import './checkbox.scss';
 
-const Checkbox = ({ hasError, label, type, onChange, checked, name }) => {
+const Checkbox = ({
+	hasError,
+	label,
+	type,
+	onChange,
+	checked,
+	name,
+	disabled,
+}) => {
 	const checkboxClassname = `
     m-checkbox
     ${type === 'switch' && 'm-checkbox--switch'}
@@ -24,7 +32,7 @@ const Checkbox = ({ hasError, label, type, onChange, checked, name }) => {
 			<input
 				type='checkbox'
 				className={inputClassname}
-				{...{ name, checked, onChange }}
+				{...{ name, checked, onChange, disabled }}
 			/>
 			<label className={labelClassname}>{label}</label>
 		</div>

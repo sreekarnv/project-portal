@@ -2,7 +2,9 @@ import * as React from 'react';
 import { FilterContext } from '../context/FilterContext';
 
 const useSort = () => {
-	const { searchedProjects, setSearchedProjects } = React.useContext(FilterContext);
+	const { searchedProjects, setSearchedProjects } = React.useContext(
+		FilterContext
+	);
 
 	const handleSort = (e, type) => {
 		let result;

@@ -10,7 +10,6 @@ import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
-import Backdrop from './components/Backdrop/Backdrop';
 import Loading from './components/Loader/Loading';
 import useSearch from './hooks/useSearch';
 import { FilterContext } from './context/FilterContext';
@@ -41,7 +40,9 @@ const App = () => {
 
 	const projects = searchedProjects;
 
-	const cardColors = React.useRef(new Array(250).fill(0).map(d => Math.floor(Math.random() * 3) + 1));
+	const cardColors = React.useRef(
+		new Array(250).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
+	);
 
 	React.useEffect(() => {
 		if (!showDetailedView) {
@@ -59,12 +60,10 @@ const App = () => {
 
 	return (
 		<>
-			{showDetailedView && (
-				<ReviewSidebar
-					project={projectDetail}
-					{...{ showDetailedView, setShowDetailedView }}
-				/>
-			)}
+			<ReviewSidebar
+				project={projectDetail}
+				{...{ showDetailedView, setShowDetailedView }}
+			/>
 
 			<Header />
 
@@ -88,12 +87,6 @@ const App = () => {
 								</motion.div>
 							)}
 						</AnimatePresence>
-
-						<Backdrop
-							className='d-lg-none'
-							show={showSideBar}
-							onClick={() => setShowSidebar(false)}
-						/>
 
 						<motion.div
 							layout

@@ -1,27 +1,28 @@
-import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import * as React from 'react';
 import { Container, Form, Button, CloseButton, Card } from 'react-bootstrap';
 import { FilterContext } from '../../context/FilterContext';
 import Checkbox from '../Checkbox/checkbox.js';
-import useSearch from '../../hooks/useSearch'
+import useSearch from '../../hooks/useSearch';
 import './sidebar.scss';
+import Backdrop from '../Backdrop/Backdrop';
 
-const Sidebar = ({ setShowSidebar }) => {
+const Sidebar = ({ setShowSidebar, showSideBar }) => {
 	const {
 		updateFilterOptions,
 		filterOptions,
 		applyFilter,
 		resetFilterOptions,
-		filteredProjects
+		filteredProjects,
 	} = React.useContext(FilterContext);
 
-	const {searchText, handleSearch} = useSearch();
+	const { searchText, handleSearch } = useSearch();
 	const first = React.useRef(true);
 
 	React.useEffect(() => {
-		if(!first.current)
-			handleSearch(searchText);
+		if (!first.current) handleSearch(searchText);
 		first.current = false;
+
+		// eslint-disable-next-line
 	}, [filteredProjects]);
 
 	const handleFilter = (e) => {
@@ -36,10 +37,7 @@ const Sidebar = ({ setShowSidebar }) => {
 			Object.keys(newFilterOptions.ProjectType).forEach((k) => {
 				newFilterOptions.ProjectType[k] = false;
 			});
-		} else if (
-			newFilterOptions.isFormal.Informal &&
-			subFilter === 'Formal'
-		) {
+		} else if (newFilterOptions.isFormal.Informal && subFilter === 'Formal') {
 			newFilterOptions.isFormal.Informal = false;
 		}
 
@@ -49,7 +47,13 @@ const Sidebar = ({ setShowSidebar }) => {
 	};
 
 	return (
-		<AnimateSharedLayout>
+		<>
+			<Backdrop
+				className='d-lg-none'
+				show={showSideBar}
+				onClick={() => setShowSidebar(false)}
+			/>
+
 			<div className={`h-100 sidebar pb-5 px-3 text-primary`}>
 				<Container className='pb-5'>
 					<CloseButton
@@ -75,59 +79,35 @@ const Sidebar = ({ setShowSidebar }) => {
 								/>
 							</Card>
 						</div>
-						<AnimatePresence>
-							{(
-								<motion.div
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									exit={{ opacity: 0 }}
-									className='mb-3'>
-									<Card className='sidebar__card py-3 pr-3'>
-										<h4 className='mb-3 text-black'>Course Types</h4>
-										<Checkbox
-											name='ProjectType-LOP'
-											label='LOP'
-											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.ProjectType.LOP}
-											disabled={filterOptions.isFormal.Informal}
-										/>
-										<Checkbox
-											name='ProjectType-DOP'
-											label='DOP'
-											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.ProjectType.DOP}
-											disabled={filterOptions.isFormal.Informal}
-										/>
-										<Checkbox
-											name='ProjectType-SOP'
-											label='SOP'
-											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.ProjectType.SOP}
-											disabled={filterOptions.isFormal.Informal}
-										/>
-									</Card>
-								</motion.div>
-							)}
-						</AnimatePresence>
-						{/* 
-						<motion.div layout className='mb-3'>
+
+						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
-								<h4 className='mb-3 text-black'>Project Time</h4>
+								<h4 className='mb-3 text-black'>Course Types</h4>
 								<Checkbox
-									name='projectTime-previousSem'
-									label='Previous Semesters'
+									name='ProjectType-LOP'
+									label='LOP'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.projectTime.previousSem}
+									checked={filterOptions.ProjectType.LOP}
+									disabled={filterOptions.isFormal.Informal}
 								/>
 								<Checkbox
-									name='projectTime-upcomingSem'
-									label='Upcoming Semester'
+									name='ProjectType-DOP'
+									label='DOP'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.projectTime.previousSem}
+									checked={filterOptions.ProjectType.DOP}
+									disabled={filterOptions.isFormal.Informal}
+								/>
+								<Checkbox
+									name='ProjectType-SOP'
+									label='SOP'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.ProjectType.SOP}
+									disabled={filterOptions.isFormal.Informal}
 								/>
 							</Card>
-						</motion.div> */}
-						<motion.div layout className='mb-3'>
+						</div>
+
+						<div layout className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
 								<div className='row'>
@@ -193,10 +173,8 @@ const Sidebar = ({ setShowSidebar }) => {
 									</div>
 								</div>
 							</Card>
-						</motion.div>
-						<motion.div
-							layout
-							className='card sidebar__card py-4 px-2 b-0 u-bb-none'>
+						</div>
+						<div className='card sidebar__card py-4 px-2 b-0 u-bb-none'>
 							<Button
 								variant='outline-primary'
 								onClick={() => {
@@ -216,11 +194,11 @@ const Sidebar = ({ setShowSidebar }) => {
 								className='my-2 btn-block btn-outline'>
 								Reset Filter
 							</Button>
-						</motion.div>
+						</div>
 					</Form>
 				</Container>
 			</div>
-		</AnimateSharedLayout>
+		</>
 	);
 };
 
