@@ -170,6 +170,7 @@ const App = () => {
 										className={`py-4 mt-3 ${showSideBar && 'p-show-sidebar'}`}>
 										<AnimateSharedLayout>
 											{projects &&
+												projects.length > 0 &&
 												projects.map((el, i) => {
 													return (
 														<motion.div
@@ -193,6 +194,11 @@ const App = () => {
 														</motion.div>
 													);
 												})}
+											{projects && projects.length === 0 && (
+												<h5 className='text-danger h1 mt-5 mx-auto'>
+													No Projects Found
+												</h5>
+											)}
 										</AnimateSharedLayout>
 									</Row>
 								</div>

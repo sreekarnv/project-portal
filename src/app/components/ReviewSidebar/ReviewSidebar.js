@@ -48,7 +48,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 							<div className='review-sidebar__projectType'>
 								<h5 className='text-white'>{project.Professor}</h5>
 								<h6 className='text-primary'>
-									{project.isFormal
+									{project.isFormal === 'Formal'
 										? `Formal / ${project.ProjectType}`
 										: 'InFormal'}
 								</h6>
