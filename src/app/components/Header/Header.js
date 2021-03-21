@@ -5,7 +5,7 @@ import { Container, Navbar } from 'react-bootstrap';
 const Header = () => {
 	return (
 		<Navbar id='header' expand='lg' variant='dark'>
-			<Container fluid className='justify-content-center pt-3'>
+			<Container fluid className='justify-content-center'>
 				<Navbar.Brand>BPHC Project Portal</Navbar.Brand>
 			</Container>
 		</Navbar>

@@ -151,7 +151,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											}
 										/>
 									</div>
-									<div className='Department-col-sm-6'>
+									<div className='col-sm-6'>
 										<Checkbox
 											name='Department-Phoenix'
 											label='Phoenix'
@@ -196,6 +196,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 							</Button>
 						</div>
 					</Form>
+					<div className="credits-container">
+							<p className="text-white small">Designed and Developed by 
+							<span className="font-weight-bold"> Sreekar NV</span>,
+							<span className="font-weight-bold"> Sidharth Anand</span> &amp; 
+							<span className="font-weight-bold"> Jonathan Samuel</span></p>
+					</div>
 				</Container>
 			</div>
 		</>

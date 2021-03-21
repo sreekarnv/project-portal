@@ -44,4 +44,13 @@
 		box-shadow: none !important;
 		border-radius: 0 !important;
 	}
+
+	.credits-container {
+		margin-top:8rem;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 1rem;
+		}
+
+	}
 }

@@ -124,7 +124,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 												})}
 											{project.profReviews.length === 0 && (
 												<h5 className='text-danger'>
-													No one has reviews this professor yet
+													No one has reviewed this professor yet
 												</h5>
 											)}
 										</Card.Body>
@@ -157,7 +157,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 									<Accordion.Collapse eventKey='2'>
 										<Card.Body>
 											<h5 className='text-danger'>
-												There are no getting started guides availabled for this
+												There are currently no getting started guides available for this
 												or related domains
 											</h5>
 										</Card.Body>
