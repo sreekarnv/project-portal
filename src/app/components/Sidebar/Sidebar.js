@@ -69,13 +69,23 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 									name='isFormal-Formal'
 									label='Formal'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.isFormal.Formal}
+									checked={
+										filterOptions.isFormal.Formal ||
+										filterOptions.ProjectType.DOP ||
+										filterOptions.ProjectType.LOP ||
+										filterOptions.ProjectType.SOP
+									}
 								/>
 								<Checkbox
 									name='isFormal-Informal'
 									label='Informal'
 									onChange={(e) => handleFilter(e)}
 									checked={filterOptions.isFormal.Informal}
+									disabled={
+										filterOptions.ProjectType.DOP ||
+										filterOptions.ProjectType.LOP ||
+										filterOptions.ProjectType.SOP
+									}
 								/>
 							</Card>
 						</div>
