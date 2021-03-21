@@ -4,6 +4,7 @@ import {
 	FunnelFill,
 	SortDown,
 	SortAlphaDown,
+	ArrowUp,
 	SortAlphaUp,
 } from 'react-bootstrap-icons';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
@@ -12,9 +13,11 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Loading from './components/Loader/Loading';
 import useSearch from './hooks/useSearch';
+
 import { FilterContext } from './context/FilterContext';
 import useSort from './hooks/useSort';
 import ReviewSidebar from './components/ReviewSidebar/ReviewSidebar';
+import IconButton from './components/IconButton/IconButton';
 
 const sidebarVariants = {
 	open: {
@@ -37,12 +40,23 @@ const App = () => {
 
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
+	const [showfloatingBtn, setShowFloatingBtn] = React.useState(false);
 
 	const projects = searchedProjects;
 
 	const cardColors = React.useRef(
 		new Array(250).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
 	);
+
+	const FloatingButton = () => {
+		if (window.scrollY >= 90) {
+			setShowFloatingBtn(true);
+		} else {
+			setShowFloatingBtn(false);
+		}
+	};
+
+	window.addEventListener('scroll', FloatingButton);
 
 	React.useEffect(() => {
 		if (!showDetailedView) {
@@ -207,6 +221,11 @@ const App = () => {
 					</Row>
 				</AnimateSharedLayout>
 			</Container>
+			{showfloatingBtn && (
+				<IconButton floating onClick={() => window.scrollTo({ top: 0 })}>
+					<ArrowUp size={21} />
+				</IconButton>
+			)}
 		</>
 	);
 };

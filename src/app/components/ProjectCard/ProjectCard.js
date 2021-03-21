@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './project-card.scss';
-import Img from './../../../assets/image.jpg';
+// import Img from './../../../assets/image.jpg';
 import { ReviewContext } from '../../context/ReviewContext';
+import Icon from '../Icon/Icon';
 
 const ProjectCard = ({
 	number,
@@ -10,7 +11,7 @@ const ProjectCard = ({
 	project,
 	showProjectDetails,
 	showDetails,
-	cardColors
+	cardColors,
 }) => {
 	const variant = cardColors[number];
 	const [projectDetails, setProjectDetails] = React.useState(project);
@@ -61,12 +62,14 @@ const ProjectCard = ({
 						{`${number + 1}`.length === 1 ? `0${number + 1}` : number + 1}
 					</Card.Title>
 					<div className='card-project__header-image'>
-						<img src={Img} alt='hello' />
+						<Icon icon={project.Department} />
 					</div>
 				</div>
 				<div className='card-project__details mb-5'>
 					<Card.Subtitle className='mb-2 card-project__details-id'>
-						{project.isFormal === "Formal" ? `FORMAL / ${project.ProjectType}` : 'INFORMAL'}
+						{project.isFormal === 'Formal'
+							? `FORMAL / ${project.ProjectType}`
+							: 'INFORMAL'}
 					</Card.Subtitle>
 					<Card.Title className='card-project__details-name'>
 						{project.ProjectTitle}

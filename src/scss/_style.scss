@@ -4,6 +4,8 @@ html {
 	@supports (scrollbar-width: none) {
 		scrollbar-width: none !important;
 	}
+
+	scroll-behavior: smooth !important;
 }
 
 body {

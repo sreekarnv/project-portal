@@ -66,16 +66,8 @@
 	}
 
 	&__header-image {
-		border: 4px solid #fff;
-		border-radius: 20px;
+		margin-bottom: 2rem;
 		overflow: hidden;
-
-		img {
-			height: 89px;
-			width: 81px;
-			object-fit: cover;
-			object-position: center;
-		}
 	}
 
 	&__details {
