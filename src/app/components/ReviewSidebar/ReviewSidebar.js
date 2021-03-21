@@ -83,9 +83,9 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 													return <p>{el}</p>;
 												})}
 											{project.projectReviews.length === 0 && (
-												<h5 className='text-danger'>
+												<h6 className='text-danger'>
 													No one has reviewed this course yet
-												</h5>
+												</h6>
 											)}
 										</Card.Body>
 									</Accordion.Collapse>
@@ -119,9 +119,9 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 													return <p>{el}</p>;
 												})}
 											{project.profReviews.length === 0 && (
-												<h5 className='text-danger'>
+												<h6 className='text-danger'>
 													No one has reviewed this professor yet
-												</h5>
+												</h6>
 											)}
 										</Card.Body>
 									</Accordion.Collapse>
@@ -150,10 +150,10 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 									</Card.Header>
 									<Accordion.Collapse eventKey='2'>
 										<Card.Body>
-											<h5 className='text-danger'>
+											<h6 className='text-danger'>
 												There are currently no getting started guides available
 												for this or related domains
-											</h5>
+											</h6>
 										</Card.Body>
 									</Accordion.Collapse>
 								</Card>
