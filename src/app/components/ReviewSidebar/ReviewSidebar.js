@@ -62,16 +62,14 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										<Accordion.Toggle
 											size='sm'
 											onClick={() => {
-												if (showProf) {
-													setShowProf(!showProf);
-												}
-												setShowCourse(false);
+												setShowCourse(!showCourse);
+												setShowProf(false);
 												setShowGuide(false);
 											}}
 											variant='transparent'
 											as={Button}
 											eventKey='0'>
-											{!showProf ? (
+											{!showCourse ? (
 												<ChevronUp fill='#fff' />
 											) : (
 												<ChevronDown fill='#fff' />
@@ -100,16 +98,14 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										<Accordion.Toggle
 											size='sm'
 											onClick={() => {
-												setShowProf(false);
-												if (showCourse) {
-													setShowCourse(!showCourse);
-												}
+												setShowProf(!showProf);
+												setShowCourse(false);
 												setShowGuide(false);
 											}}
 											variant='transparent'
 											as={Button}
 											eventKey='1'>
-											{!showCourse ? (
+											{!showProf ? (
 												<ChevronUp fill='#fff' />
 											) : (
 												<ChevronDown fill='#fff' />
@@ -138,11 +134,9 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										<Accordion.Toggle
 											size='sm'
 											onClick={() => {
+												setShowGuide(!showGuide);
 												setShowProf(false);
 												setShowCourse(false);
-												if (showGuide) {
-													setShowGuide(!showGuide);
-												}
 											}}
 											variant='transparent'
 											as={Button}
@@ -157,8 +151,8 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 									<Accordion.Collapse eventKey='2'>
 										<Card.Body>
 											<h5 className='text-danger'>
-												There are currently no getting started guides available for this
-												or related domains
+												There are currently no getting started guides available
+												for this or related domains
 											</h5>
 										</Card.Body>
 									</Accordion.Collapse>
