@@ -34,8 +34,8 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects } = React.useContext(FilterContext);
-	const { searchText, handleSearch } = useSearch();
+	const { loading, searchedProjects, searchString } = React.useContext(FilterContext);
+	const { handleSearch } = useSearch();
 	const { handleSort } = useSort();
 
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
@@ -134,7 +134,7 @@ const App = () => {
 												onChange={(e) => {
 													handleSearch(e.target.value);
 												}}
-												value={searchText}
+												value={searchString}
 											/>
 										</Form.Group>
 
@@ -209,8 +209,8 @@ const App = () => {
 													);
 												})}
 											{projects && projects.length === 0 && (
-												<h5 className='text-danger h1 mt-5 mx-auto'>
-													No Projects Found
+												<h5 className='text-danger mt-5 mx-auto'>
+													No projects exist satisfying the given parameters
 												</h5>
 											)}
 										</AnimateSharedLayout>

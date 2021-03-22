@@ -4,15 +4,14 @@ import { FilterContext } from '../context/FilterContext';
 const searchFields = ["ProjectTitle", "Professor", "Department"];
 
 const useSearch = () => {
-	const { filteredProjects, searchedProjects, setSearchedProjects } = React.useContext(
+	const { filteredProjects, searchedProjects, setSearchedProjects, searchString, setSearchString } = React.useContext(
 		FilterContext
 	);
-	const [searchText, setSearchText] = React.useState('');
 
 	const handleSearch = (value) => {
-		setSearchedProjects(searchObject(value.length > searchText.length ? searchedProjects : filteredProjects, value));
+		setSearchedProjects(searchObject(value.length > searchString.length ? searchedProjects : filteredProjects, value));
 
-		setSearchText(value);
+		setSearchString(value);
 	};
 
 	const searchObject = (data, value) => {
@@ -26,7 +25,6 @@ const useSearch = () => {
 
 	return {
 		handleSearch,
-		searchText,
 	};
 };
 

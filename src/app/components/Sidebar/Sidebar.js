@@ -13,13 +13,14 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 		applyFilter,
 		resetFilterOptions,
 		filteredProjects,
+		searchString,
 	} = React.useContext(FilterContext);
 
-	const { searchText, handleSearch } = useSearch();
+	const { handleSearch } = useSearch();
 	const first = React.useRef(true);
 
 	React.useEffect(() => {
-		if (!first.current) handleSearch(searchText);
+		if (!first.current) handleSearch(searchString);
 		first.current = false;
 
 		// eslint-disable-next-line
@@ -117,7 +118,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 							</Card>
 						</div>
 
-						<div layout className='mb-3'>
+						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
 								<div className='row'>
@@ -190,6 +191,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 								onClick={() => {
 									first.current = false;
 									applyFilter();
+									handleSearch(searchString);
 									setShowSidebar(false);
 								}}
 								className='btn-block btn-outline'>

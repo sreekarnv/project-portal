@@ -34,6 +34,7 @@ const FilterContextProvider = ({ children }) => {
 	const { projects, loading } = React.useContext(ProjectContext);
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
 	const [searchedProjects, setSearchedProjects] = React.useState([]);
+	const [searchString, setSearchString] = React.useState('');
 
 	const [filterOptions, setFilterOptions] = React.useState(defaultFilterState);
 
@@ -91,6 +92,8 @@ const FilterContextProvider = ({ children }) => {
 				applyFilter,
 				searchedProjects,
 				setSearchedProjects,
+				searchString,
+				setSearchString
 			}}>
 			{children}
 		</FilterContext.Provider>
