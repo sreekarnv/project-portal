@@ -34,7 +34,10 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects, searchString } = React.useContext(FilterContext);
+	const { loading, searchedProjects, searchString } = React.useContext(
+		FilterContext
+	);
+	const cardsContainerRef = React.useRef();
 	const { handleSearch } = useSearch();
 	const { handleSort } = useSort();
 
@@ -48,15 +51,13 @@ const App = () => {
 		new Array(250).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
 	);
 
-	const FloatingButton = () => {
-		if (window.scrollY >= 90) {
+	const FloatingButton = (e) => {
+		if (e.target.scrollTop >= 60) {
 			setShowFloatingBtn(true);
 		} else {
 			setShowFloatingBtn(false);
 		}
 	};
-
-	window.addEventListener('scroll', FloatingButton);
 
 	React.useEffect(() => {
 		if (!showDetailedView) {
@@ -83,7 +84,10 @@ const App = () => {
 
 			<Container fluid>
 				<AnimateSharedLayout>
-					<Row className='cards-container'>
+					<Row
+						className='cards-container'
+						onScroll={(e) => FloatingButton(e)}
+						ref={cardsContainerRef}>
 						<AnimatePresence>
 							{showSideBar && (
 								<motion.div
@@ -222,7 +226,11 @@ const App = () => {
 				</AnimateSharedLayout>
 			</Container>
 			{showfloatingBtn && (
-				<IconButton floating onClick={() => window.scrollTo({ top: 0 })}>
+				<IconButton
+					floating
+					onClick={() => {
+						cardsContainerRef.current.scrollTop = 0;
+					}}>
 					<ArrowUp size={21} />
 				</IconButton>
 			)}
