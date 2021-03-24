@@ -61,11 +61,20 @@ const ProjectCard = ({
 					<Card.Title className='text-white'>
 						{`${number + 1}`.length === 1 ? `0${number + 1}` : number + 1}
 					</Card.Title>
+
 					<div className='card-project__header-image'>
 						<Icon icon={project.Department} />
 					</div>
 				</div>
 				<div className='card-project__details mb-5'>
+					<Card.Subtitle
+						style={{ fontWeight: 'bold' }}
+						className='text-uppercase mb-4'>
+						{project.courseOffered === 'upcoming'
+							? 'Offered in SEM 2 2021'
+							: 'Previously Offered'}
+					</Card.Subtitle>
+
 					<Card.Subtitle className='mb-2 card-project__details-id'>
 						{project.isFormal === 'Formal'
 							? `FORMAL / ${project.ProjectType}`
@@ -76,7 +85,7 @@ const ProjectCard = ({
 					</Card.Title>
 				</div>
 				<div className='card-project__prof mb-4 text-white'>
-					<Card.Text className='text-uppercase card-project__prof-name mb-1'>
+					<Card.Text className='text-uppercase card-project__prof-name mb-1 text-truncate'>
 						{project.Professor}
 					</Card.Text>
 					<small>{project.Department}</small>

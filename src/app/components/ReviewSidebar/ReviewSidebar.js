@@ -19,6 +19,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 	const [showProf, setShowProf] = React.useState(false);
 	const [showDesc, setShowDesc] = React.useState(true);
 	const [showPreReq, setShowPreReq] = React.useState(false);
+	const [showgettingStarted, setShowGettingStarted] = React.useState(false);
 
 	const togglePreReq = () => {
 		setShowCourse(false);
@@ -32,11 +33,13 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 		setShowProf(false);
 		setShowDesc(!showDesc);
 		setShowPreReq(false);
+		setShowGettingStarted(false);
 	};
 
 	const toggleCourse = () => {
 		setShowCourse(!showCourse);
 		setShowProf(false);
+		setShowGettingStarted(false);
 		setShowDesc(false);
 		setShowPreReq(false);
 	};
@@ -44,6 +47,15 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 	const toggleProf = () => {
 		setShowCourse(false);
 		setShowProf(!showProf);
+		setShowDesc(false);
+		setShowGettingStarted(false);
+		setShowPreReq(false);
+	};
+
+	const toggleGettingStarted = () => {
+		setShowGettingStarted(!showgettingStarted);
+		setShowCourse(false);
+		setShowProf(false);
 		setShowDesc(false);
 		setShowPreReq(false);
 	};
@@ -125,36 +137,53 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										</CollapseField>
 									</>
 								)}
-								<CollapseField
-									label='Course Reviews'
-									onClick={toggleCourse}
-									show={showCourse}
-									i='2'>
-									{project.projectReviews.length > 0 &&
-										project.projectReviews.map((el) => {
-											return <p>{el}</p>;
-										})}
-									{project.projectReviews.length === 0 && (
-										<h6 className='text-danger'>
-											No one has reviewed this course yet
-										</h6>
-									)}
-								</CollapseField>
-								<CollapseField
-									label='Professor Reviews'
-									onClick={toggleProf}
-									show={showProf}
-									i='3'>
-									{project.profReviews.length > 0 &&
-										project.profReviews.map((el) => {
-											return <p>{el}</p>;
-										})}
-									{project.profReviews.length === 0 && (
-										<h6 className='text-danger'>
-											No one has reviewed this professor yet
-										</h6>
-									)}
-								</CollapseField>
+								{project.courseOffered.toLowerCase() === 'previous' && (
+									<>
+										<CollapseField
+											label='Course Reviews'
+											onClick={toggleCourse}
+											show={showCourse}
+											i='2'>
+											{project.projectReviews.length > 0 &&
+												project.projectReviews.map((el) => {
+													return <p>{el}</p>;
+												})}
+											{project.projectReviews.length === 0 && (
+												<h6 className='text-danger'>
+													No one has reviewed this course yet
+												</h6>
+											)}
+										</CollapseField>
+										<CollapseField
+											label='Professor Reviews'
+											onClick={toggleProf}
+											show={showProf}
+											i='3'>
+											{project.profReviews.length > 0 &&
+												project.profReviews.map((el) => {
+													return <p>{el}</p>;
+												})}
+											{project.profReviews.length === 0 && (
+												<h6 className='text-danger'>
+													No one has reviewed this professor yet
+												</h6>
+											)}
+										</CollapseField>
+										<CollapseField
+											label='Getting Started'
+											onClick={toggleGettingStarted}
+											show={showgettingStarted}
+											i='4'>
+											{project.gettingStarted ? (
+												project.gettingStarted
+											) : (
+												<h6 className='text-danger'>
+													No one getting started guides
+												</h6>
+											)}
+										</CollapseField>
+									</>
+								)}
 							</Accordion>
 						</motion.div>
 					</>

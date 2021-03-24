@@ -1431,8 +1431,7 @@
         "Professor": "Rajib Ranjan Maiti",
         "isFormal": "Formal",
         "ProjectType": "LOP",
-        "ProjectTitle": "LOP",
-        "ProjectDescription": "Cyber Espionage on IoT",
+        "ProjectTitle": "Cyber Espionage on IoT",
         "Prerequisite": "Python Programming,\r\ncomputer networking, wireshark"
     },
     {

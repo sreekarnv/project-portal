@@ -8,6 +8,7 @@ import { ReactComponent as EcoIcon } from './../../../assets/economics.svg';
 import { ReactComponent as ManufactureIcon } from './../../../assets/settings-gears.svg';
 import { ReactComponent as PharmaIcon } from './../../../assets/drugs-capsules-and-pills.svg';
 import { ReactComponent as MathIcon } from './../../../assets/axis.svg';
+import { ReactComponent as PhysicsIcon } from './../../../assets/physics.svg';
 
 import './icon.scss';
 
@@ -22,6 +23,10 @@ const Icon = ({ icon }) => {
 
 	if (icon === 'Civil') {
 		return <CivilIcon className='icon' />;
+	}
+
+	if (icon === 'Physics') {
+		return <PhysicsIcon className='icon' />;
 	}
 
 	if (icon === 'Computer Science') {

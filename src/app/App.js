@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Row, Container, Button, Form, Dropdown } from 'react-bootstrap';
+
 import {
 	FunnelFill,
 	SortDown,
@@ -18,6 +19,7 @@ import { FilterContext } from './context/FilterContext';
 import useSort from './hooks/useSort';
 import ReviewSidebar from './components/ReviewSidebar/ReviewSidebar';
 import IconButton from './components/IconButton/IconButton';
+// import useLoading from './hooks/useLoading';
 
 const sidebarVariants = {
 	open: {
@@ -37,10 +39,12 @@ const App = () => {
 	const { loading, searchedProjects, searchString } = React.useContext(
 		FilterContext
 	);
+
 	const cardsContainerRef = React.useRef();
 	const { handleSearch } = useSearch();
 	const { handleSort } = useSort();
-
+	// const { isLoading, startLoading, stopLoading } = useLoading();
+	// const [end, setEnd] = React.useState(50);
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
 	const [showfloatingBtn, setShowFloatingBtn] = React.useState(false);
@@ -52,11 +56,15 @@ const App = () => {
 	);
 
 	const FloatingButton = (e) => {
-		if (e.target.scrollTop >= 60) {
+		if (e.target.scrollTop >= 150) {
 			setShowFloatingBtn(true);
 		} else {
 			setShowFloatingBtn(false);
 		}
+	};
+
+	const toggleSidebar = () => {
+		setShowSidebar(!showSideBar);
 	};
 
 	React.useEffect(() => {
@@ -123,7 +131,7 @@ const App = () => {
 										<Button
 											variant='outline-primary'
 											className='btn-wide-md btn-hover-text-dark mb-4 mb-sm-0 filter-row__filter'
-											onClick={() => setShowSidebar(!showSideBar)}>
+											onClick={toggleSidebar}>
 											<FunnelFill size={20} />
 											<span>Filter</span>
 										</Button>
