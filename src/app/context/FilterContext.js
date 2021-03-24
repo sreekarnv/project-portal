@@ -13,10 +13,10 @@ const DEFAULT_FILTER_STATE = {
 		DOP: false,
 		SOP: false,
 	},
-	// projectTime: {
-	// 	previousSem: false,
-	// 	upcomingSem: false,
-	// },
+	courseOffered: {
+		previous: false,
+		upcoming: false,
+	},
 	Department: {
 		Chemical: false,
 		Phoenix: false,

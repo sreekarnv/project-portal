@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { Accordion, Card, Button, CloseButton } from 'react-bootstrap';
-import { ChevronDown, ChevronUp } from 'react-bootstrap-icons';
+import { Accordion, CloseButton } from 'react-bootstrap';
 import Backdrop from '../Backdrop/Backdrop';
+import CollapseField from './CollapseField';
 import './review-sidebar.scss';
 
 const sidebarVariants = {
@@ -17,7 +17,36 @@ const sidebarVariants = {
 const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 	const [showCourse, setShowCourse] = React.useState(true);
 	const [showProf, setShowProf] = React.useState(false);
-	const [showGuide, setShowGuide] = React.useState(false);
+	const [showDesc, setShowDesc] = React.useState(true);
+	const [showPreReq, setShowPreReq] = React.useState(false);
+
+	const togglePreReq = () => {
+		setShowCourse(false);
+		setShowProf(false);
+		setShowDesc(false);
+		setShowPreReq(!showPreReq);
+	};
+
+	const toggleDesc = () => {
+		setShowCourse(false);
+		setShowProf(false);
+		setShowDesc(!showDesc);
+		setShowPreReq(false);
+	};
+
+	const toggleCourse = () => {
+		setShowCourse(!showCourse);
+		setShowProf(false);
+		setShowDesc(false);
+		setShowPreReq(false);
+	};
+
+	const toggleProf = () => {
+		setShowCourse(false);
+		setShowProf(!showProf);
+		setShowDesc(false);
+		setShowPreReq(false);
+	};
 
 	return (
 		<>
@@ -52,111 +81,80 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										? `Formal / ${project.ProjectType}`
 										: 'InFormal'}
 								</h6>
+								<h6>
+									Sem Offered:
+									<span
+										className={`text-uppercase ${
+											project.courseOffered === 'upcoming'
+												? 'text-success'
+												: 'text-danger'
+										}`}>
+										&nbsp;{project.courseOffered}
+									</span>
+								</h6>
 							</div>
-							<Accordion defaultActiveKey='0'>
-								<Card>
-									<Card.Header className='d-flex align-items-center'>
-										<Card.Title className='mb-0 mr-3'>
-											Course Reviews
-										</Card.Title>
-										<Accordion.Toggle
-											size='sm'
-											onClick={() => {
-												setShowCourse(!showCourse);
-												setShowProf(false);
-												setShowGuide(false);
-											}}
-											variant='transparent'
-											as={Button}
-											eventKey='0'>
-											{!showCourse ? (
-												<ChevronUp fill='#fff' />
+							<Accordion
+								defaultActiveKey={
+									project.courseOffered === 'upcoming' ? '0' : '2'
+								}>
+								{project.courseOffered === 'upcoming' && (
+									<>
+										<CollapseField
+											label='Prerequisites'
+											onClick={togglePreReq}
+											show={showPreReq}
+											i='0'>
+											{project.Prerequisite ? (
+												<h6 className='text-white'>{project.Prerequisite}</h6>
 											) : (
-												<ChevronDown fill='#fff' />
+												<h6 className='text-danger'>No Prerequisties</h6>
 											)}
-										</Accordion.Toggle>
-									</Card.Header>
-									<Accordion.Collapse eventKey='0'>
-										<Card.Body>
-											{project.projectReviews.length > 0 &&
-												project.projectReviews.map((el) => {
-													return <p>{el}</p>;
-												})}
-											{project.projectReviews.length === 0 && (
-												<h6 className='text-danger'>
-													No one has reviewed this course yet
+										</CollapseField>
+										<CollapseField
+											label='Description'
+											onClick={toggleDesc}
+											show={showDesc}
+											i='1'>
+											{project.ProjectDescription ? (
+												<h6 className='text-white'>
+													{project.ProjectDescription}
 												</h6>
-											)}
-										</Card.Body>
-									</Accordion.Collapse>
-								</Card>
-								<Card>
-									<Card.Header className='d-flex align-items-center'>
-										<Card.Title className='mb-0 mr-3'>
-											Professor Reviews
-										</Card.Title>
-										<Accordion.Toggle
-											size='sm'
-											onClick={() => {
-												setShowProf(!showProf);
-												setShowCourse(false);
-												setShowGuide(false);
-											}}
-											variant='transparent'
-											as={Button}
-											eventKey='1'>
-											{!showProf ? (
-												<ChevronUp fill='#fff' />
 											) : (
-												<ChevronDown fill='#fff' />
+												<h6 className='text-danger'>No Description</h6>
 											)}
-										</Accordion.Toggle>
-									</Card.Header>
-									<Accordion.Collapse eventKey='1'>
-										<Card.Body>
-											{project.profReviews.length > 0 &&
-												project.profReviews.map((el) => {
-													return <p>{el}</p>;
-												})}
-											{project.profReviews.length === 0 && (
-												<h6 className='text-danger'>
-													No one has reviewed this professor yet
-												</h6>
-											)}
-										</Card.Body>
-									</Accordion.Collapse>
-								</Card>
-								<Card>
-									<Card.Header className='d-flex align-items-center'>
-										<Card.Title className='mb-0 mr-3'>
-											Getting Started Guides
-										</Card.Title>
-										<Accordion.Toggle
-											size='sm'
-											onClick={() => {
-												setShowGuide(!showGuide);
-												setShowProf(false);
-												setShowCourse(false);
-											}}
-											variant='transparent'
-											as={Button}
-											eventKey='2'>
-											{!showGuide ? (
-												<ChevronUp fill='#fff' />
-											) : (
-												<ChevronDown fill='#fff' />
-											)}
-										</Accordion.Toggle>
-									</Card.Header>
-									<Accordion.Collapse eventKey='2'>
-										<Card.Body>
-											<h6 className='text-danger'>
-												There are currently no getting started guides available
-												for this or related domains
-											</h6>
-										</Card.Body>
-									</Accordion.Collapse>
-								</Card>
+										</CollapseField>
+									</>
+								)}
+								<CollapseField
+									label='Course Reviews'
+									onClick={toggleCourse}
+									show={showCourse}
+									i='2'>
+									{project.projectReviews.length > 0 &&
+										project.projectReviews.map((el) => {
+											return <p>{el}</p>;
+										})}
+									{project.projectReviews.length === 0 && (
+										<h6 className='text-danger'>
+											No one has reviewed this course yet
+										</h6>
+									)}
+								</CollapseField>
+								<CollapseField
+									label='Professor Reviews'
+									onClick={toggleProf}
+									show={showProf}
+									i='3'>
+									{project.profReviews.length > 0 &&
+										project.profReviews.map((el) => {
+											return <p>{el}</p>;
+										})}
+									{project.profReviews.length === 0 && (
+										<h6 className='text-danger'>
+											No one has reviewed this professor yet
+										</h6>
+									)}
+								</CollapseField>
 							</Accordion>
 						</motion.div>
 					</>

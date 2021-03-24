@@ -48,7 +48,7 @@ const App = () => {
 	const projects = searchedProjects;
 
 	const cardColors = React.useRef(
-		new Array(250).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
+		new Array(400).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
 	);
 
 	const FloatingButton = (e) => {

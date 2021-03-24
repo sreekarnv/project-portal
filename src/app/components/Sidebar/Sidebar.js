@@ -120,6 +120,26 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 
 						<div className='mb-3'>
 							<Card className='sidebar__card py-3 pr-3'>
+								<h4 className='mb-3 text-black'>Course Offered</h4>
+								<Checkbox
+									name='courseOffered-previous'
+									label='Previous Semester'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.courseOffered.previous}
+									disabled={filterOptions.isFormal.Informal}
+								/>
+								<Checkbox
+									name='courseOffered-upcoming'
+									label='Upcoming Semester'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.courseOffered.upcoming}
+									disabled={filterOptions.isFormal.Informal}
+								/>
+							</Card>
+						</div>
+
+						<div className='mb-3'>
+							<Card className='sidebar__card py-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
 								<div className='row'>
 									<div className='col-sm-6'>
@@ -160,6 +180,13 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											checked={
 												filterOptions.Department['Mechanical & Manufacturing']
 											}
+										/>
+
+										<Checkbox
+											name='Department-Mechanical'
+											label='Mechanical'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department['Mechanical']}
 										/>
 									</div>
 									<div className='col-sm-6'>
