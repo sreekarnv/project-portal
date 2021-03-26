@@ -192,28 +192,28 @@ const App = () => {
 
 											<Dropdown.Menu className='bg-dark w-100'>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'asc')}
+													onClick={(e) => handleSort(e.target.name, 'asc')}
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaDown size={20} />
 													Project Title
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'dec')}
+													onClick={(e) => handleSort(e.target.name, 'dec')}
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaUp size={20} />
 													Project Title
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'asc')}
+													onClick={(e) => handleSort(e.target.name, 'asc')}
 													name='Department'
 													className='text-light'>
 													<SortAlphaDown size={20} />
 													Department
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'dec')}
+													onClick={(e) => handleSort(e.target.name, 'dec')}
 													name='Department'
 													className='text-light'>
 													<SortAlphaUp size={20} />
