@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FilterContext } from '../context/FilterContext';
 
 const useSort = () => {
-	const { searchedProjects, setSortedProjects, searchedProjectsChain } = React.useContext(
+	const { setSortedProjects, searchedProjectsChain } = React.useContext(
 		FilterContext
 	);
 
@@ -14,7 +14,10 @@ const useSort = () => {
 	const handleSort = (target, type) => {
 		if (!searchedProjectsChain || !searchedProjectsChain.collection) return;
 
-		let result = searchedProjectsChain.copy().simplesort(target, type !== 'asc').data();
+		let result = searchedProjectsChain
+			.copy()
+			.simplesort(target, type !== 'asc')
+			.data();
 
 		setCurrentSort({
 			target: target,

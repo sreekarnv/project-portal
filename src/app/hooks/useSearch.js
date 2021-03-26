@@ -2,8 +2,6 @@ import React from 'react';
 import { FilterContext } from '../context/FilterContext';
 import { debounce } from 'lodash';
 
-// const searchFields = ['ProjectTitle', 'Professor', 'Department'];
-
 const useSearch = () => {
 	const {
 		filteredProjectsChain,
@@ -18,7 +16,6 @@ const useSearch = () => {
 		debounce(
 			() => {
 				setSearchedProjects(
-
 					searchObject(
 						value.length > searchString.length
 							? searchedProjectsChain
@@ -47,8 +44,6 @@ const useSearch = () => {
 				{ Department: query },
 			],
 		});
-
-		console.log('Search took: ' + (Date.now() - start) + 'ms');
 
 		setSearchedProjectsChain(result);
 		return result.data();

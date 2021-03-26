@@ -115,8 +115,6 @@ const FilterContextProvider = ({ children }) => {
 			}
 		});
 
-		console.log('Filtering took: ' + (Date.now() - start) + 'ms');
-
 		setFilteredProjectsChain(filteredProjects);
 		setFilteredProjects(filteredProjects.data());
 	};

@@ -258,56 +258,55 @@ const App = () => {
 											</h5>
 										)}
 									</Row>
-									<Row>
-										<div className='col-md-4 mx-sm-0 ml-0 my-auto'>
-											<p className='text-light my-0'>
-												Showing{' '}
-												<b>
-													{Math.min(
-														Math.min(itemsPerPage(), projects.length),
-														projects.length - (page - 1) * itemsPerPage()
-													)}
-												</b>{' '}
-												of {projects.length} projects
-											</p>
-										</div>
-										<Pagination
-											className={`mx-auto mx-sm-0 ml-0 ml-sm-auto mr-sm-5 mr-sm-0 ${
-												showSideBar ? 'mr-0 mr-sidebar-open' : ''
-											}`}
-											size='lg'>
-											<Pagination.Prev
-												className={`card__pagination-item ${
-													page <= 1 ? 'u-cursor-na' : ''
-												}`}
-												onClick={() => {
-													if (page > 1) {
-														handlePrevPage(page - 1);
-														setPage(page - 1);
-														cardsContainerRef.current.scrollTop = 0;
-													}
-												}}
-												disabled={page <= 1}
-											/>
-											<Pagination.Item className='card__pagination-item'>
-												{page}
-											</Pagination.Item>
-											<Pagination.Next
-												className={`card__pagination-item ${
-													projects && end >= projects.length
-														? 'u-cursor-na'
-														: ''
-												}`}
-												onClick={() => {
-													if (end < projects.length) {
-														handleNextPage(page + 1);
-														setPage(page + 1);
-														cardsContainerRef.current.scrollTop = 0;
-													}
-												}}
-											/>
-										</Pagination>
-									</Row>
+									<Container fluid={!showSideBar}>
+										<Row className='justify-content-md-between justify-content-center align-items-center'>
+											<div className='col-md-4 mx-sm-0 ml-0 my-auto my-md-0 mb-3 mb-md-0'>
+												<p className='text-light text-center my-0 text-md-right text-lg-left'>
+													Showing{' '}
+													<b>
+														{Math.min(
+															Math.min(itemsPerPage(), projects.length),
+															projects.length - (page - 1) * itemsPerPage()
+														)}
+													</b>{' '}
+													of {projects.length} projects
+												</p>
+											</div>
+
+											<Pagination size='lg' className='pr-0 pr-md-3'>
+												<Pagination.Prev
+													className={`card__pagination-item ${
+														page <= 1 ? 'u-cursor-na' : ''
+													}`}
+													onClick={() => {
+														if (page > 1) {
+															handlePrevPage(page - 1);
+															setPage(page - 1);
+															cardsContainerRef.current.scrollTop = 0;
+														}
+													}}
+													disabled={page <= 1}
+												/>
+												<Pagination.Item className='card__pagination-item'>
+													{page}
+												</Pagination.Item>
+												<Pagination.Next
+													className={`card__pagination-item ${
+														projects && end >= projects.length
+															? 'u-cursor-na'
+															: ''
+													}`}
+													onClick={() => {
+														if (end < projects.length) {
+															handleNextPage(page + 1);
+															setPage(page + 1);
+															cardsContainerRef.current.scrollTop = 0;
+														}
+													}}
+												/>
+											</Pagination>
+										</Row>
+									</Container>
 								</div>
 							</Container>
 						</motion.div>

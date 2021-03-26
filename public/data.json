@@ -2299,7 +2299,13 @@
         "ProjectType": "SOP",
         "Professor": "D Purnima ",
         "ProjectTitle": "HEAVY METAL REMOVAL",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Name": "Harsh Vashistha",
+                "Email": "f20180756@hyderabad.bits-pilani.ac.in"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2307,7 +2313,13 @@
         "ProjectType": "LOP",
         "Professor": "Suvadip Batabyal",
         "ProjectTitle": "QUANTUM ARCHITECTURE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Name": "Abhinav Bandaru",
+                "Email": "f20180236@hyderabad.bits-pilani.ac.in"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2315,7 +2327,13 @@
         "ProjectType": "DOP",
         "Professor": "Akash Chaurasiya",
         "ProjectTitle": "DEVELOPMENT OF LIPSOMAL FORMULATION FOR ANTICANCER DRUGS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Name": "Mansi Shah",
+                "Email": "f20181074@hyderabad.bits-pilani.ac.in"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2323,7 +2341,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Thota Nagaraju",
         "ProjectTitle": "DERIVATIVES USAGE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180748@hyderabad.bits-pilani.ac.in",
+                "Name": "Divya Vora"
+            }
+        ]
     },
     {
         
@@ -2332,7 +2356,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. SUMIT KUMAR CHATTERJEE",
         "ProjectTitle": "DESIGN OF HIGH SPEED ADDERS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170724@hyderabad.bits-pilani.ac.in",
+                "Name": "VELIDANDLA SRI RACHANA"
+            }
+        ]
     },
     {
         
@@ -2341,7 +2371,13 @@
         "ProjectType": "LOP",
         "Professor": "K Ram Chandra Murthy ",
         "ProjectTitle": "CFD OF WIND FLOWS OVER LOW RISE BUILDINGS ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181005@hyderabad.bits-pilani.ac.in",
+                "Name": "Nivedan Vishwanath"
+            }
+        ]
     },
     {
         
@@ -2350,7 +2386,13 @@
         "ProjectType": "SOP",
         "Professor": "Prof. KVG Chandrashekhar",
         "ProjectTitle": "PHARMACOLOGICAL ADVANCEMENT OF QUINOXLINE DERIVATIVES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180702@hyderabad.bits-pilani.ac.in",
+                "Name": "Aditya Krishna"
+            }
+        ]
     },
     {
         
@@ -2359,7 +2401,13 @@
         "ProjectType": "SOP",
         "Professor": "S.K. Sahoo",
         "ProjectTitle": "HARDWARE SECURITY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190415@hyderabad.bits-pilani.ac.in",
+                "Name": "Abhishek Revinipati"
+            }
+        ]
     },
     {
         
@@ -2368,7 +2416,13 @@
         "ProjectType": "SOP",
         "Professor": "V Vamsi Krishna Venuganti",
         "ProjectTitle": "FUNCTIONALISED NANOPARTICLES FOR DRUG DELIVERY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181068@hyderabad.bits-pilani.ac.in",
+                "Name": "Snigdha Khare"
+            }
+        ]
     },
     {
         
@@ -2377,7 +2431,13 @@
         "ProjectType": "DOP",
         "Professor": "Dushyant Kumar",
         "ProjectTitle": "INFORMATION ECONOMICS AND PERFECT BAYESIAN NASH EQUILIBRIUM",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170381@hyderabad.bits-pilani.ac.in",
+                "Name": "Vashist"
+            }
+        ]
     },
     {
         
@@ -2385,7 +2445,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "K Ram Chandra Murthy ",
         "ProjectTitle": "DSMC SIMULATION OF RAYLEIGH BENARD FLOWS IN A RAREFIED REGIME",
-       "courseOffered": "previous"  
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181005@hyderabad.bits-pilani.ac.in",
+                "Name": "Nivedan Vishwanath"
+            }
+        ]  
     },
     {
         
@@ -2394,7 +2460,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Sudha Radika ",
         "ProjectTitle": "BIOMEDICAL IMAGE PROCESSING ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180764@hyderabad.bits-pilani.ac.in",
+                "Name": "Amitesh Badkul"
+            }
+        ]  
     },
     {
         "isFormal": "Formal",
@@ -2402,7 +2474,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Swati Biswas",
         "ProjectTitle": "MECHANISM OF EMT AND THERAPEUTIC STRATEGY IN CANCER",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181086@hyderabad.bits-pilani.ac.in",
+                "Name": "Ipsita Gopal Kundu "
+            }
+        ]
     },
     {
         
@@ -2411,7 +2489,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr.Arti Dhar",
         "ProjectTitle": "THERPEUTIC ROLE OF NOVEL PEPTIDES IN CARDIOMETABOLIC SYNDROME",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181096@hyderabad.bits-pilani.ac.in",
+                "Name": "Shubham Khanuja "
+            }
+        ]
     },
     {
         
@@ -2419,7 +2503,13 @@
         "Department": "Phoenix",
         "Professor": "Dr. Alivelu Manga Parimi",
         "ProjectTitle": "KALMAN FILTER APPLICATIONS IN MICROGRIDS FOR STATE ESTIMATION AND STABILITY ISSUES ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190443@hyderabad.bits-pilani.ac.in",
+                "Name": "VISHWAS VASUKI GAUTAM"
+            }
+        ]
     },
     {
         
@@ -2428,7 +2518,13 @@
         "ProjectType": "SOP",
         "Professor": "Dr Manish Kumar",
         "ProjectTitle": "MATHEMATICAL MODELLING OF COVID-19 USING IMAGE PROCESSING TECHNIQUES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180795@hyderabad.bits-pilani.ac.in",
+                "Name": "Viral Tiwari"
+            }
+        ]
     },
     {
         
@@ -2436,7 +2532,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Pardha Saradhi G.",
         "ProjectTitle": "TWO WAY FLUID STRUCTURE INTERACTION (FSI) IN FLEXIBLE STRUCTURES WITH LOW MASS RATIOS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181005@hyderabad.bits-pilani.ac.in",
+                "Name": "Nivedan Vishwanath"
+            }
+        ]
     },
     {
         
@@ -2444,7 +2546,13 @@
         "Department": "Phoenix",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "2D MATERIALS BASED PHOTODETECTORS ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190415@hyderabad.bits-pilani.ac.in",
+                "Name": "Abhishek Revinipati"
+            }
+        ]
     },
     {
         
@@ -2453,7 +2561,13 @@
         "ProjectType": "SOP",
         "Professor": "SK Sahoo",
         "ProjectTitle": "QUANTUM CRYPTOGRAPHY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20191276@hyderabad.bits-pilani.ac.in",
+                "Name": "Sathvik Swaminathan"
+            }
+        ]
     },
     {
         
@@ -2462,7 +2576,13 @@
         "ProjectType": "LOP",
         "Professor": "Dr. Lov Kumar",
         "ProjectTitle": "SENTIMENT ANALYSIS USING ML TECHNIQUES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2471,7 +2591,13 @@
         "ProjectType": "DOP",
         "Professor": "Paresh Saxena",
         "ProjectTitle": "WORK ON MPQUIC ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2480,7 +2606,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr Subhrakanta Panda",
         "ProjectTitle": "BREAST CANCER DETECTION USING MACHINE LEARNING AND DIP",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2489,7 +2621,13 @@
         "ProjectType": "LOP",
         "Professor": "Soumya J",
         "ProjectTitle": "RISCV BASED NOC DESIGN",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2498,7 +2636,13 @@
         "ProjectType": "DOP",
         "Professor": " Dr. Nitin Kotkunde",
         "ProjectTitle": "PRODUCT DESIGN AND DEVELOPMENT STRATEGIES FOR AUTOMOTIVE APPLICATIONS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2507,7 +2651,13 @@
         "ProjectType": "SOP",
         "Professor": "Dr. ARTI DHAR",
         "ProjectTitle": "THERAPEUTIC POTENTIAL OF NOVEL MAD2 INHIBITORS IN OVARIAN CANCER",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2516,7 +2666,13 @@
         "ProjectType": "SOP",
         "Professor": "Dr. Jaideep Chaterjee",
         "ProjectTitle": "DESALINATION OF WATER USING RO",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2525,7 +2681,13 @@
         "ProjectType": "LOP",
         "Professor": "Dr. Lov Kumar",
         "ProjectTitle": "TESTING OF AI MODELS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2534,7 +2696,13 @@
         "ProjectType": "LOP",
         "Professor": "R Gururaj",
         "ProjectTitle": "IMPLEMENTING LEXICAL AND SYNTAX ANALYSERS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2543,7 +2711,13 @@
         "ProjectType": "DOP",
         "Professor": "Prof K. Srinivas Raju",
         "ProjectTitle": "DROUGHT PREDICTION USING MACHINE LEARNING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2552,7 +2726,13 @@
         "ProjectType": "DOP",
         "Professor": "Tathagata Ray",
         "ProjectTitle": "COMPUTER VISION BASED QUALITY ASSURANCE OF MECHANICAL ASSEMBLY COMPONENTS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2561,7 +2741,13 @@
         "ProjectType": "DOP",
         "Professor": "Mithun Mondal",
         "ProjectTitle": "DESIGN AND SIMULATION OF TEXTURED INSULATOR ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2569,21 +2755,39 @@
         "ProjectType": "SOP",
         "Professor": "SK Sahoo",
         "ProjectTitle": "CPS BASED SYSTEM FOR BIOMEDICAL APPLICATION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Informal",
         "Department": "Computer Science",
         "Professor": "Prof. M.B. Srinivas",
         "ProjectTitle": "CLASSIFICATION OF INAGES WITH COMPLEX BACKGROUNDS USING TRANSFORMER NETWORKS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Informal",
         "Department": "Phoenix",
         "Professor": "Syed Ershad ",
         "ProjectTitle": "STUDY OF APPROXIMATE BOOTH MULTIPLIERS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2592,7 +2796,13 @@
         "ProjectType": "SOP",
         "Professor": "PK Sahoo",
         "ProjectTitle": "COSMOLOGICAL MODELS IN MODIFIED GRAVITY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2600,7 +2810,13 @@
         "ProjectType": "LOP",
         "Professor": "Archana Srivastava ",
         "ProjectTitle": "CORPORATE AND INVESTMENT BANKING (CIB): COVID-19 IMPACT AND RECOVERY.",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2608,7 +2824,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr.Sujith R",
         "ProjectTitle": "FUELCELL",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2617,7 +2839,13 @@
         "ProjectType": "DOP",
         "Professor": "Murari Raja Raja Verma",
         "ProjectTitle": "LCA OF ENGINEERED WATER AND WASTEWATER TREATMENT PLANTS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2626,7 +2854,13 @@
         "ProjectType": "DOP",
         "Professor": "Professor Ponnalagu R N",
         "ProjectTitle": "MACHINE LEARNING METHODS FOR WATER PARAMETER ANALYSIS AND PREDICTION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2635,7 +2869,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. N.L. Bhanumurthy",
         "ProjectTitle": "AUTOMATIC COMMENT GENERATION OF CODE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2644,7 +2884,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr Runa Kumari",
         "ProjectTitle": "SMART ANTENNAS FOR AEROSPACE APPLICATIONS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2653,7 +2899,13 @@
         "ProjectType": "LOP",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "BROADBAND PHOTODETECTORS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2661,7 +2913,13 @@
         "ProjectType": "SOP",
         "Professor": "Mithun Mondal",
         "ProjectTitle": "DISSOLVED GAS ANALYSIS (DGA) IN POWER TRANSFORMERS.",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2670,7 +2928,13 @@
         "ProjectType": "DOP",
         "Professor": "SANKET GOEL",
         "ProjectTitle": "MICROFLUIDIC DEVICES FOR ENERGY HARVESTING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2678,7 +2942,13 @@
         "Department": "Physics",
         "Professor": "Dr Rahul Nigam",
         "ProjectTitle": "GUIDED STUDY IN GENERAL RELATIVITY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2686,7 +2956,13 @@
         "ProjectType": "DOP",
         "Professor": "Nirmal J",
         "ProjectTitle": "PHARMACOLIGICAL INTERVENTIONS FOR UVEITIS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2694,7 +2970,13 @@
         "ProjectType": "DOP",
         "Professor": "Sujith R",
         "ProjectTitle": "ANALYSIS OF THE HIGH STRAIN RATE DEFORMATION BEHAVIOR OF METALLIC FOAMS ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2703,7 +2985,13 @@
         "ProjectType": "DOP",
         "Professor": "Prof. Onkar Kulkarni",
         "ProjectTitle": "MEDICATION AND MANAGEMENT STRATEGIES FOR ALZHEIMER'S DISEASE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2712,7 +3000,13 @@
         "ProjectType": "DOP",
         "Professor": "Prof. Yogeeswari Perumal",
         "ProjectTitle": "MODELLING OF THERAPEUTIC AGENTS FOR ANTI SARS COV-2",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2721,7 +3015,13 @@
         "ProjectType": "SOP",
         "Professor": "Nivedita Sinha",
         "ProjectTitle": "OPTIMAL CAPITAL STRUCTURE OF LISTED FIRMS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2730,7 +3030,13 @@
         "ProjectType": "DOP",
         "Professor": "Barsha Mitra",
         "ProjectTitle": "WEBSITE FINGERPRINTING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2739,7 +3045,13 @@
         "ProjectType": "DOP",
         "Professor": "Syed Arshad Ehmed",
         "ProjectTitle": "APPROCIMATE BOOTH MULTIPLIER DESIGN",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2747,7 +3059,13 @@
         "Department": "Phoenix",
         "Professor": "Soumya J",
         "ProjectTitle": "RISC-V BASED NOC DESIGNING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2756,7 +3074,13 @@
         "ProjectType": "SOP",
         "Professor": "Sandeep Deshmukh",
         "ProjectTitle": "MACHINE LEARNING MODELS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2765,7 +3089,13 @@
         "ProjectType": "SOP",
         "Professor": "Debopam Chakraborty",
         "ProjectTitle": "STUDY OF ARITHMETIC OF ELLIPTIC CURVES AND ELLIPTIC CURVE CRYPTOGRAPHY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2774,7 +3104,13 @@
         "ProjectType": "LOP",
         "Professor": "Dr. Soumya J",
         "ProjectTitle": "ARITHMETIC BASED NETWORK ON CHIP DESIGN",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2782,7 +3118,13 @@
         "ProjectType": "DOP",
         "Professor": "Nivideta sinha",
         "ProjectTitle": "MERGER AND ACQUISITION IN PHARMACEUTICAL INDUSTRY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -2790,7 +3132,13 @@
         "ProjectType": "SOP",
         "Professor": "Amit Kumar Panda",
         "ProjectTitle": "EFFICIENT PRNG METHOD FOR HARDWARE SECURITY ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2799,7 +3147,13 @@
         "ProjectType": "SOP",
         "Professor": "Tanmay Chatterjee",
         "ProjectTitle": "TADF LIGHTS 3RD GENERATION LIGHTS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2808,7 +3162,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Pavan Kumar Penumakala",
         "ProjectTitle": "COMPUTATIONAL MODELLING OF PULTRUDED COMPOSITES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2817,7 +3177,13 @@
         "ProjectType": "SOP",
         "Professor": "N. Jalaiah",
         "ProjectTitle": "COLD THERMAL ENERGY STORAGE- A REVIEW",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2826,7 +3192,13 @@
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
         "ProjectTitle": "STOCHASTIC MODELLING OF WAVE ENERGY CONVERTER DEVICES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2834,7 +3206,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr. Nitin Kotkunde",
         "ProjectTitle": "REDESIGNING AUTOMOTIVE INTERIORS WITH AN EMPHASIS ON SUSTAINABILITY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2842,7 +3220,13 @@
         "Department": "Math",
         "Professor": "Depobam Chakraborty",
         "ProjectTitle": "ELLIPTIC CURVES AND ELLIPTIC CURVE CRYPTOGRAPHY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2851,7 +3235,13 @@
         "ProjectType": "SOP",
         "Professor": "Vivek Sharma",
         "ProjectTitle": "TECHNIQUES TO STUDY RNA AND PROTEIN INTERACTION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2860,7 +3250,13 @@
         "ProjectType": "DOP",
         "Professor": "Pardha Saradhi",
         "ProjectTitle": "FLOW INDUCED ROTATION ON A SQUARE CYLINDER MOUNTED ON A TORSION SPRING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2868,7 +3264,13 @@
         "Department": "Computer Science",
         "Professor": "Dipanjan Chakravarty",
         "ProjectTitle": "REMOTE SENSING AND SOCIO ECONOMIC INDICATORS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2877,7 +3279,13 @@
         "ProjectType": "SOP",
         "Professor": "D Purnima",
         "ProjectTitle": "EFFECT OF TREATMENT OF BIOMASS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2885,7 +3293,13 @@
         "Department": "Computer Science",
         "Professor": "Prof. DIPANJAN chakraborty",
         "ProjectTitle": "DISINFORMATION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2893,7 +3307,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith Sir",
         "ProjectTitle": "DTF COMPUTATION ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
      
     },
     {   
@@ -2902,7 +3322,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Tathagatha Ray",
         "ProjectTitle": "COMPUTER VISION BASED MECHANICAL ASSEMBLY ANALYSIS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2911,7 +3337,13 @@
         "ProjectType": "DOP",
         "Professor": "Arnab Dutta, Pankaj Kumar",
         "ProjectTitle": "BIODIESEL PRODUCTION - PLANT DESIGN AND SIMULATION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2920,7 +3352,13 @@
         "ProjectType": "SOP",
         "Professor": "Archana Srivastava",
         "ProjectTitle": "IMPACT OF COVID 19 ON ECONOMY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2929,7 +3367,13 @@
         "ProjectType": "SOP",
         "Professor": "Shreya Biswas",
         "ProjectTitle": "TRENDS IN PORTFOLIOS OF INDIAN HOUSEHOLDS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2938,7 +3382,13 @@
         "ProjectType": "SOP",
         "Professor": "KS Raju",
         "ProjectTitle": "PREDICTION OF RAINFALL IN TELANGANA USING MACHINE LEARNING ALGORITHMS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2947,7 +3397,13 @@
         "ProjectType": "SOP",
         "Professor": "Lov Kumar",
         "ProjectTitle": "SENTIMENT ANALYSIS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180527@hyderabad.bits-pilani.ac.in",
+                "Name": "Keshav Kabra"
+            }
+        ]
     },
     {
         
@@ -2956,7 +3412,13 @@
         "ProjectType": "SOP",
         "Professor": "Michael alphonse",
         "ProjectTitle": "SINGULAR INTEGRALS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170885@hyderabad.bits-pilani.ac.in",
+                "Name": "Suhas Reddy Nancherla"
+            }
+        ]
     },
     {
         
@@ -2964,7 +3426,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith R.",
         "ProjectTitle": "BALLISTIC TESTING OF METAL FOAM COMPOSITES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180983@hyderabad.bits-pilani.ac.in",
+                "Name": "Rupangi"
+            }
+        ]
     },
     {
         
@@ -2973,7 +3441,13 @@
         "ProjectType": "SOP",
         "Professor": "Manik Gupta",
         "ProjectTitle": "CONVERSATIONAL AI FOR MENTAL HEALTH",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190265@hyderabad.bits-pilani.ac.in",
+                "Name": "Anuradha Pandey"
+            }
+        ]
     },
     {
         
@@ -2981,7 +3455,13 @@
         "Department": "Phoenix",
         "Professor": "Parikshit Sir",
         "ProjectTitle": "WEARABLE SENSORS",
-            "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180384@hyderabad.bits-pilani.ac.in",
+                "Name": "Hitesh Aryan Acharya "
+            }
+        ]
     },
     {
         
@@ -2989,7 +3469,13 @@
         "Department": "Mechanical & Manufacturing",
         "Professor": "Sujith R",
         "ProjectTitle": "COMPUTATIONAL ANALYSIS OF 2D MATERIALS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181039@hyderabad.bits-pilani.ac.in",
+        "Name": "Rakesh Prashant Ladi"
+            }
+        ]
     },
     {
         
@@ -2998,7 +3484,13 @@
         "ProjectType": "LOP",
         "Professor": "D V N Sivakumar ",
         "ProjectTitle": "PRIVACY-PRESERVING MULTI-KEYWORD SEARCH OVER ENCRYPTED DATA",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180473@hyderabad.bits-pilani.ac.in",
+                "Name": "Divya Munipalle"
+            }
+        ]
     },
     {
         
@@ -3007,14 +3499,26 @@
         "ProjectType": "SOP",
         "Professor": "Sudha Radhika",
         "ProjectTitle": "IOT BASE HEMS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190391@hyderabad.bits-pilani.ac.in",
+                "Name": "Maitri Goel"
+            }
+        ]
     },
     {
         "isFormal": "Informal",
         "Department": "Mechanical & Manufacturing",
         "Professor": "Dr. Abhishek Sarkar",
         "ProjectTitle": "HUMANOID GAIT ANALYSIS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180518@hyderabad.bits-pilani.ac.in",
+                "Name": "Om Kulkarni"
+            }
+        ]
     },
     {
         
@@ -3023,7 +3527,13 @@
         "ProjectType": "DOP",
         "Professor": "D Sriram",
         "ProjectTitle": "NANO PARTICLE MODELLING FOR ALZHEIMER'S DISEASE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181079@hyderabad.bits-pilani.ac.in",
+        "Name": "Mahima Tejasvni Gupta"
+            }
+        ]
     },
     {
         
@@ -3031,7 +3541,13 @@
         "Department": "Computer Science",
         "Professor": "Manik Gupta",
         "ProjectTitle": "DEEP LEARNING FOR TIME SERIES CLASSIFICATION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20191200@hyderabad.bits-pilani.ac.in",
+        "Name": "Sathvik Bhaskarpandit"
+            }
+        ]
     },
     {
         
@@ -3040,7 +3556,13 @@
         "ProjectType": "DOP",
         "Professor": "Dipanjan Chakraborty",
         "ProjectTitle": "DISINFORMATION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20171083@hyderabad.bits-pilani.ac.in",
+                "Name": "BG Vamsi"
+            }
+        ]
     },
     {
         
@@ -3049,7 +3571,13 @@
         "ProjectType": "LOP",
         "Professor": "Dr. R.N.Ponnalagu",
         "ProjectTitle": "IMPEDANCE CONTROL OF A SPHERICAL(3 DOF) ARTICULATED MANIPULATOR",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20171348@hyderabad.bits-pilani.ac.in",
+                "Name": "Prathamesh Saraf"
+            }
+        ]
     },
     {
         
@@ -3058,7 +3586,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Arshad Javed",
         "ProjectTitle": "MOTION PLANNING AND GAIT ANALYSIS OF A QUADRUPED ROBOT ON UNEVEN TERRAINS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20171348@hyderabad.bits-pilani.ac.in",
+                "Name": "Prathamesh Saraf"
+            }
+        ]
     },
     {
         
@@ -3067,7 +3601,13 @@
         "ProjectType": "SOP",
         "Professor": "Onkar kulkarni",
         "ProjectTitle": "IMMUNOPROTEOSOME ",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180720@hyderabad.bits-pilani.ac.in",
+                "Name": "Aarushi bhomia"
+            }
+        ]
     },
     {
         
@@ -3076,7 +3616,13 @@
         "ProjectType": "SOP",
         "Professor": "Subhash Narayan Karbelkar",
         "ProjectTitle": "MANY BODY QUANTUM MECHANICS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181014@hyderabad.bits-pilani.ac.in",
+                "Name": "SVS Sai Ruthvik"
+            }
+        ]
     },
     {
         
@@ -3085,7 +3631,13 @@
         "ProjectType": "SOP",
         "Professor": "Prof. Sanket Goel",
         "ProjectTitle": "FLEXIBLE MEMRISTOR FOR NEUROMORPHIC APPLICATIONS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170959@hyderabad.bits-pilani.ac.in",
+                "Name": "Aastha Dave"
+            }
+        ]
     },
     {
         
@@ -3093,7 +3645,13 @@
         "Department": "Phoenix",
         "Professor": "Prof. Parikshit Sahatiya",
         "ProjectTitle": "LARGE AREA PRESSURE SENSOR FOR SMART FLOOR SENSOR APPLICATIONS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170959@hyderabad.bits-pilani.ac.in",
+                "Name": "Aastha Dave"
+            }
+        ]
     },
     {
         
@@ -3102,7 +3660,13 @@
         "ProjectType": "DOP",
         "Professor": "Prof. Archana Srivastava",
         "ProjectTitle": "A SECTORAL ANALYSIS OF THE EFFECT OF COVID-19 ANNOUNCEMENTS ON STOCK MARKET",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20170959@hyderabad.bits-pilani.ac.in",
+                "Name": "Aastha Dave"
+            }
+        ]
     },
     {
         
@@ -3111,16 +3675,28 @@
         "ProjectType": "SOP",
         "Professor": "Sandeep Kumar",
         "ProjectTitle": "INTELLIGENT TRANSPORT SYSTEMS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180440@hyderabad.bits-pilani.ac.in",
+        "Name": "Guru Vardhan Kancharla"
+            }
+        ]
     },
     {
         
         "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
-        "Professor": "Sharan gopal sir",
+        "Professor": "Sharan Gopal",
         "ProjectTitle": "A STUDY ON P-ADIC NUMBERS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180594@hyderabad.bits-pilani.ac.in",
+                "Name": "Suyash garg"
+            }
+        ]
     },
     {
         
@@ -3129,7 +3705,13 @@
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
         "ProjectTitle": "STOCHASTIC MODELING OF WAVE ENERGY CONVERTER DEVICE",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190850@hyderabad.bits-pilani.ac.in",
+                "Name": "KHUSHI KHANNA"
+            }
+        ]
     },
     {
         
@@ -3138,14 +3720,26 @@
         "ProjectType": "SOP",
         "Professor": "PK Sahoo",
         "ProjectTitle": "COSMOLOGICAL MODEL IN UNIFIED GRAVITY",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190869@hyderabad.bits-pilani.ac.in",
+                "Name": "Raj Tripathi"
+            }
+        ]
     },
     {
         "isFormal": "Informal",
         "Department": "Math",
         "Professor": " Pratyusha Chattopadhyay",
         "ProjectTitle": "FUNDAMENTAL GROUP",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20191031@hyderabad.bits-pilani.ac.in",
+                "Name": "Arundhati Ghose"
+            }
+        ]
     },
     {
         
@@ -3154,7 +3748,13 @@
         "ProjectType": "SOP",
         "Professor": "Santanu Koley",
         "ProjectTitle": "STOCHASTIC MODELING OF WAVE ENERGY CONVERTER DEVICES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181077@hyderabad.bits-pilani.ac.in",
+                "Name": "BATHINI THARUN KUMAR REDDY"
+            }
+        ]
     },
     {
         
@@ -3163,15 +3763,27 @@
         "ProjectType": "SOP",
         "Professor": "Dr. Pratyusha Chattopadhyay",
         "ProjectTitle": "PROPERTIES OF CLASSICAL GROUPS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20190699@hyderabad.bits-pilani.ac.in",
+                "Name": "Shriya M"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
         "Department": "Math",
         "ProjectType": "SOP",
-        "Professor": "Praveen Sir",
+        "Professor": "Praveen",
         "ProjectTitle": "ADAPTIVE LEARNING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180868@hyderabad.bits-pilani.ac.in",
+                "Name": "Abhinav"
+            }
+        ]
     },
     {
         
@@ -3180,7 +3792,13 @@
         "ProjectType": "SOP",
         "Professor": "Santanu koley ",
         "ProjectTitle": "STOCHASTIC MODELLING OF WAVE ENERGY CONVERTOR DEVICES",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180147@hyderabad.bits-pilani.ac.in",
+                "Name": "P.Prudhvi"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -3188,7 +3806,13 @@
         "ProjectType": "LOP",
         "Professor": "PTV Praveen Kumar",
         "ProjectTitle": "ADAPTIVE LEARNING",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180039@hyderabad.bits-pilani.ac.in",
+                "Name": "Vijay"
+            }
+        ]
     },
     {
         
@@ -3197,7 +3821,13 @@
         "ProjectType": "SOP",
         "Professor": "TSL Radhika",
         "ProjectTitle": "PROBLEMS IN FLUID DYNAMICS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180922@hyderabad.bits-pilani.ac.in",
+        "Name": "Kartheek Nadimpalli"
+            }
+        ]
     },
     {
         
@@ -3206,7 +3836,13 @@
         "ProjectType": "LOP",
         "Professor": "Parikshit Sahatiya",
         "ProjectTitle": "BROADBAND PHOTODETECTION",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20171719@hyderabad.bits-pilani.ac.in",
+                "Name": "Harini Raghavan"
+            }
+        ]
     },
     {
         "isFormal": "Formal",
@@ -3214,7 +3850,13 @@
         "ProjectType": "DOP",
         "Professor": "Dr. Nitin Ramesh kotkunde",
         "ProjectTitle": "LCA OF COCKPIT PARTS IN THE INDIAN AUTOMOBILE SCENARIO",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180793@hyderabad.bits-pilani.ac.in",
+        "Name": "Tanay nagar"
+            }
+        ]
     },
     {
         
@@ -3223,7 +3865,13 @@
         "ProjectType": "SOP",
         "Professor": "I Sreedhar",
         "ProjectTitle": "NANOMATERIAL ADSORBENTS IN HEAVY METAL REMOVAL",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181201@hyderabad.bits-pilani.ac.in",
+              "Name": "Samyuktha"
+            }
+        ]
     },
     {
         
@@ -3232,7 +3880,13 @@
         "ProjectType": "DOP",
         "Professor": "Pankaj Kumar & Arnab Dutta",
         "ProjectTitle": "TECHNOECONOMIC ANALYSIS AND PRODUCTION OF GREEN DIESEL",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20181201@hyderabad.bits-pilani.ac.in",
+                "Name": "Samyuktha"
+            }
+        ]
     },
     {
         
@@ -3241,6 +3895,12 @@
         "ProjectType": "SOP",
         "Professor": "Ponnalagu R N",
         "ProjectTitle": "MEASUREMENT OF AIR QUALITY PARAMETERS",
-        "courseOffered": "previous"
+        "courseOffered": "previous",
+        "students": [
+            {
+                "Email": "f20180409@hyderabad.bits-pilani.ac.in",
+                "Name": "Akshay Tomar"
+            }
+        ]
     }
 ]

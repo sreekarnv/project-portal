@@ -20,11 +20,13 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 	const [showDesc, setShowDesc] = React.useState(true);
 	const [showPreReq, setShowPreReq] = React.useState(false);
 	const [showgettingStarted, setShowGettingStarted] = React.useState(false);
+	const [showStudents, setShowStudents] = React.useState(false);
 
 	const togglePreReq = () => {
 		setShowCourse(false);
 		setShowProf(false);
 		setShowDesc(false);
+		setShowStudents(false);
 		setShowPreReq(!showPreReq);
 	};
 
@@ -33,6 +35,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 		setShowProf(false);
 		setShowDesc(!showDesc);
 		setShowPreReq(false);
+		setShowStudents(false);
 		setShowGettingStarted(false);
 	};
 
@@ -41,6 +44,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 		setShowProf(false);
 		setShowGettingStarted(false);
 		setShowDesc(false);
+		setShowStudents(false);
 		setShowPreReq(false);
 	};
 
@@ -50,10 +54,21 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 		setShowDesc(false);
 		setShowGettingStarted(false);
 		setShowPreReq(false);
+		setShowStudents(false);
 	};
 
 	const toggleGettingStarted = () => {
 		setShowGettingStarted(!showgettingStarted);
+		setShowCourse(false);
+		setShowProf(false);
+		setShowDesc(false);
+		setShowPreReq(false);
+		setShowStudents(false);
+	};
+
+	const toggleStudents = () => {
+		setShowStudents(!showStudents);
+		setShowGettingStarted(false);
 		setShowCourse(false);
 		setShowProf(false);
 		setShowDesc(false);
@@ -119,7 +134,9 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 											{project.Prerequisite ? (
 												<h6 className='text-white'>{project.Prerequisite}</h6>
 											) : (
-												<h6 className='text-danger'>This project does not need any prerequisites</h6>
+												<h6 className='text-danger'>
+													This project does not need any prerequisites
+												</h6>
 											)}
 										</CollapseField>
 										<CollapseField
@@ -132,7 +149,10 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 													{project.ProjectDescription}
 												</h6>
 											) : (
-												<h6 className='text-danger'>The professor has not provided a description for this project</h6>
+												<h6 className='text-danger'>
+													The professor has not provided a description for this
+													project
+												</h6>
 											)}
 										</CollapseField>
 									</>
@@ -178,10 +198,29 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 												project.gettingStarted
 											) : (
 												<h6 className='text-danger'>
-													There are no getting started guides currently available for this domain
+													There are no getting started guides currently
+													available for this domain
 												</h6>
 											)}
 										</CollapseField>
+
+										{project.projectReviews.length === 0 &&
+											project.profReviews.length === 0 && (
+												<CollapseField
+													label='Students Who Took The Course'
+													onClick={toggleStudents}
+													show={showStudents}
+													i='5'>
+													{project.students.map((el) => {
+														return (
+															<div>
+																<h6>{el.Name}</h6>
+																<p>{el.Email}</p>
+															</div>
+														);
+													})}
+												</CollapseField>
+											)}
 									</>
 								)}
 							</Accordion>
