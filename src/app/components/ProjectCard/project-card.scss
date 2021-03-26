@@ -101,3 +101,16 @@
 		}
 	}
 }
+
+.card__pagination-item {
+	.page-link {
+		background: #333 !important;
+		color: #fff !important;
+		cursor: pointer;
+
+		&:hover {
+			background: #fff !important;
+			color: #333 !important;
+		}
+	}
+}

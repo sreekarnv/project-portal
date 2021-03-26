@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { Row, Container, Button, Form, Dropdown } from 'react-bootstrap';
+import {
+	Row,
+	Container,
+	Button,
+	Form,
+	Dropdown,
+	Pagination,
+} from 'react-bootstrap';
 
 import {
 	FunnelFill,
@@ -19,7 +26,7 @@ import { FilterContext } from './context/FilterContext';
 import useSort from './hooks/useSort';
 import ReviewSidebar from './components/ReviewSidebar/ReviewSidebar';
 import IconButton from './components/IconButton/IconButton';
-// import useLoading from './hooks/useLoading';
+import usePagination from './hooks/usePagination';
 
 const sidebarVariants = {
 	open: {
@@ -36,20 +43,22 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects, searchString, setSearchString } = React.useContext(
+	const { loading, searchedProjects, searchString } = React.useContext(
 		FilterContext
 	);
 
 	const cardsContainerRef = React.useRef();
 	const { handleSearch } = useSearch();
 	const { handleSort } = useSort();
-	// const { isLoading, startLoading, stopLoading } = useLoading();
-	// const [end, setEnd] = React.useState(50);
+
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
 	const [showfloatingBtn, setShowFloatingBtn] = React.useState(false);
 
 	const projects = searchedProjects;
+
+	const [page, setPage] = React.useState(1);
+	const { start, end, handleNextPage, handlePrevPage } = usePagination();
 
 	const cardColors = React.useRef(
 		new Array(400).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
@@ -80,6 +89,8 @@ const App = () => {
 			</div>
 		);
 	}
+
+	console.log(`len projects `, projects);
 
 	return (
 		<>
@@ -197,7 +208,7 @@ const App = () => {
 										<AnimateSharedLayout>
 											{projects &&
 												projects.length > 0 &&
-												projects.map((el, i) => {
+												projects.slice(start, end).map((el, i) => {
 													return (
 														<motion.div
 															layout
@@ -210,7 +221,7 @@ const App = () => {
 															} col-md-6 col-sm-6 col-12`}>
 															<div>
 																<ProjectCard
-																	number={i}
+																	number={i + start}
 																	project={el}
 																	showDetails={() => setShowDetailedView(true)}
 																	showProjectDetails={setProjectDetail}
@@ -220,12 +231,47 @@ const App = () => {
 														</motion.div>
 													);
 												})}
-											{projects && projects.length === 0 && (
-												<h5 className='text-danger mt-5 mx-auto'>
-													No projects exist satisfying the given parameters
-												</h5>
-											)}
 										</AnimateSharedLayout>
+										{projects && projects.length === 0 && (
+											<h5 className='text-danger mt-5 mx-auto'>
+												No projects exist satisfying the given parameters
+											</h5>
+										)}
+									</Row>
+									<Row>
+										<Pagination
+											className='mx-auto mx-sm-0 ml-0 ml-sm-auto'
+											size='lg'>
+											<Pagination.Prev
+												className={`card__pagination-item ${
+													page <= 1 ? 'u-cursor-na' : ''
+												}`}
+												onClick={() => {
+													if (page > 1) {
+														handlePrevPage(page - 1);
+														setPage(page - 1);
+														cardsContainerRef.current.scrollTop = 0;
+													}
+												}}
+												disabled={page <= 1}
+											/>
+											<Pagination.Item className='card__pagination-item'>
+												{page}
+											</Pagination.Item>
+											<Pagination.Next
+												className={`card__pagination-item ${
+													end >= projects.length ? 'u-cursor-na' : ''
+												}`}
+												onClick={() => {
+													console.log(projects.length);
+													if (end < projects.length) {
+														handleNextPage(page + 1);
+														setPage(page + 1);
+														cardsContainerRef.current.scrollTop = 0;
+													}
+												}}
+											/>
+										</Pagination>
 									</Row>
 								</div>
 							</Container>

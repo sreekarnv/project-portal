@@ -33,13 +33,17 @@ const DEFAULT_FILTER_STATE = {
 
 const FilterContextProvider = ({ children }) => {
 	const { projects, loading } = React.useContext(ProjectContext);
-	const {projectCollection} = React.useContext(DBContext);
+	const { projectCollection } = React.useContext(DBContext);
 
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
 	const [searchedProjects, setSearchedProjects] = React.useState([]);
 
-	const [filteredProjectsChain, setFilteredProjectsChain] = React.useState(null);
-	const [searchedProjectsChain, setSearchedProjectsChain] = React.useState(null);
+	const [filteredProjectsChain, setFilteredProjectsChain] = React.useState(
+		null
+	);
+	const [searchedProjectsChain, setSearchedProjectsChain] = React.useState(
+		null
+	);
 
 	const [searchString, setSearchString] = React.useState('');
 
@@ -90,18 +94,22 @@ const FilterContextProvider = ({ children }) => {
 				false
 			);
 			if (shouldFilter) {
-				console.log(d, filteredProjects, Object.keys(subFilter).filter(key => subFilter[key]));
+				console.log(
+					d,
+					filteredProjects,
+					Object.keys(subFilter).filter((key) => subFilter[key])
+				);
 
 				const query = {};
 				query[d] = {
-					'$in': Object.keys(subFilter).filter(key => subFilter[key])
-				}
+					$in: Object.keys(subFilter).filter((key) => subFilter[key]),
+				};
 
 				filteredProjects = filteredProjects.find(query);
 			}
 		});
 
-		console.log("Filtering took: " + (Date.now() - start) + "ms");
+		console.log('Filtering took: ' + (Date.now() - start) + 'ms');
 
 		setFilteredProjectsChain(filteredProjects);
 		setFilteredProjects(filteredProjects.limit(200).data());
@@ -118,7 +126,7 @@ const FilterContextProvider = ({ children }) => {
 			setFilteredProjectsChain(chain);
 			setSearchedProjectsChain(chain);
 		}
-	}, [loading]);
+	}, [loading, projectCollection]);
 
 	return (
 		<FilterContext.Provider
@@ -137,7 +145,7 @@ const FilterContextProvider = ({ children }) => {
 				filteredProjectsChain,
 				setFilteredProjectsChain,
 				searchedProjectsChain,
-				setSearchedProjectsChain
+				setSearchedProjectsChain,
 			}}>
 			{children}
 		</FilterContext.Provider>

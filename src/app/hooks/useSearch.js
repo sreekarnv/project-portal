@@ -2,7 +2,7 @@ import React from 'react';
 import { FilterContext } from '../context/FilterContext';
 import { debounce } from 'lodash';
 
-const searchFields = ['ProjectTitle', 'Professor', 'Department'];
+// const searchFields = ['ProjectTitle', 'Professor', 'Department'];
 
 const useSearch = () => {
 	const {
@@ -11,23 +11,25 @@ const useSearch = () => {
 		setSearchedProjects,
 		searchString,
 		setSearchString,
-		setSearchedProjectsChain
+		setSearchedProjectsChain,
 	} = React.useContext(FilterContext);
 
 	const handleSearch = (value, override) => {
 		setSearchString(value);
-		
-		debounce(() => {
-			setSearchedProjects(
-				searchObject(
-					value.length > searchString.length
-						? searchedProjectsChain
-						: filteredProjectsChain,
-					value
-				)
-			);
-		}, override ? 1 : 250)();
 
+		debounce(
+			() => {
+				setSearchedProjects(
+					searchObject(
+						value.length > searchString.length
+							? searchedProjectsChain
+							: filteredProjectsChain,
+						value
+					)
+				);
+			},
+			override ? 1 : 250
+		)();
 	};
 
 	const searchObject = (data, value) => {
@@ -35,17 +37,17 @@ const useSearch = () => {
 
 		if (!data) return;
 
-		const query = {'$regex': [value, 'i']};
+		const query = { $regex: [value, 'i'] };
 
 		const result = data.find({
-			'$or': [
-				{'ProjectTitle': query},
-				{'Professor': query},
-				{'Department': query}
-			]
+			$or: [
+				{ ProjectTitle: query },
+				{ Professor: query },
+				{ Department: query },
+			],
 		});
 
-		console.log("Search took: " + (Date.now() - start) + "ms");
+		console.log('Search took: ' + (Date.now() - start) + 'ms');
 
 		setSearchedProjectsChain(result);
 		return result.data();

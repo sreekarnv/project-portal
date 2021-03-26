@@ -4,53 +4,54 @@ import * as React from 'react';
 
 export const DBContext = React.createContext();
 
-const INDEX_IDENTIFIER = "project_portal";
-const DB_IDENTIFIER = "projects.db";
-const COLLECTION_NAME = "projects";
+const INDEX_IDENTIFIER = 'project_portal';
+const DB_IDENTIFIER = 'projects.db';
+const COLLECTION_NAME = 'projects';
 
-const DBContextProvider = ({children}) => {
-    const [initComplete, setInitComplete] = React.useState(false);
-    const [dbExists, setDbExists] = React.useState(false);
-    const [projectCollection, setProjectCollection] = React.useState(null);
-    const [db, setdb] = React.useState(null);
+const idbAdapter = new LokiIndexedAdapter(INDEX_IDENTIFIER);
 
-    const dbInit = () => {
-        if(db) {
-            const collection = db.getCollection(COLLECTION_NAME);
-    
-            if(collection) {
-                setProjectCollection(collection);
-                setDbExists(true);
-            } else {
-                setProjectCollection(db.addCollection(COLLECTION_NAME));
-            }
-            setInitComplete(true);
-        }
-    }
+const DBContextProvider = ({ children }) => {
+	const [initComplete, setInitComplete] = React.useState(false);
+	const [dbExists, setDbExists] = React.useState(false);
+	const [projectCollection, setProjectCollection] = React.useState(null);
+	const [db, setdb] = React.useState(null);
 
-    const idbAdapter = new LokiIndexedAdapter(INDEX_IDENTIFIER);
+	const dbInit = () => {
+		if (db) {
+			const collection = db.getCollection(COLLECTION_NAME);
 
-    React.useEffect(() => {
-        let tempDB = new loki(DB_IDENTIFIER, {
-            adapter: idbAdapter,
-            autoload: true,
-        });
-        
-        setdb(tempDB);
-    }, []);
+			if (collection) {
+				setProjectCollection(collection);
+				setDbExists(true);
+			} else {
+				setProjectCollection(db.addCollection(COLLECTION_NAME));
+			}
+			setInitComplete(true);
+		}
+	};
 
-    React.useEffect(dbInit, [db]);
+	React.useEffect(() => {
+		let tempDB = new loki(DB_IDENTIFIER, {
+			adapter: idbAdapter,
+			autoload: true,
+		});
 
-    return (
-        <DBContext.Provider value={{
-            db,
-            initComplete,
-            dbExists,
-            projectCollection
-        }}>
-            {children}
-        </DBContext.Provider>
-    );
+		setdb(tempDB);
+	}, []);
+
+	React.useEffect(dbInit, [db]);
+
+	return (
+		<DBContext.Provider
+			value={{
+				db,
+				initComplete,
+				dbExists,
+				projectCollection,
+			}}>
+			{children}
+		</DBContext.Provider>
+	);
 };
 
 export default DBContextProvider;
