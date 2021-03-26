@@ -32,7 +32,7 @@ const DEFAULT_FILTER_STATE = {
 };
 
 const FilterContextProvider = ({ children }) => {
-	const { projects, loading } = React.useContext(ProjectContext);
+	const { loading } = React.useContext(ProjectContext);
 	const { projectCollection } = React.useContext(DBContext);
 
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
@@ -71,7 +71,7 @@ const FilterContextProvider = ({ children }) => {
 
 		setFilteredProjectsChain(JSON.parse(JSON.stringify(chain)));
 		setSearchedProjectsChain(JSON.parse(JSON.stringify(chain)));
-	}
+	};
 
 	const resetFilterOptions = () => {
 		setFilterOptions({
@@ -126,6 +126,7 @@ const FilterContextProvider = ({ children }) => {
 			resetArrayStates();
 			applyFilter();
 		}
+		// eslint-disable-next-line
 	}, [loading, projectCollection]);
 
 	return (

@@ -43,9 +43,13 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects, searchString, sortedProjects, filteredProjects } = React.useContext(
-		FilterContext
-	);
+	const {
+		loading,
+		searchedProjects,
+		searchString,
+		sortedProjects,
+		filteredProjects,
+	} = React.useContext(FilterContext);
 
 	const cardsContainerRef = React.useRef();
 	const { handleSearch } = useSearch();
@@ -58,7 +62,13 @@ const App = () => {
 	const projects = sortedProjects;
 
 	const [page, setPage] = React.useState(1);
-	const { start, end, handleNextPage, handlePrevPage, itemsPerPage } = usePagination();
+	const {
+		start,
+		end,
+		handleNextPage,
+		handlePrevPage,
+		itemsPerPage,
+	} = usePagination();
 
 	const cardColors = React.useRef(
 		new Array(400).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
@@ -84,10 +94,14 @@ const App = () => {
 
 	React.useEffect(() => {
 		handleSort(currentSort.target, currentSort.type);
+
+		// eslint-disable-next-line
 	}, [searchedProjects]);
 
 	React.useEffect(() => {
 		handleSearch(searchString, true);
+
+		// eslint-disable-next-line
 	}, [filteredProjects]);
 
 	if (loading) {
@@ -245,13 +259,22 @@ const App = () => {
 										)}
 									</Row>
 									<Row>
-										<div className="col-md-4 mx-sm-0 ml-0 my-auto">
-											<p className="text-light my-0">
-												Showing <b>{Math.min(Math.min(itemsPerPage(), projects.length), projects.length - (page - 1) * itemsPerPage())}</b> of {projects.length} projects
+										<div className='col-md-4 mx-sm-0 ml-0 my-auto'>
+											<p className='text-light my-0'>
+												Showing{' '}
+												<b>
+													{Math.min(
+														Math.min(itemsPerPage(), projects.length),
+														projects.length - (page - 1) * itemsPerPage()
+													)}
+												</b>{' '}
+												of {projects.length} projects
 											</p>
 										</div>
 										<Pagination
-											className='mx-auto mx-sm-0 ml-0 ml-sm-auto'
+											className={`mx-auto mx-sm-0 ml-0 ml-sm-auto mr-sm-5 mr-sm-0 ${
+												showSideBar ? 'mr-0 mr-sidebar-open' : ''
+											}`}
 											size='lg'>
 											<Pagination.Prev
 												className={`card__pagination-item ${
@@ -271,7 +294,9 @@ const App = () => {
 											</Pagination.Item>
 											<Pagination.Next
 												className={`card__pagination-item ${
-													end >= projects.length ? 'u-cursor-na' : ''
+													projects && end >= projects.length
+														? 'u-cursor-na'
+														: ''
 												}`}
 												onClick={() => {
 													if (end < projects.length) {
