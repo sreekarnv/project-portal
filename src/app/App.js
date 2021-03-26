@@ -36,7 +36,7 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects, searchString } = React.useContext(
+	const { loading, searchedProjects, searchString, setSearchString } = React.useContext(
 		FilterContext
 	);
 

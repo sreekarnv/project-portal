@@ -6,39 +6,49 @@ const searchFields = ['ProjectTitle', 'Professor', 'Department'];
 
 const useSearch = () => {
 	const {
-		filteredProjects,
-		searchedProjects,
+		filteredProjectsChain,
+		searchedProjectsChain,
 		setSearchedProjects,
 		searchString,
 		setSearchString,
+		setSearchedProjectsChain
 	} = React.useContext(FilterContext);
 
-	const handleSearch = (value) => {
+	const handleSearch = (value, override) => {
 		setSearchString(value);
+		
 		debounce(() => {
 			setSearchedProjects(
 				searchObject(
 					value.length > searchString.length
-						? searchedProjects
-						: filteredProjects,
+						? searchedProjectsChain
+						: filteredProjectsChain,
 					value
 				)
 			);
-		}, 850)();
+		}, override ? 1 : 250)();
+
 	};
 
 	const searchObject = (data, value) => {
+		const start = Date.now();
+
 		if (!data) return;
 
-		return data.filter((project) => {
-			return searchFields.reduce(
-				(val, field) =>
-					val ||
-					(project[field] &&
-						project[field].toLowerCase().includes(value.toLowerCase())),
-				false
-			);
+		const query = {'$regex': [value, 'i']};
+
+		const result = data.find({
+			'$or': [
+				{'ProjectTitle': query},
+				{'Professor': query},
+				{'Department': query}
+			]
 		});
+
+		console.log("Search took: " + (Date.now() - start) + "ms");
+
+		setSearchedProjectsChain(result);
+		return result.data();
 	};
 
 	return {

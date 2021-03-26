@@ -218,7 +218,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 								onClick={() => {
 									first.current = false;
 									applyFilter();
-									handleSearch(searchString);
+									handleSearch(searchString, true);
 									setShowSidebar(false);
 								}}
 								className='btn-block btn-outline'>

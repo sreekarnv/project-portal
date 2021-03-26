@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ProjectContext } from './ProjectContext';
+import { DBContext } from './dbContext';
 
 export const FilterContext = React.createContext();
 
@@ -32,9 +33,16 @@ const DEFAULT_FILTER_STATE = {
 
 const FilterContextProvider = ({ children }) => {
 	const { projects, loading } = React.useContext(ProjectContext);
+	const {projectCollection} = React.useContext(DBContext);
+
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
 	const [searchedProjects, setSearchedProjects] = React.useState([]);
+
+	const [filteredProjectsChain, setFilteredProjectsChain] = React.useState(null);
+	const [searchedProjectsChain, setSearchedProjectsChain] = React.useState(null);
+
 	const [searchString, setSearchString] = React.useState('');
+
 	const [filterOptions, setFilterOptions] = React.useState({
 		...DEFAULT_FILTER_STATE,
 		isFormal: {
@@ -71,7 +79,9 @@ const FilterContextProvider = ({ children }) => {
 	};
 
 	const applyFilter = () => {
-		let filteredProjects = projects;
+		const start = Date.now();
+
+		let filteredProjects = projectCollection.chain().find();
 
 		Object.keys(filterOptions).forEach((d) => {
 			const subFilter = filterOptions[d];
@@ -80,34 +90,35 @@ const FilterContextProvider = ({ children }) => {
 				false
 			);
 			if (shouldFilter) {
-				filteredProjects = filteredProjects.filter((project) => {
-					let include = false;
+				console.log(d, filteredProjects, Object.keys(subFilter).filter(key => subFilter[key]));
 
-					Object.keys(subFilter)
-						.filter((key) => subFilter[key])
-						.forEach((key) => {
-							if (
-								project[d] &&
-								project[d].toLowerCase() === key.toLowerCase()
-							) {
-								include = true;
-							}
-						});
+				const query = {};
+				query[d] = {
+					'$in': Object.keys(subFilter).filter(key => subFilter[key])
+				}
 
-					return include;
-				});
+				filteredProjects = filteredProjects.find(query);
 			}
 		});
 
-		setFilteredProjects(filteredProjects);
+		console.log("Filtering took: " + (Date.now() - start) + "ms");
+
+		setFilteredProjectsChain(filteredProjects);
+		setFilteredProjects(filteredProjects.limit(200).data());
 	};
 
 	React.useEffect(() => {
-		if (!loading && projects) {
-			setFilteredProjects(projects);
-			setSearchedProjects(projects);
+		if (!loading) {
+			const chain = projectCollection.chain().find();
+			const data = chain.limit(200).data();
+
+			setFilteredProjects(data);
+			setSearchedProjects(data);
+
+			setFilteredProjectsChain(chain);
+			setSearchedProjectsChain(chain);
 		}
-	}, [loading, projects]);
+	}, [loading]);
 
 	return (
 		<FilterContext.Provider
@@ -123,6 +134,10 @@ const FilterContextProvider = ({ children }) => {
 				setSearchedProjects,
 				searchString,
 				setSearchString,
+				filteredProjectsChain,
+				setFilteredProjectsChain,
+				searchedProjectsChain,
+				setSearchedProjectsChain
 			}}>
 			{children}
 		</FilterContext.Provider>
