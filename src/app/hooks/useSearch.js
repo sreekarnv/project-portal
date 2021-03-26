@@ -31,7 +31,7 @@ const useSearch = () => {
 	};
 
 	const searchObject = (data, value) => {
-		const start = Date.now();
+		// const start = Date.now();
 
 		if (!data) return;
 
