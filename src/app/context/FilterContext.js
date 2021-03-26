@@ -16,7 +16,7 @@ const DEFAULT_FILTER_STATE = {
 	},
 	courseOffered: {
 		previous: false,
-		upcoming: false,
+		upcoming: true,
 	},
 	Department: {
 		Chemical: false,
@@ -37,6 +37,7 @@ const FilterContextProvider = ({ children }) => {
 
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
 	const [searchedProjects, setSearchedProjects] = React.useState([]);
+	const [sortedProjects, setSortedProjects] = React.useState([]);
 
 	const [filteredProjectsChain, setFilteredProjectsChain] = React.useState(
 		null
@@ -60,6 +61,18 @@ const FilterContextProvider = ({ children }) => {
 		},
 	});
 
+	const resetArrayStates = () => {
+		const chain = projectCollection.chain().find();
+		const data = chain.data();
+
+		setFilteredProjects(JSON.parse(JSON.stringify(data)));
+		setSearchedProjects(JSON.parse(JSON.stringify(data)));
+		setSortedProjects(JSON.parse(JSON.stringify(data)));
+
+		setFilteredProjectsChain(JSON.parse(JSON.stringify(chain)));
+		setSearchedProjectsChain(JSON.parse(JSON.stringify(chain)));
+	}
+
 	const resetFilterOptions = () => {
 		setFilterOptions({
 			...DEFAULT_FILTER_STATE,
@@ -74,8 +87,7 @@ const FilterContextProvider = ({ children }) => {
 			},
 		});
 
-		setFilteredProjects(projects);
-		setSearchedProjects(projects);
+		resetArrayStates();
 	};
 
 	const updateFilterOptions = (newFilterOptions) => {
@@ -94,12 +106,6 @@ const FilterContextProvider = ({ children }) => {
 				false
 			);
 			if (shouldFilter) {
-				console.log(
-					d,
-					filteredProjects,
-					Object.keys(subFilter).filter((key) => subFilter[key])
-				);
-
 				const query = {};
 				query[d] = {
 					$in: Object.keys(subFilter).filter((key) => subFilter[key]),
@@ -112,19 +118,13 @@ const FilterContextProvider = ({ children }) => {
 		console.log('Filtering took: ' + (Date.now() - start) + 'ms');
 
 		setFilteredProjectsChain(filteredProjects);
-		setFilteredProjects(filteredProjects.limit(200).data());
+		setFilteredProjects(filteredProjects.data());
 	};
 
 	React.useEffect(() => {
 		if (!loading) {
-			const chain = projectCollection.chain().find();
-			const data = chain.limit(200).data();
-
-			setFilteredProjects(data);
-			setSearchedProjects(data);
-
-			setFilteredProjectsChain(chain);
-			setSearchedProjectsChain(chain);
+			resetArrayStates();
+			applyFilter();
 		}
 	}, [loading, projectCollection]);
 
@@ -142,6 +142,8 @@ const FilterContextProvider = ({ children }) => {
 				setSearchedProjects,
 				searchString,
 				setSearchString,
+				sortedProjects,
+				setSortedProjects,
 				filteredProjectsChain,
 				setFilteredProjectsChain,
 				searchedProjectsChain,

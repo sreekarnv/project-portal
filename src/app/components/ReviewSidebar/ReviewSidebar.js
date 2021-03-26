@@ -88,13 +88,8 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 							</h3>
 							<div className='review-sidebar__projectType'>
 								<h5 className='text-white'>{project.Professor}</h5>
-								<h6 className='text-primary'>
-									{project.isFormal === 'Formal'
-										? `Formal / ${project.ProjectType}`
-										: 'InFormal'}
-								</h6>
 								<h6>
-									Sem Offered:
+									Semester Offered:
 									<span
 										className={`text-uppercase ${
 											project.courseOffered === 'upcoming'
@@ -103,6 +98,11 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										}`}>
 										&nbsp;{project.courseOffered}
 									</span>
+								</h6>
+								<h6 className='text-primary'>
+									{project.isFormal === 'Formal'
+										? `Formal / ${project.ProjectType}`
+										: 'Informal'}
 								</h6>
 							</div>
 							<Accordion
@@ -119,7 +119,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 											{project.Prerequisite ? (
 												<h6 className='text-white'>{project.Prerequisite}</h6>
 											) : (
-												<h6 className='text-danger'>No Prerequisties</h6>
+												<h6 className='text-danger'>This project does not need any prerequisites</h6>
 											)}
 										</CollapseField>
 										<CollapseField
@@ -132,7 +132,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 													{project.ProjectDescription}
 												</h6>
 											) : (
-												<h6 className='text-danger'>No Description</h6>
+												<h6 className='text-danger'>The professor has not provided a description for this project</h6>
 											)}
 										</CollapseField>
 									</>
@@ -178,7 +178,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 												project.gettingStarted
 											) : (
 												<h6 className='text-danger'>
-													No one getting started guides
+													There are no getting started guides currently available for this domain
 												</h6>
 											)}
 										</CollapseField>

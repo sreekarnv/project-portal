@@ -1,21 +1,25 @@
 import React from 'react';
 
+const ITEMS_PER_PAGE = 36;
+
 const usePagination = () => {
 	const [start, setStart] = React.useState(0);
-	const [end, setEnd] = React.useState(37);
+	const [end, setEnd] = React.useState(ITEMS_PER_PAGE);
 
 	const handleNextPage = (page) => {
 		const prevEnd = end;
-		setEnd(37 * page);
+		setEnd(ITEMS_PER_PAGE * page);
 		setStart(prevEnd);
 	};
 
 	const handlePrevPage = (page) => {
-		setEnd(37 * page);
-		setStart(37 * (page - 1));
+		setEnd(ITEMS_PER_PAGE * page);
+		setStart(ITEMS_PER_PAGE * (page - 1));
 	};
 
-	return { start, end, handleNextPage, handlePrevPage };
+	const itemsPerPage = () => ITEMS_PER_PAGE;
+
+	return { start, end, handleNextPage, handlePrevPage, itemsPerPage };
 };
 
 export default usePagination;

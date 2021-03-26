@@ -13,43 +13,33 @@ import { ReactComponent as PhysicsIcon } from './../../../assets/physics.svg';
 import './icon.scss';
 
 const Icon = ({ icon }) => {
-	if (icon === 'Chemical' || icon === 'Chemistry') {
-		return <ChemicalIcon className='icon' />;
+	switch(icon) {
+		case 'Chemical':
+		case 'Chemistry':
+			return <ChemicalIcon className='icon' />;
+		case 'Biology':
+		case 'Biological Science':
+		case 'Biological Sciences':
+			return <BioIcon className='icon' />;
+		case 'Civil':
+			return <CivilIcon className='icon' />;
+		case 'Physics':
+			return <PhysicsIcon className='icon' />;
+		case 'Computer Science':
+			return <CompScIcon className='icon' />;
+		case 'Economics':
+			return <EcoIcon className='icon' />;
+		case 'Mechanical & Manufacturing':
+		case 'Mechanical':
+			return <ManufactureIcon className='icon' />;
+		case 'Pharmacy':
+			return <PharmaIcon className='icon' />;
+		case 'Math':
+		case 'Mathematics':
+			return <MathIcon className='icon' />;
+		default:
+			return <PhoenixIcon className='icon' />;
 	}
-
-	if (icon === 'Biology' || icon === 'Biological Science') {
-		return <BioIcon className='icon' />;
-	}
-
-	if (icon === 'Civil') {
-		return <CivilIcon className='icon' />;
-	}
-
-	if (icon === 'Physics') {
-		return <PhysicsIcon className='icon' />;
-	}
-
-	if (icon === 'Computer Science') {
-		return <CompScIcon className='icon' />;
-	}
-
-	if (icon === 'Economics') {
-		return <EcoIcon className='icon' />;
-	}
-
-	if (icon === 'Mechanical & Manufacturing') {
-		return <ManufactureIcon className='icon' />;
-	}
-
-	if (icon === 'Pharmacy') {
-		return <PharmaIcon className='icon' />;
-	}
-
-	if (icon === 'Math') {
-		return <MathIcon className='icon' />;
-	}
-
-	return <PhoenixIcon className='icon' />;
 };
 
 export default Icon;

@@ -43,22 +43,22 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects, searchString } = React.useContext(
+	const { loading, searchedProjects, searchString, sortedProjects, filteredProjects } = React.useContext(
 		FilterContext
 	);
 
 	const cardsContainerRef = React.useRef();
 	const { handleSearch } = useSearch();
-	const { handleSort } = useSort();
+	const { handleSort, currentSort } = useSort();
 
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
 	const [showfloatingBtn, setShowFloatingBtn] = React.useState(false);
 
-	const projects = searchedProjects;
+	const projects = sortedProjects;
 
 	const [page, setPage] = React.useState(1);
-	const { start, end, handleNextPage, handlePrevPage } = usePagination();
+	const { start, end, handleNextPage, handlePrevPage, itemsPerPage } = usePagination();
 
 	const cardColors = React.useRef(
 		new Array(400).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
@@ -82,6 +82,14 @@ const App = () => {
 		}
 	}, [showDetailedView]);
 
+	React.useEffect(() => {
+		handleSort(currentSort.target, currentSort.type);
+	}, [searchedProjects]);
+
+	React.useEffect(() => {
+		handleSearch(searchString, true);
+	}, [filteredProjects]);
+
 	if (loading) {
 		return (
 			<div className='vh-100 bg-dark d-flex justify-content-center align-items-center'>
@@ -89,8 +97,6 @@ const App = () => {
 			</div>
 		);
 	}
-
-	console.log(`len projects `, projects);
 
 	return (
 		<>
@@ -239,6 +245,11 @@ const App = () => {
 										)}
 									</Row>
 									<Row>
+										<div className="col-md-4 mx-sm-0 ml-0 my-auto">
+											<p className="text-light my-0">
+												Showing <b>{Math.min(Math.min(itemsPerPage(), projects.length), projects.length - (page - 1) * itemsPerPage())}</b> of {projects.length} projects
+											</p>
+										</div>
 										<Pagination
 											className='mx-auto mx-sm-0 ml-0 ml-sm-auto'
 											size='lg'>
@@ -263,7 +274,6 @@ const App = () => {
 													end >= projects.length ? 'u-cursor-na' : ''
 												}`}
 												onClick={() => {
-													console.log(projects.length);
 													if (end < projects.length) {
 														handleNextPage(page + 1);
 														setPage(page + 1);

@@ -15,11 +15,10 @@ const useSearch = () => {
 	} = React.useContext(FilterContext);
 
 	const handleSearch = (value, override) => {
-		setSearchString(value);
-
 		debounce(
 			() => {
 				setSearchedProjects(
+
 					searchObject(
 						value.length > searchString.length
 							? searchedProjectsChain
@@ -30,6 +29,8 @@ const useSearch = () => {
 			},
 			override ? 1 : 250
 		)();
+
+		setSearchString(value);
 	};
 
 	const searchObject = (data, value) => {
@@ -39,7 +40,7 @@ const useSearch = () => {
 
 		const query = { $regex: [value, 'i'] };
 
-		const result = data.find({
+		const result = data.copy().find({
 			$or: [
 				{ ProjectTitle: query },
 				{ Professor: query },

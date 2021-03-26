@@ -42,6 +42,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 			newFilterOptions.isFormal.Informal = false;
 		}
 
+		if(newFilterOptions.courseOffered.previous && subFilter === 'upcoming') {
+			newFilterOptions.courseOffered.previous = false;
+		} else if (newFilterOptions.courseOffered.upcoming && subFilter === 'previous') {
+			newFilterOptions.courseOffered.upcoming = false;
+		}
+
 		newFilterOptions[key][subFilter] = value;
 
 		updateFilterOptions(newFilterOptions);
@@ -185,7 +191,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 										<Checkbox
 											name='Department-Mechanical'
 											label='Mechanical'
-											onChange={(e) => handleFilter(e)}
+											onChange={(e) => handleFilter(e.target.name)}
 											checked={filterOptions.Department['Mechanical']}
 										/>
 									</div>
@@ -193,19 +199,19 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 										<Checkbox
 											name='Department-Phoenix'
 											label='Phoenix'
-											onChange={(e) => handleFilter(e)}
+											onChange={(e) => handleFilter(e.target.name)}
 											checked={filterOptions.Department.Phoenix}
 										/>
 										<Checkbox
 											name='Department-Math'
 											label='Math'
-											onChange={(e) => handleFilter(e)}
+											onChange={(e) => handleFilter(e.target.name)}
 											checked={filterOptions.Department.Math}
 										/>
 										<Checkbox
 											name='Department-Civil'
 											label='Civil'
-											onChange={(e) => handleFilter(e)}
+											onChange={(e) => handleFilter(e.target.name)}
 											checked={filterOptions.Department.Civil}
 										/>
 									</div>
@@ -218,7 +224,6 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 								onClick={() => {
 									first.current = false;
 									applyFilter();
-									handleSearch(searchString, true);
 									setShowSidebar(false);
 								}}
 								className='btn-block btn-outline'>

@@ -14,7 +14,7 @@ body {
 	font-family: 'Nunito', sans-serif !important;
 	width: 100vw !important;
 	height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .custom-control {
@@ -118,5 +118,19 @@ body {
 		@include media-breakpoint-up(md) {
 			grid-column: 7 / 11;
 		}
+	}
+}
+
+.pagination {
+
+	padding-right: 1.25rem;
+
+	.card__pagination-item {
+		border-radius: 0;
+
+		.page-link {
+			border-radius: 0 !important;
+		}
+
 	}
 }
