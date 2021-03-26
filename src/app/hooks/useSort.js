@@ -14,7 +14,7 @@ const useSort = () => {
 	const handleSort = (target, type) => {
 		if (!searchedProjectsChain || !searchedProjectsChain.collection) return;
 
-		let result = searchedProjectsChain.copy().simplesort('ProjectTitle', type !== 'asc').data();
+		let result = searchedProjectsChain.copy().simplesort(target, type !== 'asc').data();
 
 		setCurrentSort({
 			target: target,
