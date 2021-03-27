@@ -68,6 +68,7 @@ const App = () => {
 		handleNextPage,
 		handlePrevPage,
 		itemsPerPage,
+		resetPagination,
 	} = usePagination();
 
 	const cardColors = React.useRef(
@@ -105,7 +106,9 @@ const App = () => {
 	}, [filteredProjects]);
 
 	React.useEffect(() => {
-		setPage(1);
+		resetPagination();
+
+		// eslint-disable-next-line
 	}, [sortedProjects]);
 
 	if (loading) {

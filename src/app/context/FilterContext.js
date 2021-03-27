@@ -96,7 +96,7 @@ const FilterContextProvider = ({ children }) => {
 	};
 
 	const applyFilter = () => {
-		const start = Date.now();
+		// const start = Date.now();
 
 		let filteredProjects = projectCollection.chain().find();
 

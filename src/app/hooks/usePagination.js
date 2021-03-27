@@ -17,9 +17,21 @@ const usePagination = () => {
 		setStart(ITEMS_PER_PAGE * (page - 1));
 	};
 
+	const resetPagination = () => {
+		setStart(0);
+		setEnd(36);
+	};
+
 	const itemsPerPage = () => ITEMS_PER_PAGE;
 
-	return { start, end, handleNextPage, handlePrevPage, itemsPerPage };
+	return {
+		start,
+		end,
+		handleNextPage,
+		handlePrevPage,
+		itemsPerPage,
+		resetPagination,
+	};
 };
 
 export default usePagination;
