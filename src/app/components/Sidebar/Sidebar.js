@@ -211,6 +211,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											checked={filterOptions.Department.Math}
 										/>
 										<Checkbox
+											name='Department-Chemistry'
+											label='Chemistry'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Chemistry}
+										/>
+										<Checkbox
 											name='Department-Civil'
 											label='Civil'
 											onChange={(e) => handleFilter(e)}
