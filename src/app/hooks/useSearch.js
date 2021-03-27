@@ -31,11 +31,9 @@ const useSearch = () => {
 	};
 
 	const searchObject = (data, value) => {
-		// const start = Date.now();
+		if (!data || !data.copy) return;
 
-		if (!data) return;
-
-		const query = { $regex: [value, 'i'] };
+		const query = { $regex: [escape(value), 'i'] };
 
 		const result = data.copy().find({
 			$or: [

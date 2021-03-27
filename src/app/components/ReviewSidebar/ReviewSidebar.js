@@ -207,15 +207,14 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 										{project.projectReviews.length === 0 &&
 											project.profReviews.length === 0 && (
 												<CollapseField
-													label='Students Who Took The Course'
+													label='Contact'
 													onClick={toggleStudents}
 													show={showStudents}
 													i='5'>
 													{project.students.map((el) => {
 														return (
 															<div>
-																<h6>{el.Name}</h6>
-																<p>{el.Email}</p>
+																<h6>{el.Name} - {el.Email.slice(0,9)}</h6>
 															</div>
 														);
 													})}

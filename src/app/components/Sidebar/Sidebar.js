@@ -129,7 +129,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 								<h4 className='mb-3 text-black'>Course Offered</h4>
 								<Checkbox
 									name='courseOffered-previous'
-									label='Previous Semester'
+									label='Previous Semesters'
 									onChange={(e) => handleFilter(e)}
 									checked={filterOptions.courseOffered.previous}
 									disabled={filterOptions.isFormal.Informal}
