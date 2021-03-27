@@ -27,6 +27,10 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 	}, [filteredProjects]);
 
 	const handleFilter = (e) => {
+		console.log(e);
+
+		if(!e || !e.target) return;
+
 		const key = e.target.name.split('-')[0];
 		const subFilter = e.target.name.split('-')[1];
 		const value = e.target.checked;
@@ -70,7 +74,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 
 					<Form>
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Project Types</h4>
 								<Checkbox
 									name='isFormal-Formal'
@@ -98,7 +102,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 						</div>
 
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Course Types</h4>
 								<Checkbox
 									name='ProjectType-LOP'
@@ -125,27 +129,25 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 						</div>
 
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Course Offered</h4>
 								<Checkbox
 									name='courseOffered-previous'
 									label='Previous Semesters'
 									onChange={(e) => handleFilter(e)}
 									checked={filterOptions.courseOffered.previous}
-									disabled={filterOptions.isFormal.Informal}
 								/>
 								<Checkbox
 									name='courseOffered-upcoming'
 									label='Upcoming Semester'
 									onChange={(e) => handleFilter(e)}
 									checked={filterOptions.courseOffered.upcoming}
-									disabled={filterOptions.isFormal.Informal}
 								/>
 							</Card>
 						</div>
 
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
 								<div className='row'>
 									<div className='col-sm-6'>
@@ -191,7 +193,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 										<Checkbox
 											name='Department-Mechanical'
 											label='Mechanical'
-											onChange={(e) => handleFilter(e.target.name)}
+											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department['Mechanical']}
 										/>
 									</div>
@@ -199,26 +201,26 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 										<Checkbox
 											name='Department-Phoenix'
 											label='Phoenix'
-											onChange={(e) => handleFilter(e.target.name)}
+											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department.Phoenix}
 										/>
 										<Checkbox
 											name='Department-Math'
 											label='Math'
-											onChange={(e) => handleFilter(e.target.name)}
+											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department.Math}
 										/>
 										<Checkbox
 											name='Department-Civil'
 											label='Civil'
-											onChange={(e) => handleFilter(e.target.name)}
+											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department.Civil}
 										/>
 									</div>
 								</div>
 							</Card>
 						</div>
-						<div className='card sidebar__card py-4 px-2 b-0 u-bb-none'>
+						<div className='card sidebar__card pt-4 px-2 b-0 u-bb-none'>
 							<Button
 								variant='outline-primary'
 								onClick={() => {

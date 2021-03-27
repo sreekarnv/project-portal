@@ -71,7 +71,7 @@ const ProjectCard = ({
 						style={{ fontWeight: 'bold' }}
 						className='text-uppercase mb-4'>
 						{project.courseOffered === 'upcoming'
-							? 'Offered in SEM 2 2021'
+							? 'Offered in SEM 2, 2021'
 							: 'Previously Offered'}
 					</Card.Subtitle>
 
