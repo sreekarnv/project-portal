@@ -104,6 +104,10 @@ const App = () => {
 		// eslint-disable-next-line
 	}, [filteredProjects]);
 
+	React.useEffect(() => {
+		setPage(1);
+	}, [sortedProjects]);
+
 	if (loading) {
 		return (
 			<div className='vh-100 bg-dark d-flex justify-content-center align-items-center'>
