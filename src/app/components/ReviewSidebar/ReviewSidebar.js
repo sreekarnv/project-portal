@@ -204,8 +204,7 @@ const ReviewSidebar = ({ project, showDetailedView, setShowDetailedView }) => {
 											)}
 										</CollapseField>
 
-										{project.projectReviews.length === 0 &&
-											project.profReviews.length === 0 && (
+										{(
 												<CollapseField
 													label='Contact'
 													onClick={toggleStudents}
