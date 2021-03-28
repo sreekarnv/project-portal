@@ -84,24 +84,11 @@
             ]
         },
         {
-            "ProjectTitle": "RISC-V based NoC designing",
-            "Professor": "Soumya J",
-            "review": [
-                "Ma'am will be very busy. You will work with the PhD scholars most of the time"
-            ]
-        },
-        {
             "ProjectTitle": "Humanoid Gait Analysis",
             "Professor": "Dr. Abhishek Sarkar",
             "review": [
                 "Great prof to do project under."
             ]
-        }
-    ],
-    "getting_started": [
-        {
-            "Nothing": "here",
-            "Fuck": "Off"
         }
     ]
 }
