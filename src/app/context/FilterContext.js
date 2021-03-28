@@ -21,6 +21,7 @@ const DEFAULT_FILTER_STATE = {
 	Department: {
 		Chemical: false,
 		Chemistry: false,
+		Physics: false,
 		Phoenix: false,
 		Pharmacy: false,
 		Math: false,

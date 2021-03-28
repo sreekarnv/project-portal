@@ -27,9 +27,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 	}, [filteredProjects]);
 
 	const handleFilter = (e) => {
-		console.log(e);
-
-		if(!e || !e.target) return;
+		if (!e || !e.target) return;
 
 		const key = e.target.name.split('-')[0];
 		const subFilter = e.target.name.split('-')[1];
@@ -46,9 +44,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 			newFilterOptions.isFormal.Informal = false;
 		}
 
-		if(newFilterOptions.courseOffered.previous && subFilter === 'upcoming') {
+		if (newFilterOptions.courseOffered.previous && subFilter === 'upcoming') {
 			newFilterOptions.courseOffered.previous = false;
-		} else if (newFilterOptions.courseOffered.upcoming && subFilter === 'previous') {
+		} else if (
+			newFilterOptions.courseOffered.upcoming &&
+			subFilter === 'previous'
+		) {
 			newFilterOptions.courseOffered.upcoming = false;
 		}
 
@@ -176,6 +177,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											checked={filterOptions.Department.Biology}
 										/>
 										<Checkbox
+											name='Department-Phoenix'
+											label='Phoenix'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Phoenix}
+										/>
+										<Checkbox
 											name='Department-Computer Science'
 											label='Computer Science'
 											onChange={(e) => handleFilter(e)}
@@ -199,12 +206,6 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 									</div>
 									<div className='col-sm-6'>
 										<Checkbox
-											name='Department-Phoenix'
-											label='Phoenix'
-											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.Department.Phoenix}
-										/>
-										<Checkbox
 											name='Department-Math'
 											label='Math'
 											onChange={(e) => handleFilter(e)}
@@ -215,6 +216,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											label='Chemistry'
 											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department.Chemistry}
+										/>
+										<Checkbox
+											name='Department-Physics'
+											label='Physics'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Physics}
 										/>
 										<Checkbox
 											name='Department-Civil'
