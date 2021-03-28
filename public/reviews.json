@@ -26,6 +26,18 @@
             ]
         },
         {
+            "ProjectTitle": "Flow induced rotation on a Square cylinder mounted on a torsion spring",
+            "review": [
+                 "A great learning experience, very nice professor to work with, requires some amount of prior knowledge in MATLAB and gmsh. Some knowledge in Python useful too for post processing. Have to put decent amount of effort from your side to actually get a feel of the problem."
+            ]
+        },
+        {
+            "ProjectTitle": "Study of arithmetic of elliptic curves and elliptic curve cryptography",
+            "review": [
+                "Algebra intensive, do not take unless willing to spend first 1-2 months on algebra alone"
+            ]
+        },
+        {
             "ProjectTitle": "Elliptic Curves and Elliptic Curve Cryptography",
             "review": [
                 "Wonderful experience with lot of freedom and no pressure whatsoever ^_^"
@@ -38,9 +50,21 @@
             ]
         },
         {
+            "ProjectTitle": "Impact of COVID 19 on Economy",
+            "review": [
+                "Pretty chill work \nMa'am doesn't expect much efforts\nOne or two hrs of work per week needed"
+            ]
+        },
+        {
             "ProjectTitle": "DTF Computation ",
             "review": [
                 "Sir is pretty good, but amount of computational required is high.... So you need to ask for access from Mechanical Department "
+            ]
+        },
+        {
+            "ProjectTitle": "Design and simulation of textured insulator ",
+            "review": [
+                "Continuation of last sems work. Last sem I designed a normal insulator. End goal is to compare both the types ."
             ]
         },
         {
@@ -66,6 +90,66 @@
             "review": [
                 "Not currently doing this. But finished it up almost a year ago"
             ]
+        },
+        {
+            "ProjectTitle": "Pharmacoligical interventions for Uveitis",
+            "review": [
+                "It was really great working under sir, despite covid situation and online classes, doing a project type course under him was very helpful in getting concepts clear.\n"
+            ]
+        },
+        {
+            "ProjectTitle": "Computer Vision based Quality Assurance of Mechanical Assembly Components",
+            "review": ["Great work, amazing learning experience"]
+        },
+        {
+            "ProjectTitle": "Mechanism of EMT and therapeutic strategy in cancer",
+            "review": "It would be great if I could get physical lab experience, since pharmacy and biology cannot be done online. We need to conduct experiments. Only writing a report by conducting literature review doesn't serve the purpose of such a project. "
+        },
+        {
+            "ProjectTitle": "Medication and Management strategies for Alzheimer's Disease",
+            "review": [
+                "It would be better if I could pursue the DOP in an offline format. Would be helpful to do the lab work and gain hands-on experience. "
+            ]
+        },
+        {
+            "ProjectTitle": "Analysis of the high strain rate deformation behavior of metallic foams ",
+             "review": [
+            "My part Involves Image pre processing and Triangulation meshing for construction of a FE model for Quasti static and Dynamic Testing Analysis on ABAQUS and LS Dyna"
+         ]
+        },
+        {    
+            "ProjectTitle": "Trends in portfolios of Indian Households",
+            "review":[
+                 "Ma'am is very helpful\nVery Lite \nOne hour work per week and you are good to go"
+            ]
+        },
+        {
+            "ProjectTitle": "Wearable sensors",
+            "review": [
+                "It is difficult to perform experimental work from home hence have to do the theoretical aspects as of now. The project is 80% practical though."
+            ]
+        },
+        {
+            "ProjectTitle": "Development of lipsomal formulation for anticancer drugs",
+            "review": [
+                "Firdt half of the project was to study about lipsomes and its action and the second half was to design a formulation method for a specific drug"
+            ]
+        },
+        {
+            "ProjectTitle": "Heavy metal removal ",
+            "review":[
+                 "Decent grading, workload of 10-12 hrs per week"
+            ]
+        },
+        {
+            "ProjectTitle": "Nanomaterial Adsorbents in Heavy Metal Removal",
+            "review": [
+                "You have to put in work, but he is serious about getting publication which will be valuable to your cv as well."
+                ]
+        },
+        {
+            "ProjectTitle": "CFD of wind flows over low rise buildings ",
+            "review": "It's a pretty long term project, and involves doing 2D and 3D (mostly) CFD simulations using Ansys fluent. It's used to predict aerodynamic loads on the upcoming LIGO India project. "
         }
     ],
     "profReviews": [
@@ -77,6 +161,34 @@
             ]
         },
         {
+            "Professor": "Nivedita Sinha",
+            "ProjectTitle": "Optimal Capital Structure of listed firms",
+            "review": [
+                "Student friendly prof. Too good and very helpful if the student is really interested and could show it to her."
+            ]
+        },
+        {
+            "Professor": "Dr Runa Kumari",
+            "ProjectTitle": "Smart Antennas for Aerospace Applications",
+            "review": [ 
+                "She is helpful and will give you any assistance you require. However, she also expects a lot of dedication and effort from your end."
+            ]
+        },
+        {
+            "Professor": "Professor Ponnalagu R N",
+            "ProjectTitle": "Machine Learning methods for Water parameter analysis and prediction",
+            "review": [
+                "A very amazing professor, expects sincerity from you and will not pressurise you with deadlines or so, all she wants is an honest and sincere try from the student’s side to try and complete the problem statement"
+            ]
+        },
+        {
+            "Professor": "Sandeep Deshmukh",
+            "ProjectTitle": "Machine learning Models",
+            "review": [
+                "Yeah it's quite interesting, it started of with a presentation on topics svm , lstm and Relevance vector machine and currently I have started the coding part of the project.As iam currently doing this project in the current semister I don't have more information unless this semester ends. If you want any other information regarding whatsoever mail me."
+            ]
+        },
+        {
             "ProjectTitle": "2D Materials Based Photodetectors ",
             "Professor": "Parikshit Sahatiya",
             "review": [
@@ -84,10 +196,31 @@
             ]
         },
         {
+            "Professor": "Amit Kumar Panda",
+            "ProjectTitle": "Efficient PRNG Method for Hardware Security ",
+            "review":[
+             "Pretty nice, lite Prof, doesn't demand submissions but you should show your interest. Laid back work and you can go at your own pace. "
+            ]
+        },
+        {
+            "Professor": "Dr. Pavan Kumar Penumakala",
+            "ProjectTitle": "Computational Modelling of Pultruded Composites",
+            "review": [
+                "Extremely interesting subject area, with a lot of scope for further research."
+            ]
+        },
+        {
             "ProjectTitle": "Humanoid Gait Analysis",
             "Professor": "Dr. Abhishek Sarkar",
             "review": [
                 "Great prof to do project under."
+            ]
+        },
+        {
+            "ProjectTitle": "Desalination of water using RO",
+            "Professor": "Dr. Jaideep Chaterjee",
+            "review": [
+                "The instructor is very good, he guides you well, always ready to help. It will be a easy project under him."
             ]
         }
     ]
