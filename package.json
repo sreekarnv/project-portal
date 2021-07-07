@@ -8,11 +8,14 @@
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
     "framer-motion": "^3.10.2",
+    "lodash": "^4.17.21",
+    "lokijs": "^1.5.11",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-bootstrap-icons": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "react-window": "^1.8.6",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

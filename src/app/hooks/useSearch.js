@@ -1,32 +1,54 @@
 import React from 'react';
 import { FilterContext } from '../context/FilterContext';
-
-const searchFields = ["ProjectTitle", "Professor", "Department"];
+import { debounce } from 'lodash';
 
 const useSearch = () => {
-	const { filteredProjects, searchedProjects, setSearchedProjects } = React.useContext(
-		FilterContext
-	);
-	const [searchText, setSearchText] = React.useState('');
+	const {
+		filteredProjectsChain,
+		searchedProjectsChain,
+		setSearchedProjects,
+		searchString,
+		setSearchString,
+		setSearchedProjectsChain,
+	} = React.useContext(FilterContext);
 
-	const handleSearch = (value) => {
-		setSearchedProjects(searchObject(value.length > searchText.length ? searchedProjects : filteredProjects, value));
+	const handleSearch = (value, override) => {
+		debounce(
+			() => {
+				setSearchedProjects(
+					searchObject(
+						value.length > searchString.length
+							? searchedProjectsChain
+							: filteredProjectsChain,
+						value
+					)
+				);
+			},
+			override ? 1 : 250
+		)();
 
-		setSearchText(value);
+		setSearchString(value);
 	};
 
 	const searchObject = (data, value) => {
-		if(!data)
-			return;
+		if (!data || !data.copy) return;
 
-		return data.filter(project => {
-			return searchFields.reduce((val, field) => val || (project[field] && project[field].toLowerCase().includes(value.toLowerCase())), false);
+		const query = { $regex: [escape(value), 'i'] };
+
+		const result = data.copy().find({
+			$or: [
+				{ ProjectTitle: query },
+				{ Professor: query },
+				{ Department: query },
+			],
 		});
+
+		setSearchedProjectsChain(result);
+		return result.data();
 	};
 
 	return {
 		handleSearch,
-		searchText,
 	};
 };
 

@@ -40,9 +40,11 @@ $tertiaryLight: #54ecc4;
 $theme-colors: (
 	'primary': #00c2d7,
 	'secondary': #ffc600,
+	'danger': #FF000A,
 	'tertiaryLight': $tertiaryLight,
 	'tertiary': $tertiary,
 	'tertiaryDark': $tertiaryDark,
+	'success': #11D400
 );
 
 $bg-primary: #222222;

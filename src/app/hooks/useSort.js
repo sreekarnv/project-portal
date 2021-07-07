@@ -2,35 +2,32 @@ import * as React from 'react';
 import { FilterContext } from '../context/FilterContext';
 
 const useSort = () => {
-	const { searchedProjects, setSearchedProjects } = React.useContext(
+	const { setSortedProjects, searchedProjectsChain } = React.useContext(
 		FilterContext
 	);
 
-	const handleSort = (e, type) => {
-		let result;
-		if (type === 'asc')
-			result = [...searchedProjects].sort((a, b) => {
-				return a[e.target.name] < b[e.target.name]
-					? -1
-					: a[e.target.name] > b[e.target.name]
-					? 1
-					: 0;
-			});
-		else {
-			result = [...searchedProjects].sort((a, b) => {
-				let res =
-					a[e.target.name] < b[e.target.name]
-						? -1
-						: a[e.target.name] > b[e.target.name]
-						? 1
-						: 0;
-				return res * -1;
-			});
-		}
-		setSearchedProjects(result);
+	const [currentSort, setCurrentSort] = React.useState({
+		target: 'ProjectTitle',
+		type: 'asc',
+	});
+
+	const handleSort = (target, type) => {
+		if (!searchedProjectsChain || !searchedProjectsChain.collection) return;
+
+		let result = searchedProjectsChain
+			.copy()
+			.simplesort(target, type !== 'asc')
+			.data();
+
+		setCurrentSort({
+			target: target,
+			type: type,
+		});
+
+		setSortedProjects(result);
 	};
 
-	return { handleSort };
+	return { handleSort, currentSort, setCurrentSort };
 };
 
 export default useSort;

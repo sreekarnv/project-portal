@@ -13,19 +13,22 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 		applyFilter,
 		resetFilterOptions,
 		filteredProjects,
+		searchString,
 	} = React.useContext(FilterContext);
 
-	const { searchText, handleSearch } = useSearch();
+	const { handleSearch } = useSearch();
 	const first = React.useRef(true);
 
 	React.useEffect(() => {
-		if (!first.current) handleSearch(searchText);
+		if (!first.current) handleSearch(searchString);
 		first.current = false;
 
 		// eslint-disable-next-line
 	}, [filteredProjects]);
 
 	const handleFilter = (e) => {
+		if (!e || !e.target) return;
+
 		const key = e.target.name.split('-')[0];
 		const subFilter = e.target.name.split('-')[1];
 		const value = e.target.checked;
@@ -39,6 +42,15 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 			});
 		} else if (newFilterOptions.isFormal.Informal && subFilter === 'Formal') {
 			newFilterOptions.isFormal.Informal = false;
+		}
+
+		if (newFilterOptions.courseOffered.previous && subFilter === 'upcoming') {
+			newFilterOptions.courseOffered.previous = false;
+		} else if (
+			newFilterOptions.courseOffered.upcoming &&
+			subFilter === 'previous'
+		) {
+			newFilterOptions.courseOffered.upcoming = false;
 		}
 
 		newFilterOptions[key][subFilter] = value;
@@ -63,25 +75,35 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 
 					<Form>
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Project Types</h4>
 								<Checkbox
 									name='isFormal-Formal'
 									label='Formal'
 									onChange={(e) => handleFilter(e)}
-									checked={filterOptions.isFormal.Formal}
+									checked={
+										filterOptions.isFormal.Formal ||
+										filterOptions.ProjectType.DOP ||
+										filterOptions.ProjectType.LOP ||
+										filterOptions.ProjectType.SOP
+									}
 								/>
 								<Checkbox
 									name='isFormal-Informal'
 									label='Informal'
 									onChange={(e) => handleFilter(e)}
 									checked={filterOptions.isFormal.Informal}
+									disabled={
+										filterOptions.ProjectType.DOP ||
+										filterOptions.ProjectType.LOP ||
+										filterOptions.ProjectType.SOP
+									}
 								/>
 							</Card>
 						</div>
 
 						<div className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Course Types</h4>
 								<Checkbox
 									name='ProjectType-LOP'
@@ -107,8 +129,26 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 							</Card>
 						</div>
 
-						<div layout className='mb-3'>
-							<Card className='sidebar__card py-3 pr-3'>
+						<div className='mb-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
+								<h4 className='mb-3 text-black'>Course Offered</h4>
+								<Checkbox
+									name='courseOffered-previous'
+									label='Previous Semesters'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.courseOffered.previous}
+								/>
+								<Checkbox
+									name='courseOffered-upcoming'
+									label='Upcoming Semester'
+									onChange={(e) => handleFilter(e)}
+									checked={filterOptions.courseOffered.upcoming}
+								/>
+							</Card>
+						</div>
+
+						<div className='mb-3'>
+							<Card className='sidebar__card pb-3 pr-3'>
 								<h4 className='mb-3 text-black'>Departments</h4>
 								<div className='row'>
 									<div className='col-sm-6'>
@@ -137,6 +177,12 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 											checked={filterOptions.Department.Biology}
 										/>
 										<Checkbox
+											name='Department-Phoenix'
+											label='Phoenix'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Phoenix}
+										/>
+										<Checkbox
 											name='Department-Computer Science'
 											label='Computer Science'
 											onChange={(e) => handleFilter(e)}
@@ -150,19 +196,32 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 												filterOptions.Department['Mechanical & Manufacturing']
 											}
 										/>
-									</div>
-									<div className='Department-col-sm-6'>
+
 										<Checkbox
-											name='Department-Phoenix'
-											label='Phoenix'
+											name='Department-Mechanical'
+											label='Mechanical'
 											onChange={(e) => handleFilter(e)}
-											checked={filterOptions.Department.Phoenix}
+											checked={filterOptions.Department['Mechanical']}
 										/>
+									</div>
+									<div className='col-sm-6'>
 										<Checkbox
 											name='Department-Math'
 											label='Math'
 											onChange={(e) => handleFilter(e)}
 											checked={filterOptions.Department.Math}
+										/>
+										<Checkbox
+											name='Department-Chemistry'
+											label='Chemistry'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Chemistry}
+										/>
+										<Checkbox
+											name='Department-Physics'
+											label='Physics'
+											onChange={(e) => handleFilter(e)}
+											checked={filterOptions.Department.Physics}
 										/>
 										<Checkbox
 											name='Department-Civil'
@@ -174,7 +233,7 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 								</div>
 							</Card>
 						</div>
-						<div className='card sidebar__card py-4 px-2 b-0 u-bb-none'>
+						<div className='card sidebar__card pt-4 px-2 b-0 u-bb-none'>
 							<Button
 								variant='outline-primary'
 								onClick={() => {
@@ -196,6 +255,14 @@ const Sidebar = ({ setShowSidebar, showSideBar }) => {
 							</Button>
 						</div>
 					</Form>
+					<div className='credits-container'>
+						<p className='text-white small'>
+							Designed and Developed by
+							<span className='font-weight-bold'> Sreekar NV</span>,
+							<span className='font-weight-bold'> Sidharth Anand</span> &amp;
+							<span className='font-weight-bold'> Jonathan Samuel</span>
+						</p>
+					</div>
 				</Container>
 			</div>
 		</>

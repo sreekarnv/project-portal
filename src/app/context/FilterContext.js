@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { ProjectContext } from './ProjectContext';
+import { DBContext } from './dbContext';
 
 export const FilterContext = React.createContext();
 
-const defaultFilterState = {
+const DEFAULT_FILTER_STATE = {
 	isFormal: {
 		Formal: false,
 		Informal: false,
@@ -13,12 +14,14 @@ const defaultFilterState = {
 		DOP: false,
 		SOP: false,
 	},
-	// projectTime: {
-	// 	previousSem: false,
-	// 	upcomingSem: false,
-	// },
+	courseOffered: {
+		previous: false,
+		upcoming: true,
+	},
 	Department: {
 		Chemical: false,
+		Chemistry: false,
+		Physics: false,
 		Phoenix: false,
 		Pharmacy: false,
 		Math: false,
@@ -27,21 +30,66 @@ const defaultFilterState = {
 		Biology: false,
 		'Computer Science': false,
 		'Mechanical & Manufacturing': false,
-	}
-}
+	},
+};
 
 const FilterContextProvider = ({ children }) => {
-	const { projects, loading } = React.useContext(ProjectContext);
+	const { loading } = React.useContext(ProjectContext);
+	const { projectCollection } = React.useContext(DBContext);
+
 	const [filteredProjects, setFilteredProjects] = React.useState(null);
 	const [searchedProjects, setSearchedProjects] = React.useState([]);
+	const [sortedProjects, setSortedProjects] = React.useState([]);
 
-	const [filterOptions, setFilterOptions] = React.useState(defaultFilterState);
+	const [filteredProjectsChain, setFilteredProjectsChain] = React.useState(
+		null
+	);
+	const [searchedProjectsChain, setSearchedProjectsChain] = React.useState(
+		null
+	);
+
+	const [searchString, setSearchString] = React.useState('');
+
+	const [filterOptions, setFilterOptions] = React.useState({
+		...DEFAULT_FILTER_STATE,
+		isFormal: {
+			...DEFAULT_FILTER_STATE.isFormal,
+		},
+		Department: {
+			...DEFAULT_FILTER_STATE.Department,
+		},
+		ProjectType: {
+			...DEFAULT_FILTER_STATE.ProjectType,
+		},
+	});
+
+	const resetArrayStates = () => {
+		const chain = projectCollection.chain().find();
+		const data = chain.data();
+
+		setFilteredProjects(JSON.parse(JSON.stringify(data)));
+		setSearchedProjects(JSON.parse(JSON.stringify(data)));
+		setSortedProjects(JSON.parse(JSON.stringify(data)));
+
+		setFilteredProjectsChain(JSON.parse(JSON.stringify(chain)));
+		setSearchedProjectsChain(JSON.parse(JSON.stringify(chain)));
+	};
 
 	const resetFilterOptions = () => {
-		setFilterOptions(defaultFilterState);
+		setFilterOptions({
+			...DEFAULT_FILTER_STATE,
+			isFormal: {
+				...DEFAULT_FILTER_STATE.isFormal,
+			},
+			Department: {
+				...DEFAULT_FILTER_STATE.Department,
+			},
+			ProjectType: {
+				...DEFAULT_FILTER_STATE.ProjectType,
+			},
+		});
 
-		setFilteredProjects(projects);
-		setSearchedProjects(projects);
+		resetArrayStates();
 	};
 
 	const updateFilterOptions = (newFilterOptions) => {
@@ -49,35 +97,37 @@ const FilterContextProvider = ({ children }) => {
 	};
 
 	const applyFilter = () => {
-		let filteredProjects = projects;
+		// const start = Date.now();
 
-		Object.keys(filterOptions).forEach(d => {
+		let filteredProjects = projectCollection.chain().find();
+
+		Object.keys(filterOptions).forEach((d) => {
 			const subFilter = filterOptions[d];
-			const shouldFilter = Object.values(subFilter).reduce((final, val) => final || val, false);
-			if(shouldFilter) {
-				filteredProjects = filteredProjects.filter(project => {
-					let include = false;
+			const shouldFilter = Object.values(subFilter).reduce(
+				(final, val) => final || val,
+				false
+			);
+			if (shouldFilter) {
+				const query = {};
+				query[d] = {
+					$in: Object.keys(subFilter).filter((key) => subFilter[key]),
+				};
 
-					Object.keys(subFilter).filter(key => subFilter[key]).forEach(key => {
-						if(project[d] && project[d].toLowerCase() === key.toLowerCase()) {
-							include = true;
-						}
-					});
-
-					return include;
-				});
+				filteredProjects = filteredProjects.find(query);
 			}
 		});
 
-		setFilteredProjects(filteredProjects);
+		setFilteredProjectsChain(filteredProjects);
+		setFilteredProjects(filteredProjects.data());
 	};
 
 	React.useEffect(() => {
-		if (!loading && projects) {
-			setFilteredProjects(projects);
-			setSearchedProjects(projects);
+		if (!loading) {
+			resetArrayStates();
+			applyFilter();
 		}
-	}, [loading, projects]);
+		// eslint-disable-next-line
+	}, [loading, projectCollection]);
 
 	return (
 		<FilterContext.Provider
@@ -91,6 +141,14 @@ const FilterContextProvider = ({ children }) => {
 				applyFilter,
 				searchedProjects,
 				setSearchedProjects,
+				searchString,
+				setSearchString,
+				sortedProjects,
+				setSortedProjects,
+				filteredProjectsChain,
+				setFilteredProjectsChain,
+				searchedProjectsChain,
+				setSearchedProjectsChain,
 			}}>
 			{children}
 		</FilterContext.Provider>

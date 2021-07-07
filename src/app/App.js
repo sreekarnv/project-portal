@@ -1,9 +1,18 @@
 import * as React from 'react';
-import { Row, Container, Button, Form, Dropdown } from 'react-bootstrap';
+import {
+	Row,
+	Container,
+	Button,
+	Form,
+	Dropdown,
+	Pagination,
+} from 'react-bootstrap';
+
 import {
 	FunnelFill,
 	SortDown,
 	SortAlphaDown,
+	ArrowUp,
 	SortAlphaUp,
 } from 'react-bootstrap-icons';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
@@ -12,9 +21,12 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import Loading from './components/Loader/Loading';
 import useSearch from './hooks/useSearch';
+
 import { FilterContext } from './context/FilterContext';
 import useSort from './hooks/useSort';
 import ReviewSidebar from './components/ReviewSidebar/ReviewSidebar';
+import IconButton from './components/IconButton/IconButton';
+import usePagination from './hooks/usePagination';
 
 const sidebarVariants = {
 	open: {
@@ -31,24 +43,73 @@ const sidebarVariants = {
 
 const App = () => {
 	const [showSideBar, setShowSidebar] = React.useState(false);
-	const { loading, searchedProjects } = React.useContext(FilterContext);
-	const { searchText, handleSearch } = useSearch();
-	const { handleSort } = useSort();
+	const {
+		loading,
+		searchedProjects,
+		searchString,
+		sortedProjects,
+		filteredProjects,
+	} = React.useContext(FilterContext);
+
+	const cardsContainerRef = React.useRef();
+	const { handleSearch } = useSearch();
+	const { handleSort, currentSort } = useSort();
 
 	const [showDetailedView, setShowDetailedView] = React.useState(false);
 	const [projectDetail, setProjectDetail] = React.useState(null);
+	const [showfloatingBtn, setShowFloatingBtn] = React.useState(false);
 
-	const projects = searchedProjects;
+	const projects = sortedProjects;
+
+	const [page, setPage] = React.useState(1);
+	const {
+		start,
+		end,
+		handleNextPage,
+		handlePrevPage,
+		itemsPerPage,
+		resetPagination,
+	} = usePagination();
 
 	const cardColors = React.useRef(
-		new Array(250).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
+		new Array(400).fill(0).map((d) => Math.floor(Math.random() * 3) + 1)
 	);
+
+	const FloatingButton = (e) => {
+		if (e.target.scrollTop >= 150) {
+			setShowFloatingBtn(true);
+		} else {
+			setShowFloatingBtn(false);
+		}
+	};
+
+	const toggleSidebar = () => {
+		setShowSidebar(!showSideBar);
+	};
 
 	React.useEffect(() => {
 		if (!showDetailedView) {
 			setProjectDetail(null);
 		}
 	}, [showDetailedView]);
+
+	React.useEffect(() => {
+		handleSort(currentSort.target, currentSort.type);
+
+		// eslint-disable-next-line
+	}, [searchedProjects]);
+
+	React.useEffect(() => {
+		handleSearch(searchString, true);
+
+		// eslint-disable-next-line
+	}, [filteredProjects]);
+
+	React.useEffect(() => {
+		resetPagination();
+
+		// eslint-disable-next-line
+	}, [sortedProjects]);
 
 	if (loading) {
 		return (
@@ -69,7 +130,10 @@ const App = () => {
 
 			<Container fluid>
 				<AnimateSharedLayout>
-					<Row className='cards-container'>
+					<Row
+						className='cards-container'
+						onScroll={(e) => FloatingButton(e)}
+						ref={cardsContainerRef}>
 						<AnimatePresence>
 							{showSideBar && (
 								<motion.div
@@ -105,7 +169,7 @@ const App = () => {
 										<Button
 											variant='outline-primary'
 											className='btn-wide-md btn-hover-text-dark mb-4 mb-sm-0 filter-row__filter'
-											onClick={() => setShowSidebar(!showSideBar)}>
+											onClick={toggleSidebar}>
 											<FunnelFill size={20} />
 											<span>Filter</span>
 										</Button>
@@ -120,7 +184,7 @@ const App = () => {
 												onChange={(e) => {
 													handleSearch(e.target.value);
 												}}
-												value={searchText}
+												value={searchString}
 											/>
 										</Form.Group>
 
@@ -135,28 +199,28 @@ const App = () => {
 
 											<Dropdown.Menu className='bg-dark w-100'>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'asc')}
+													onClick={(e) => handleSort(e.target.name, 'asc')}
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaDown size={20} />
 													Project Title
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'dec')}
+													onClick={(e) => handleSort(e.target.name, 'dec')}
 													name='ProjectTitle'
 													className='text-light'>
 													<SortAlphaUp size={20} />
 													Project Title
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'asc')}
+													onClick={(e) => handleSort(e.target.name, 'asc')}
 													name='Department'
 													className='text-light'>
 													<SortAlphaDown size={20} />
 													Department
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={(e) => handleSort(e, 'dec')}
+													onClick={(e) => handleSort(e.target.name, 'dec')}
 													name='Department'
 													className='text-light'>
 													<SortAlphaUp size={20} />
@@ -171,7 +235,7 @@ const App = () => {
 										<AnimateSharedLayout>
 											{projects &&
 												projects.length > 0 &&
-												projects.map((el, i) => {
+												projects.slice(start, end).map((el, i) => {
 													return (
 														<motion.div
 															layout
@@ -184,7 +248,7 @@ const App = () => {
 															} col-md-6 col-sm-6 col-12`}>
 															<div>
 																<ProjectCard
-																	number={i}
+																	number={i + start}
 																	project={el}
 																	showDetails={() => setShowDetailedView(true)}
 																	showProjectDetails={setProjectDetail}
@@ -194,19 +258,77 @@ const App = () => {
 														</motion.div>
 													);
 												})}
-											{projects && projects.length === 0 && (
-												<h5 className='text-danger h1 mt-5 mx-auto'>
-													No Projects Found
-												</h5>
-											)}
 										</AnimateSharedLayout>
+										{projects && projects.length === 0 && (
+											<h5 className='text-danger mt-5 mx-auto'>
+												No projects exist satisfying the given parameters
+											</h5>
+										)}
 									</Row>
+									<Container fluid={!showSideBar}>
+										<Row className='justify-content-md-between justify-content-center align-items-center'>
+											<div className='col-md-4 mx-sm-0 ml-0 my-auto my-md-0 mb-3 mb-md-0'>
+												<p className='text-light text-center my-0 text-md-right text-lg-left'>
+													Showing{' '}
+													<b>
+														{Math.min(
+															Math.min(itemsPerPage(), projects.length),
+															projects.length - (page - 1) * itemsPerPage()
+														)}
+													</b>{' '}
+													of {projects.length} projects
+												</p>
+											</div>
+
+											<Pagination size='lg' className='pr-0 pr-md-3'>
+												<Pagination.Prev
+													className={`card__pagination-item ${
+														page <= 1 ? 'u-cursor-na' : ''
+													}`}
+													onClick={() => {
+														if (page > 1) {
+															handlePrevPage(page - 1);
+															setPage(page - 1);
+															cardsContainerRef.current.scrollTop = 0;
+														}
+													}}
+													disabled={page <= 1}
+												/>
+												<Pagination.Item className='card__pagination-item'>
+													{page}
+												</Pagination.Item>
+												<Pagination.Next
+													className={`card__pagination-item ${
+														projects && end >= projects.length
+															? 'u-cursor-na'
+															: ''
+													}`}
+													onClick={() => {
+														if (end < projects.length) {
+															handleNextPage(page + 1);
+															setPage(page + 1);
+															cardsContainerRef.current.scrollTop = 0;
+														}
+													}}
+												/>
+											</Pagination>
+										</Row>
+									</Container>
 								</div>
 							</Container>
 						</motion.div>
 					</Row>
 				</AnimateSharedLayout>
 			</Container>
+			{showfloatingBtn && (
+				<IconButton
+					floating
+					onClick={() => {
+						cardsContainerRef.current.scrollTop = 0;
+					}}>
+					<ArrowUp size={21} />
+				</IconButton>
+			)}
 		</>
 	);
 };

@@ -55,7 +55,7 @@
 }
 
 .card-project {
-	height: 420px;
+	height: 450px;
 	backface-visibility: hidden;
 	border-radius: 1rem !important;
 	border: none !important;
@@ -66,16 +66,8 @@
 	}
 
 	&__header-image {
-		border: 4px solid #fff;
-		border-radius: 20px;
+		margin-bottom: 2rem;
 		overflow: hidden;
-
-		img {
-			height: 89px;
-			width: 81px;
-			object-fit: cover;
-			object-position: center;
-		}
 	}
 
 	&__details {
@@ -92,7 +84,8 @@
 			letter-spacing: 0.5px;
 			text-transform: uppercase;
 			font-size: 24px;
-			height: 80px;
+			height: 100px;
+			overflow-y:auto;
 		}
 	}
 
@@ -106,6 +99,19 @@
 		small {
 			width: 80% !important;
 			opacity: 0.8;
+		}
+	}
+}
+
+.card__pagination-item {
+	.page-link {
+		background: #333 !important;
+		color: #fff !important;
+		cursor: pointer;
+
+		&:hover {
+			background: #fff !important;
+			color: #333 !important;
 		}
 	}
 }

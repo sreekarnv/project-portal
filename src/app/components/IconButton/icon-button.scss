@@ -1,0 +1,15 @@
+.floating-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	box-shadow: 0 5px 15px rgba(70, 202, 255, 0.45);
+}
+
+.icon-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50% !important;
+	height: 3rem;
+	width: 3rem;
+}
